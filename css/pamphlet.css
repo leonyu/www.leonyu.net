@@ -1,0 +1,4 @@
+body { font-family: 'Arial Narrow', Arial, sans-serif; background-color: #faf8ce; }
+.column-restraint { width: 940px; margin: 0 auto; }
+nav { background-color: #58595b; color: #faf8ce; text-align: right; }
+h1 { font: bold 72px 'Times New Roman', sans-serif; }
