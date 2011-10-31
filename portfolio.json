@@ -27,13 +27,13 @@
 	     "platform": ".NET, C#",
 	     "description": "When VEVO was taking transcoding in-house, we used Handbrake CLI to handle transcoding of our videos. We had the need to find an alternative AAC encoder, because Handbrake used FAAC encoder on Windows/Linux which was very poor quality. The Core Audio from OS X was higher quality; however, OS X was not available as cloud instances, thus not scalable. I did the research and found that there were alternative encoders such as Nero AAC Encoder and QuickTime Encoder that were higher quality than FAAC. However, since Handbrake did not make encoder modular, I had to write a wrapper to mux and demux the streams for Handbrake. This Handbrake Wrapper does exactly that. In the end, we ended up using QuickTime because Nero was significantly more expensive.",
 	     "url": "",
-	     "download": "http://www.leonyu.net/portfolio/Vevo.Transcoder.zip"
+	     "download": "https://github.com/leonyu/HandBrake.Wrapper.NET"
 	 },
 	 {
 	     "name": "VEVO Newsletter",
 	     "platform": "HTML (Email)",
 	     "description": "This is the email newsletter for VEVO. I coded it out and made sure that it worked with all major email clients.",
-	     "url": "http://www.leonyu.net/portfolio/vevo-newsletter/",
+	     "url": "http://www.leonyu.net/vevo-newsletter/",
 	     "download": ""
 	 },
 	 {
@@ -56,8 +56,8 @@
 	     "platform": "Perl CGI",
 	     "support": "Perl, mod_perl",
 	     "description": "I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.",
-	     "url": "http://www.leonyu.net/portfolio/cookiejar/cookiejar.pl",
-	     "download": "http://www.leonyu.net/portfolio/cookiejar.zip"
+	     "url": "http://www.leonyu.net/cookiejar/cookiejar.pl",
+	     "download": "https://github.com/leonyu/cookiejar.pl"
 	 }
     ]
 }
