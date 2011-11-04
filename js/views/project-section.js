@@ -21,12 +21,12 @@ define(['models/project'], function(Project){
 			
 			var url = this.model.get('url');
 			if (url) {
-				$('.linkContainer', this.el).append(Mustache.to_html(this.testLinkTemplate, { url : url, text : 'Test Drive'}));
+				$('.linkContainer', this.el).append(Mustache.to_html(this.testLinkTemplate, { 'url' : url, 'text' : 'Test Drive'}));
 			}
 
-			var download = this.model.get('download');
-			if (download) {
-				$('.linkContainer', this.el).append(Mustache.to_html(this.testLinkTemplate, { url : download, text : 'Source Code'}));
+			var code = this.model.get('code');
+			if (code) {
+				$('.linkContainer', this.el).append(Mustache.to_html(this.testLinkTemplate, { 'url' : code, 'text' : 'Source Code'}));
 			}
 		}
 	});

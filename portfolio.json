@@ -6,56 +6,56 @@
 	     "platform": "JavaScript, HTML",
 	     "description": "This is the JavaScript carousel on VEVO.com homepage. It was created by me replacing an earlier Flash-based carousel. Most JavaScript carousels base its implementation on the brower's scroll bar function. That implementation choice is flawed because when the carousel scrolls to the last page, it would need to scroll backward in order to start over again. I instead implemented the carousel from scratch using CSS positioning, which does not have this issue.",
 	     "url": "http://leonyu.github.com/carousel.js/",
-	     "download": "https://github.com/leonyu/carousel.js"
+	     "code": "https://github.com/leonyu/carousel.js"
 	 },
 	 {
 	     "name": "Text to Image",
 	     "platform": "ASP.NET, C#",
 	     "description": "This is an application that converts text to image. We needed something like this at VEVO because one of the core fonts we used explicitly states that it cannot be embed using @font-face. We got around that by using this application which automatically generates images for text we needed. The app supports four different rendering providers: GDI+, WPF, ImageMagick and Pango. However, I am running this on Mono, which does not support WPF. And I did not want to install Pango on this server. since it is a very small cloud server.",
 	     "url": "http://txt2img.leonyu.net/Home/Index",
-	     "download": "https://github.com/leonyu/TextToImage.NET"
+	     "code": "https://github.com/leonyu/TextToImage.NET"
 	 },
 	 {
 	     "name": "VEVO Recommendation Prototype",
 	     "platform": ".NET, Silverlight, C#",
 	     "description": "Awhile back VEVO had explored creating an in-house recommendation. At the time, we did not have a readily available tracking data. I thought of the idea that we should use Playlist data as the basis for our recommendation. This prototype grew out of that. The engine calculates similarity using vector cosine. In vector space, the cosine between two vectors is a number between 0 and 1 that is directly proportional to the angle between the two vectors. I have since removed the SQL Server dependency by replacing it with a SQL CE instance. In addition, I have added a Silverlight and a WinForm GUI so that the users can easily query the results.",
 	     "url": "http://leonyu.github.com/Vevo.Recommendation.NET/",
-	     "download": "https://github.com/leonyu/Vevo.Recommendation.NET"
+	     "code": "https://github.com/leonyu/Vevo.Recommendation.NET"
 	 },
 	 {
 	     "name": "Handbrake Wrapper",
 	     "platform": ".NET, C#",
 	     "description": "When VEVO was taking transcoding in-house, we used Handbrake CLI to handle transcoding of our videos. We had the need to find an alternative AAC encoder, because Handbrake used FAAC encoder on Windows/Linux which was very poor quality. The Core Audio from OS X was higher quality; however, OS X was not available as cloud instances, thus not scalable. I did the research and found that there were alternative encoders such as Nero AAC Encoder and QuickTime Encoder that were higher quality than FAAC. However, since Handbrake did not make encoder modular, I had to write a wrapper to mux and demux the streams for Handbrake. This Handbrake Wrapper does exactly that. In the end, we ended up using QuickTime because Nero was significantly more expensive.",
 	     "url": "",
-	     "download": "https://github.com/leonyu/HandBrake.Wrapper.NET"
+	     "code": "https://github.com/leonyu/HandBrake.Wrapper.NET"
 	 },
 	 {
 	     "name": "VEVO Newsletter",
 	     "platform": "HTML (Email)",
 	     "description": "This is the email newsletter for VEVO. I coded it out and made sure that it worked with all major email clients.",
 	     "url": "http://www.leonyu.net/vevo-newsletter/",
-	     "download": ""
+	     "code": "https://github.com/leonyu/newsletter.php"
 	 },
 	 {
 	     "name": "Sudoku Solver",
 	     "platform": "JavaScript, HTML",
 	     "description": "I created this project back around 2007, when I was in-between jobs. Most online Sudoku solvers relied on either server-side code or browser plugins do the actual solving. JavaScript application was still in its infancy. There were a few JavaScript-based solvers, but none of them could solve any puzzles that were considered challenging to average humans. I decided to create this Sudoku solver with the goal of being able to solve all Sudoku puzzles using only JavaScript technology. I have implemented a number of techniques that emulate human approach. These human techniques alone can solve puzzles that are considered very difficult for a normal human player. When all human techniques are exhausted, the script would then remodel the Sudoku as an Exact Cover problem. This allows the solver to solve in milliseconds puzzles that were designed to be impossible but mathematically valid.",
 	     "url": "http://leonyu.github.com/sudoku.js/",
-	     "download": "https://github.com/leonyu/sudoku.js"
+	     "code": "https://github.com/leonyu/sudoku.js"
 	 },
 	 {
 	     "name": "vWin",
 	     "platform": "JavaScript, HTML",
 	     "description": "CSS positioning based virtual window. It was a component of my former blog around 2003. Previous version only accounted for quirks mode. I have since update it so it works in both quirks mode and standard mode. It was written in an era where JS did not have all the libraries it currently has, so my code had to handle all the browser incompatibilities.",
 	     "url": "http://leonyu.github.com/vWin.js/",
-	     "download": "https://github.com/leonyu/vWin.js"
+	     "code": "https://github.com/leonyu/vWin.js"
 	 },
 	 {
 	     "name": "Cookie Manager",
 	     "platform": "Perl CGI",
 	     "description": "I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.",
 	     "url": "http://www.leonyu.net/cookiejar/cookiejar.pl",
-	     "download": "https://github.com/leonyu/cookiejar.pl"
+	     "code": "https://github.com/leonyu/cookiejar.pl"
 	 }
     ]
 }
