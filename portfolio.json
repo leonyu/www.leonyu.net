@@ -46,7 +46,6 @@
 	 {
 	     "name": "vWin",
 	     "platform": "JavaScript, HTML",
-	     "support": "Internet Explorer 5+, Netscape 6+, Opera 7.1+, Mozilla 1.0+",
 	     "description": "CSS positioning based virtual window. It was a component of my former blog around 2003. Previous version only accounted for quirks mode. I have since update it so it works in both quirks mode and standard mode. It was written in an era where JS did not have all the libraries it currently has, so my code had to handle all the browser incompatibilities.",
 	     "url": "http://leonyu.github.com/vWin.js/",
 	     "download": "https://github.com/leonyu/vWin.js"
@@ -54,7 +53,6 @@
 	 {
 	     "name": "Cookie Manager",
 	     "platform": "Perl CGI",
-	     "support": "Perl, mod_perl",
 	     "description": "I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.",
 	     "url": "http://www.leonyu.net/cookiejar/cookiejar.pl",
 	     "download": "https://github.com/leonyu/cookiejar.pl"
