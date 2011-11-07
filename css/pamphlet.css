@@ -8,7 +8,7 @@ h2 { font: 30px/43px Caslon224BkBTBold, sans-serif; border-top: 2px solid #41404
 h3 { font: bold 15px/22px Arial, sans-serif; }
 a.testLink { color: #414042; text-decoration: none; border-right: 1px solid #414042; padding: 0 5px; font-weight: bold; }
 a.testLink:first-child { border-left: 1px solid #414042; } 
-.linkContainer { font: bold 15px/22px Arial, sans-serif; position: absolute; right: 0; top: 72px; }
+.linkContainer { font: bold 15px/22px Arial, sans-serif; position: absolute; right: 0; top: 60px; }
 section { position: relative; margin-bottom: 50px; }
 p { font: 14px/22px Arial, sans-serif; }
 
