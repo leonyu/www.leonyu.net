@@ -8,10 +8,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
 
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/white_in_grey.css" title="White in Grey" />
-		<link rel="alternate stylesheet" type="text/css" href="css/pamphlet.css" title="Pamphlet" />
+		<link rel="alternate stylesheet" type="text/css" href="css/white_in_grey.css" title="White in Grey" />
+		<link rel="stylesheet" type="text/css" href="fonts/cas224b.css" title="Pamphlet" />
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/pamphlet.css" title="Pamphlet" />
+
+		<script type="text/javascript" src="js/lib/modernizr.js"></script>
+		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
 		<script type="text/javascript" src="js/lib/mustache.js"></script>
@@ -22,13 +25,13 @@
 	<body>
 		<div class="column-restraint">
 			<nav>
-				<p><a href="mailto:mr.leon.yu@gmail.com">mr.leon.yu@gmail.com</a></p>
-				<p>917.683.3520</p>
+				<div><a href="mailto:mr.leon.yu@gmail.com">mr.leon.yu@gmail.com</a></div>
+				<div>917.683.3520</div>
 			</nav>
 			<header>
 				<h1>Leon’s Portfolio</h1>
 			</header>
-			<div class="content">
+			<div class="content clearfix">
 				<div id="portfolio"></div>
 			</div>
 			<footer>
