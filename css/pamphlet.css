@@ -1,15 +1,15 @@
-body { background-color: #58595b; }
+body { background-color: #666; }
 .content { font-family: Arial, sans-serif; }
-nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #58595b; color: #F7FFEF; text-align: right; padding: 12px; }
-nav a { color: #F7FFEF; text-decoration: none; }
-.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #F7FFEF; color: #414042; }
+nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #666; color: #f7ffef; text-align: right; padding: 12px; }
+nav a { color: #f7ffef; text-decoration: none; }
+.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; }
 h1 { font: 77px/65px Caslon224BkBTBold, sans-serif; text-transform: uppercase; margin: 150px 0 50px; }
-h2 { font: 30px/43px Caslon224BkBTBold, sans-serif; border-top: 2px solid #414042; border-bottom: 2px solid #414042; height: 43px; padding: 0; margin: 0; }
+h2 { font: 30px/43px Caslon224BkBTBold, sans-serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
 h3 { font: bold 15px/22px Arial, sans-serif; }
 .platform { float: left; }
 .links { float: right; }
-.links a { color: #414042; text-decoration: none; border-right: 1px solid #414042; padding: 0 5px; }
-.links a:first-child { border-left: 1px solid #414042; } 
+.links a { color: #444; text-decoration: none; border-right: 1px solid #444; padding: 0 5px; }
+.links a:first-child { border-left: 1px solid #444; } 
 section { margin-bottom: 50px; }
 p { font: 14px/22px Arial, sans-serif; clear: both; }
 
