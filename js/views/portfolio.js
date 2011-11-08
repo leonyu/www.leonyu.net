@@ -13,7 +13,7 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 			this.model.bind('error', function(){ this.renderError(); }, this);
 		},
 
-	       	tagName : 'ul',
+	       	tagName : 'div',
 		
 		className : 'portfolio',
 		
@@ -21,14 +21,6 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 			var subsection = new Section({model: project});
 			subsection.render();
 			$(this.el).append(subsection.el);
-		},
-
-	       	renderEmpty : function(){
-			$(this.el).html('<li>Empty</li>');
-		},
-
-		renderBusy : function(){
-			$(this.el).html('<li>Loading...</li>');
 		},
 
 		// Render all of the elements in the collection
