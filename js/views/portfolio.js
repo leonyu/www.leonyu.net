@@ -15,7 +15,6 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 		className : 'portfolio',
 		
 		renderOne : function(project){
-			console.log(project);
 			var subsection = new Section({model: project});
 			subsection.render();
 			$(this.el).append(subsection.el);
