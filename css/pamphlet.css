@@ -1,8 +1,8 @@
 body { background-color: #58595b; }
 .content { font-family: Arial, sans-serif; }
-nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #58595b; color: #faf8ce; text-align: right; padding: 12px; }
-nav a { color: #faf8ce; text-decoration: none; }
-.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #faf8ce; color: #414042; }
+nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #58595b; color: #F7FFEF; text-align: right; padding: 12px; }
+nav a { color: #F7FFEF; text-decoration: none; }
+.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #F7FFEF; color: #414042; }
 h1 { font: 77px/65px Caslon224BkBTBold, sans-serif; text-transform: uppercase; margin: 150px 0 50px; }
 h2 { font: 30px/43px Caslon224BkBTBold, sans-serif; border-top: 2px solid #414042; border-bottom: 2px solid #414042; height: 43px; padding: 0; margin: 0; }
 h3 { font: bold 15px/22px Arial, sans-serif; }
