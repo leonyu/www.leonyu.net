@@ -5,8 +5,8 @@ require.config({
 	baseUrl : 'js'
 });
 
-require(['controllers/portfolio'], function(Controller){
-	window.Page = {
+define(['controllers/portfolio'], function(Controller){
+	return {
 		'Controller' : Controller
 	};
 });

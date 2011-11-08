@@ -6,11 +6,12 @@ nav a { color: #faf8ce; text-decoration: none; }
 h1 { font: 77px/65px Caslon224BkBTBold, sans-serif; text-transform: uppercase; margin: 150px 0 50px; }
 h2 { font: 30px/43px Caslon224BkBTBold, sans-serif; border-top: 2px solid #414042; border-bottom: 2px solid #414042; height: 43px; padding: 0; margin: 0; }
 h3 { font: bold 15px/22px Arial, sans-serif; }
-a.testLink { color: #414042; text-decoration: none; border-right: 1px solid #414042; padding: 0 5px; font-weight: bold; }
-a.testLink:first-child { border-left: 1px solid #414042; } 
-.linkContainer { font: bold 15px/22px Arial, sans-serif; position: absolute; right: 0; top: 60px; }
-section { position: relative; margin-bottom: 50px; }
-p { font: 14px/22px Arial, sans-serif; }
+.platform { float: left; }
+.links { float: right; }
+.links a { color: #414042; text-decoration: none; border-right: 1px solid #414042; padding: 0 5px; }
+.links a:first-child { border-left: 1px solid #414042; } 
+section { margin-bottom: 50px; }
+p { font: 14px/22px Arial, sans-serif; clear: both; }
 
 .clearfix:before, .clearfix:after {  content:""; display:table; }
 .clearfix:after { clear:both; }

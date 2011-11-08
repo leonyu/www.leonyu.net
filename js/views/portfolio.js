@@ -1,34 +1,34 @@
 /**
  * @author leonyu
  */
-define(['models/project', 'models/projects', 'views/project-section'], function(Project, Projects, Section){
-	return Backbone.View.extend({
+define(['models/project', 'models/projects', 'views/project-section', 'views/BaseView'], function(Project, Projects, Section, BaseView){
+	return BaseView.extend({
 		initialize : function (attr) {
-			if (attr.el == null){
-				throw new Error('Must specify an element'); 
-			}
-			if (!(attr.model instanceof Projects)){
+			if (!(this.model instanceof Projects)){
 				throw new Error('model must be an instance of Projects'); 
 			}
-			view = this;
 			
-			this.model.bind('reset', function(){
-				view.render();
-			});
+			this.render();
+                        this.model.bind('reset', function(){ this.render(); }, this);
 		},
 		
 		className : 'portfolio',
 		
-		buildSubsections : function () {
+		renderOne : function(project){
+			console.log(project);
+			var subsection = new Section({model: project});
+			subsection.render();
+			$(this.el).append(subsection.el);
+		},
+
+		// Render all of the elements in the collection
+		renderAll : function () {
+			$(this.el).empty();
+			this.model.each(function(project, i){ this.renderOne(project); }, this);
 		},
 		
 		render : function () {
-			$(this.el).empty();
-			this.model.each(function(project, i){
-				var subsection = new Section({ model : project });
-				subsection.render();
-				$(this.el).append(subsection.el);
-			}, this);
+			this.renderAll();
 		}
 	});
 })

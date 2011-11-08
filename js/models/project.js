@@ -5,7 +5,7 @@
 define([], function(){
 	return Backbone.Model.extend({
 		initialize : function (attr) {
-			if (attr == null || attr.name == null) {
+			if (this.get('name') == null) {
 				throw new Error('Model has to be a project JSON.');
 			}
 		},

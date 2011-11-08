@@ -7,7 +7,11 @@ define(['models/project'], function(Project){
 		model : Project,
 		url : 'portfolio.json',
 		parse : function (result) {
-			return result.projects;
+			var projects = result.projects;
+			for(var i = 0; i < projects.length; i++) {
+				projects[i].hasData = true;
+			}
+			return projects;
 		}
 	});
 });
