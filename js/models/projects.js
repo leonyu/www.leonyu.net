@@ -18,13 +18,7 @@ define(['models/project'], function(Project){
 				}
 			});
 			return projects.sort(function(a, b){
-				if (a.updated_at > b.updated_at) {
-					return -1;
-				}
-				if (b.updated_at > a.updated_at) {
-					return 1;
-				}
-				return 0;
+				return a.pushed_at > b.pushed_at ? -1 : (b.pushed_at > a.pushed_at ? 1 : 0);
 			});
 		}
 	});
