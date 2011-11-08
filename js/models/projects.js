@@ -11,11 +11,10 @@ define(['models/project'], function(Project){
 			return Backbone.sync(method, model, options);
 		},
 		parse : function (result) {
-			$.each(result.data,function(i, repo){
+			return $.map(result.data,function(repo){
 				repo.hasData = true;
+				return repo;
 			});
-			console.log(result.data);
-			return result.data;
 		}
 	});
 });
