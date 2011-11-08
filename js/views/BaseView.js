@@ -12,36 +12,31 @@ define([], function() {
 		},
 
 		renderContent : function () {
-			this.setState('content');
 			$(this.el).text(JSON.stringify(this.model));
 		},
 		renderEmpty : function () {
-			this.setState('empty');
 			$(this.el).empty();
 		},
 
 		renderError : function (error) {
-			this.setState('error');
 			$(this.el).text(error);
 		},
 
 		renderBusy : function () {
-			this.setState('busy');
 			$(this.el).text('loading ' + this.model.id + '\u2026');
 		},
 		
 		// Watch a model for change until something happens
 		asyncRender : function (modelToBind) {
-			var view = this;
 			var callOnceSuccess = function(model) {
-				this.unbind('change', callOnceSuccess).unbind('error', callOnceError);
-				view.renderContent();
+				this.setState('content');
+				this.renderContent();
 			};
 			var callOnceError = function(model, xhr, options) {
-				this.unbind('change', callOnceSuccess).unbind('error', callOnceError);
-				view.renderError(xhr.responseText);
+				this.setState('error');
+				this.renderError(xhr.responseText);
 			};
-			modelToBind.bind('change', callOnceSuccess).bind('error', callOnceError);
+			modelToBind.bind('change', callOnceSuccess, this).bind('error', callOnceError, this);
 		},
 
 		render : function () {
@@ -50,18 +45,22 @@ define([], function() {
 			
 		renderModel: function(model){
 			if (model == null) {
+				this.setState('empty');
 				this.renderEmpty();
 			}
 			else if (model instanceof Backbone.Model) {
 				if (!model.get('hasData')) {
+					this.setState('busy');
 					this.renderBusy();
 					this.asyncRender(model);
 				}
 				else {
+					this.setState('content');
 					this.renderContent();
 				}
 			}
 			else {
+				this.setState('content');
 				this.renderContent();
 			}
 		}
