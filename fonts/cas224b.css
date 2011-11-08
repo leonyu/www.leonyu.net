@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Caslon224BkBTBold';
+    src: url('cas224b.eot');
+    src: url('cas224b.eot?#iefix') format('embedded-opentype'),
+         url('cas224b.woff') format('woff'),
+         url('cas224b.ttf') format('truetype'),
+         url('cas224b.svg#Caslon224BkBTBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

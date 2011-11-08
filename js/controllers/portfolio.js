@@ -2,8 +2,9 @@
  * @author leonyu
  */
 define(['models/projects', 'views/portfolio'], function(Projects, Portfolio){
-	var portfolio = new Portfolio({ model : new Projects(), el : '#portfolio' });
-	portfolio.model.fetch();
+	var projects = new Projects();
+	var portfolio = new Portfolio({ 'model' : projects, 'el' : '#portfolio' });
+	projects.fetch();
 	
 	return { 'portfolio' : portfolio };
 });
