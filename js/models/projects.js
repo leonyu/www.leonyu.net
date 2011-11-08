@@ -14,6 +14,7 @@ define(['models/project'], function(Project){
 			$.each(result.data,function(repo){
 				repo.hasData = true;
 			});
+			console.log(result.data);
 			return result.data;
 		}
 	});
