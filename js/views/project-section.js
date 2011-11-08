@@ -24,14 +24,14 @@ define(['models/project', 'views/BaseView'], function(Project, BaseView){
 			var model = this.model.toJSON();
 			$(this.el).html(this.template);
 			$('.name',this.el).text(model.name);
-			$('.platform',this.el).text(model.platform);
+			$('.platform',this.el).text(model.language);
 			
-                        if (model.url) {
-                                $('.links', this.el).append($('<a class="testLink">Test Drive</a>').attr({ 'href' : model.url}));
+                        if (model.homepage) {
+                                $('.links', this.el).append($('<a class="testLink">Demonstration</a>').attr({ 'href' : model.homepage }));
                         }
 
-                        if (model.code) {
-				$('.links', this.el).append($('<a class="testLink">Source Code</a>').attr({ 'href' : model.code}));
+                        if (model.html_url) {
+				$('.links', this.el).append($('<a class="testLink">Source Code</a>').attr({ 'href' : model.html_url}));
                         }
 
                         $('p',this.el).text(model.description);
