@@ -17,7 +17,15 @@ define(['models/project'], function(Project){
 					projects.push($.extend({'hasData' : true }, repo));
 				}
 			});
-			return projects.sort(function(a, b){ return Array.prototype.sort(b.updated_at, a.updated_at); });
+			return projects.sort(function(a, b){
+				if (a.updated_at > b.updated_at) {
+					return -1;
+				}
+				if (b.updated_at > a.updated_at) {
+					return 1;
+				}
+				return 0;
+			});
 		}
 	});
 });
