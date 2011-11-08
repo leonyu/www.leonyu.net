@@ -3,8 +3,8 @@ body { background-color: #666; }
 nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #666; color: #f7ffef; text-align: right; padding: 12px; }
 nav a { color: #f7ffef; text-decoration: none; }
 .column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; }
-h1 { font: 77px/65px Caslon224BkBTBold, sans-serif; text-transform: uppercase; margin: 150px 0 50px; }
-h2 { font: 30px/43px Caslon224BkBTBold, sans-serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
+h1 { font: 77px/65px Caslon224BkBTBold, serif; text-transform: uppercase; margin: 150px 0 50px; }
+h2 { font: 30px/43px Caslon224BkBTBold, serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
 h3 { font: bold 15px/22px Arial, sans-serif; }
 .platform { float: left; }
 .links { float: right; }
