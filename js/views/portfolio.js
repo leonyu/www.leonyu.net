@@ -10,6 +10,7 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 			
 			this.render();
                         this.model.bind('reset', function(){ this.render(); }, this);
+			this.model.bind('error', function(){ this.renderError(); }, this);
 		},
 		
 		className : 'portfolio',
@@ -21,13 +22,9 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 		},
 
 		// Render all of the elements in the collection
-		renderAll : function () {
+		renderContent : function () {
 			$(this.el).empty();
 			this.model.each(function(project, i){ this.renderOne(project); }, this);
-		},
-		
-		render : function () {
-			this.renderAll();
 		}
 	});
 })
