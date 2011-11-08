@@ -17,7 +17,7 @@ define(['models/project'], function(Project){
 					projects.push($.extend({'hasData' : true }, repo));
 				}
 			});
-			return projects;
+			return projects.sort(function(a,b){ return new Date(b.updated_at) - new Date(a.updated_at); });
 		}
 	});
 });
