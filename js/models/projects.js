@@ -8,13 +8,13 @@ define(['models/project'], function(Project){
 		url : 'https://api.github.com/users/leonyu/repos?callback=?',
 	       	sync : function (method, model, options) {
 			options.dataType = 'jsonp';
+			return Backbone.sync(method, model, options);
 		},
 		parse : function (result) {
-			var projects = $.map(result.data,function(repo){
+			$.each(result.data,function(repo){
 				repo.hasData = true;
-				return repo;
 			});
-			return projects;
+			return result.data;
 		}
 	});
 });
