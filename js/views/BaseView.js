@@ -49,7 +49,7 @@ define([], function() {
 				this.renderEmpty();
 			}
 			else if (model instanceof Backbone.Model) {
-				if (!model.isNew()) {
+				if (model.isNew()) {
 					this.setState('busy');
 					this.renderBusy();
 					this.asyncRender(model);
