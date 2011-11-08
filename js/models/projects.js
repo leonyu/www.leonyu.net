@@ -11,10 +11,13 @@ define(['models/project'], function(Project){
 			return Backbone.sync(method, model, options);
 		},
 		parse : function (result) {
-			return $.map(result.data,function(repo){
-				repo.hasData = true;
-				return repo;
+			var projects = [];
+			$.each(result.data,function(repo){
+				if (repo.name !== 'leonyu.github.com') {
+					projects.push($.extend({'hasData' : true }, repo));
+				}
 			});
+			return projects;
 		}
 	});
 });
