@@ -14,6 +14,7 @@ define(['models/project'], function(Project){
 			var projects = [];
 			$.each(result.data,function(repo){
 				if (repo.name !== 'leonyu.github.com') {
+					console.log(repo);
 					projects.push($.extend({'hasData' : true }, repo));
 				}
 			});
