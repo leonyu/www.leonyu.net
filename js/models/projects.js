@@ -11,7 +11,7 @@ define(['models/project'], function(Project){
 			return Backbone.sync(method, model, options);
 		},
 		parse : function (result) {
-			$.each(result.data,function(repo){
+			$.each(result.data,function(i, repo){
 				repo.hasData = true;
 			});
 			console.log(result.data);
