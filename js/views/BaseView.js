@@ -4,6 +4,7 @@ define([], function() {
 
 	return Backbone.View.extend({
 		setState : function (state) {
+			console.log(state);
 			this._contentViewState = state;
 		},
 
