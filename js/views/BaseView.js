@@ -49,7 +49,7 @@ define([], function() {
 				this.renderEmpty();
 			}
 			else if (model instanceof Backbone.Model) {
-				if (!model.get('hasData')) {
+				if (!model.isNew()) {
 					this.setState('busy');
 					this.renderBusy();
 					this.asyncRender(model);
@@ -59,9 +59,20 @@ define([], function() {
 					this.renderContent();
 				}
 			}
+			else if (model instanceof Backbone.Collection) {
+				if (model.length == 0) {
+	                                this.setState('empty');
+        	                        this.renderEmpty();
+				}
+				else {
+                                	this.setState('content');
+					this.renderContent();
+				}
+			}
 			else {
-				this.setState('content');
-				this.renderContent();
+				throw new Error('Model must be a Backbone.Model or Backbone.Collection');
+				//this.setState('content');
+				//this.renderContent();
 			}
 		}
 	});
