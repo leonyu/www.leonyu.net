@@ -5,7 +5,7 @@ nav a { color: #f7ffef; text-decoration: none; }
 .column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; }
 h1 { font: 77px/65px Caslon224BkBTBold, 'Bookman Old Style' serif; text-transform: uppercase; margin: 150px 0 50px; }
 h2 { font: 30px/43px Caslon224BkBTBold, 'Bookman Old Style', serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
-h3 { font: bold 15px/22px Arial, sans-serif; }
+h3 { font: bold 15px/22px Arial, sans-serif; margin-top: 15px; }
 .platform { float: left; }
 .links { float: right; }
 .links a { color: #444; text-decoration: none; border-right: 1px solid #444; padding: 0 5px; }
