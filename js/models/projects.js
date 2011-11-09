@@ -7,7 +7,7 @@ define(['models/project'], function(Project){
 		model : Project,
 		url : 'https://api.github.com/users/leonyu/repos?callback=?',
 		comparator : function(project) {
-			return project.get('pushed_at');
+			return -parseInt(project.get('pushed_at').replace(/\D/g,''));
 		},
 	       	sync : function (method, model, options) {
 			options.dataType = 'jsonp';

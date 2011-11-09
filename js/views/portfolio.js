@@ -25,8 +25,7 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 		// Render all of the elements in the collection
 		renderContent : function () {
 			$(this.el).empty();
-			this.model.sort({silent: true}).reverse({silent: true});
-			this.model.each(function(project, i){ this.renderOne(project); }, this);
+			this.model.sort({silent: true}).each(function(project, i){ this.renderOne(project); }, this);
 		}
 	});
 })
