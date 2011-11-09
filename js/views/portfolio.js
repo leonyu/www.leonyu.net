@@ -16,6 +16,10 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 	       	tagName : 'div',
 		className : 'portfolio',
 		
+		renderEmpty : function () {
+			$(this.el).empty();
+		},
+
 		renderOne : function(project){
 			var subsection = new Section({model: project});
 			subsection.render();
