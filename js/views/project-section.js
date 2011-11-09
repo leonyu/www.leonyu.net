@@ -15,10 +15,6 @@ define(['models/project', 'views/BaseView'], function(Project, BaseView){
 		tagName : 'section',
 		template : '<hgroup><h2 class="name"></h2><h3 class="platform"></h3><h3 class="links"></h3></hgroup><p></p>',
 	
-		renderBusy : function(){
-			$(this.el).text('loading project data\u2026');
-		},
-
 		renderContent : function(){
 			this.setState('content');
 			var model = this.model.toJSON();

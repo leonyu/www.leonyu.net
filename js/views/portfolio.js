@@ -14,7 +14,6 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 		},
 
 	       	tagName : 'div',
-		
 		className : 'portfolio',
 		
 		renderOne : function(project){

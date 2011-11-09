@@ -4,7 +4,6 @@ define([], function() {
 
 	return Backbone.View.extend({
 		setState : function (state) {
-			console.log(state);
 			this._contentViewState = state;
 		},
 
@@ -16,35 +15,55 @@ define([], function() {
 			$(this.el).text(JSON.stringify(this.model));
 		},
 		renderEmpty : function () {
-			$(this.el).empty();
+			$(this.el).text('No Content');
 		},
 
 		renderError : function (error) {
-			$(this.el).text(error);
+			$(this.el).text(JSON.stringify(error));
 		},
 
 		renderBusy : function () {
-			$(this.el).text('loading ' + this.model.id + '\u2026');
+			$(this.el).text('Loading ' + this.model.id + '\u2026');
 		},
-		
+
+		_renderModelWrapper : function() {
+			this.renderModel(this.model);
+		},
+
+		_renderErrorWrapper : function(error){
+			this.setState('error');
+			this.renderError(error);
+		},
+
 		// Watch a model for change until something happens
-		asyncRender : function (modelToBind) {
-			var callOnceSuccess = function(model) {
-				this.setState('content');
-				this.renderContent();
-			};
-			var callOnceError = function(model, xhr, options) {
-				this.setState('error');
-				this.renderError(xhr.responseText);
-			};
-			modelToBind.bind('change', callOnceSuccess, this).bind('error', callOnceError, this);
+		bindEvents : function (model) {
+			if (arguments.length) {
+				model = this.model
+			}
+			if (model == null) {
+				return;
+			}
+			if (model instanceof Backbone.Model) {
+				model.bind('change', this._renderModelWrapper, this).bind('error', this._renderErrorWrapper, this);
+			}
+			else if (model instanceof Backbone.Collection) {
+				model.bind('reset', this._renderModelWrapper, this).bind('error', this._renderErrorWrapper, this);
+			}
+			else {
+				throw new Error('Model must be a Backbone.Model or Backbone.Collection');
+			}
 		},
 
 		render : function () {
 			this.renderModel(this.model);
+			this.bindEvents(this.model);
 		},
 			
 		renderModel: function(model){
+			if (arguments.length == 0) {
+				model = this.model;
+			}
+
 			if (model == null) {
 				this.setState('empty');
 				this.renderEmpty();
@@ -53,7 +72,6 @@ define([], function() {
 				if (model.isNew()) {
 					this.setState('busy');
 					this.renderBusy();
-					this.asyncRender(model);
 				}
 				else {
 					this.setState('content');
