@@ -38,7 +38,7 @@ define([], function() {
 		// Watch a model for change until something happens
 		bindEvents : function (model) {
 			if (arguments.length) {
-				model = this.model
+				model = this.model;
 			}
 			if (model == null) {
 				return;
