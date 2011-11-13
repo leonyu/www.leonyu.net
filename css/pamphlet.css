@@ -1,6 +1,6 @@
 html { height: 100%; }
 body { background-color: #222; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; height: 100%; }
-.busy { background: transparent url('/loading.gif') center center no-repeat; }
+.busy { background: transparent url('/loading.gif') center center no-repeat; min-height: 100px; }
 nav { font-size: 12px; line-height: 20px; height: 40px; background-color: #444; color: #f7ffef; text-align: right; padding: 12px; }
 nav a { color: #f7ffef; text-decoration: none; }
 .column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; min-height: 100%; }
