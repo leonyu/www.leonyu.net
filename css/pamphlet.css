@@ -1,8 +1,9 @@
-body { background-color: #222; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+html { height: 100%; }
+body { background-color: #222; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; height: 100%; }
 .busy { background: transparent url('/loading.gif') center center no-repeat; height:400px;}
 nav { font-size: 12px; line-height: 20px; height: 40px; background-color: #444; color: #f7ffef; text-align: right; padding: 12px; }
 nav a { color: #f7ffef; text-decoration: none; }
-.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; }
+.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; min-height: 100%; }
 h1 { font: 77px/65px Caslon224BkBTBold, serif; text-transform: uppercase; margin: 150px 0 50px; }
 h2 { font: 30px/43px Caslon224BkBTBold, serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
 h3 { font-weight: bold; font-size: 15px; line-height: 22px; margin-top: 15px; }
