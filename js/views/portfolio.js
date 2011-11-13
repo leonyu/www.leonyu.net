@@ -17,7 +17,7 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 		className : 'portfolio',
 		
 		renderEmpty : function () {
-			$(this.el).empty();
+			$(this.el).empty().addClass('busy');
 		},
 
 		renderOne : function(project){
@@ -28,7 +28,7 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 
 		// Render all of the elements in the collection
 		renderContent : function () {
-			$(this.el).empty();
+			$(this.el).empty().removeClass('busy');
 			this.model.sort({silent: true}).each(function(project, i){ this.renderOne(project); }, this);
 		}
 	});
