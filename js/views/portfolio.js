@@ -17,7 +17,7 @@ define(['models/project', 'models/projects', 'views/project-section', 'views/Bas
 		className : 'portfolio',
 		
 		renderEmpty : function () {
-			$(this.el).empty().addClass('busy');
+			$(this.el).empty();
 		},
 
 		renderOne : function(project){
