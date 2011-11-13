@@ -1,5 +1,5 @@
 body { background-color: #222; }
-.content { font-family: Arial, sans-serif; }
+.content { font-family: 'HelveticaNeueW01-47LtCn 692689', Arial, sans-serif; }
 .busy { background: transparent url('/loading.gif') center center no-repeat; height:400px;}
 nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #444; color: #f7ffef; text-align: right; padding: 12px; }
 nav a { color: #f7ffef; text-decoration: none; }
