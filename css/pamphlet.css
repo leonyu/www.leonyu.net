@@ -1,18 +1,18 @@
 body { background-color: #222; }
 .content { font-family: 'HelveticaNeueW01-47LtCn 692689', Arial, sans-serif; }
 .busy { background: transparent url('/loading.gif') center center no-repeat; height:400px;}
-nav { font: 12px/20px Arial, sans-serif; height: 40px; background-color: #444; color: #f7ffef; text-align: right; padding: 12px; }
+nav { font-size: 12px; line-height: 20px; height: 40px; background-color: #444; color: #f7ffef; text-align: right; padding: 12px; }
 nav a { color: #f7ffef; text-decoration: none; }
 .column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; }
 h1 { font: 77px/65px Caslon224BkBTBold, 'Bookman Old Style' serif; text-transform: uppercase; margin: 150px 0 50px; }
 h2 { font: 30px/43px Caslon224BkBTBold, 'Bookman Old Style', serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
-h3 { font: bold 15px/22px Arial, sans-serif; margin-top: 15px; }
+h3 { font-weight: bold; font-size: 15px; line-height: 22px; margin-top: 15px; }
 .platform { float: left; }
 .links { float: right; }
 .links a { color: #444; text-decoration: none; border-right: 1px solid #444; padding: 0 5px; }
 .links a:first-child { border-left: 1px solid #444; } 
 section { margin-bottom: 50px; }
-p { font: 14px/22px Arial, sans-serif; clear: both; }
+p { font-size: 14px; line-height: 22px; clear: both; }
 
 .clearfix:before, .clearfix:after {  content:""; display:table; }
 .clearfix:after { clear:both; }
