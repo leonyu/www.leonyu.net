@@ -13,7 +13,7 @@ define(['models/project', 'views/BaseView'], function(Project, BaseView){
 		},
 		
 		tagName : 'section',
-		template : '<hgroup><h2 class="name"></h2><h3 class="platform"></h3><h3 class="links"></h3></hgroup><p></p>',
+		template : '<hgroup><h2 class="name"></h2><h3 class="platform"></h3><ul class="links"></ul></hgroup><p></p>',
 	
 		renderContent : function(){
 			this.setState('content');
@@ -23,11 +23,13 @@ define(['models/project', 'views/BaseView'], function(Project, BaseView){
 			$('.platform',this.el).text(model.language);
 			
                         if (model.homepage) {
-                                $('.links', this.el).append($('<a class="testLink">Demonstration</a>').attr({ 'href' : model.homepage }));
+				var $a = $('<a class="testLink">Demonstration</a>').attr({ 'href' : model.homepage });
+                                $('.links', this.el).append($('<li/>').append($a));
                         }
 
                         if (model.html_url) {
-				$('.links', this.el).append($('<a class="testLink">Source Code</a>').attr({ 'href' : model.html_url}));
+				var $a = $('<a class="testLink">Source Code</a>').attr({ 'href' : model.html_url});
+                                $('.links', this.el).append($('<li/>').append($a));
                         }
 
                         $('p',this.el).text(model.description);

@@ -1,19 +1,30 @@
 html { height: 100%; }
 body { background-color: #222; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; height: 100%; }
 .busy { background: transparent url('../img/loading.gif') no-repeat center center; min-height: 300px; }
-nav { font-size: 12px; line-height: 20px; height: 40px; background-color: #444; color: #f7ffef; text-align: right; padding: 12px; }
-nav a { color: #f7ffef; text-decoration: none; }
-.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #f7ffef; color: #444; min-height: 100%; }
-h1 { font: 77px/65px Caslon224BkBTBold, serif; text-transform: uppercase; margin: 150px 0 50px; }
-h2 { font: 30px/43px Georgia, "Times New Roman", Times, serif; border-top: 2px solid #444; border-bottom: 2px solid #444; height: 43px; padding: 0; margin: 0; }
+nav { font-size: 12px; line-height: 20px; height: 40px; background-color: #444; color: #fff; text-align: right; padding: 12px; }
+nav a { color: #fff; text-decoration: none; }
+.column-restraint { width: 674px; margin: 0 auto; padding: 0 64px; background-color: #fff; color: #444; min-height: 100%; overflow: hidden; }
+
+h1 { font: 72px/64px Calibri, 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 100px 0 50px; }
+h2 { font: 32px/48px Georgia, "Times New Roman", Times, serif; border-top: 2px solid #444; border-bottom: 2px solid #444; padding: 0; margin: 0; }
 h3 { font-weight: bold; font-size: 15px; line-height: 22px; margin-top: 15px; }
 .platform { float: left; }
-.links { float: right; }
-.links a { color: #444; text-decoration: none; border-right: 1px solid #444; padding: 0 5px; }
-.links a:first-child { border-left: 1px solid #444; } 
+ul.links { list-style: none; float: right; font-weight: bold; font-size: 15px; line-height: 22px; margin-top: 15px; }
+ul.links li { float: left; }
+ul.links li a { color: #444; text-decoration: none; border-right: 1px solid #444; padding: 0 5px; }
+ul.links li:first-child a { border-left: 1px solid #444; } 
 section { margin-bottom: 50px; }
 p { font-size: 14px; line-height: 22px; clear: both; }
 
 .clearfix:before, .clearfix:after {  content:""; display:table; }
 .clearfix:after { clear:both; }
 .clearfix { zoom:1; }
+
+@media screen and (max-width: 640px) {
+	.platform { float: none; } 
+	ul.links { float: none; }
+	ul.links li { float: none; }
+	ul.links li a, ul.links li:first-child a  { border: 0; }
+	.column-restraint { width: 100%; padding: 0; }
+}
+
