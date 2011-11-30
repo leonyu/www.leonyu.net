@@ -16,8 +16,13 @@ define(['models/project'], function(Project){
 		parse : function (result) {
 			var projects = [];
 			$.each(result.data,function(i, repo){
-				if (repo.name !== 'leonyu.github.com') {
-					projects.push($.extend({'hasData' : true }, repo));
+				switch(repo.name) {
+					case 'leonyu.github.com':
+					case 'leonyu.net':
+						break;
+					default:
+						projects.push($.extend({'hasData' : true }, repo));
+						break;
 				}
 			});
 			return projects;
