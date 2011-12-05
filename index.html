@@ -1,35 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-
-		<title>Leon’s Portfolio</title>
-		
-		<meta name="viewport" content="width=device-width" />  
-
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/pamphlet.css" />
-
-		<script type="text/javascript" src="js/lib/modernizr.js"></script>
-		<script type="text/javascript" src="js/lib/jquery.js"></script>
-		<script type="text/javascript" src="js/lib/underscore.js"></script>
-		<script type="text/javascript" src="js/lib/backbone.js"></script>
-		<script type="text/javascript" data-main="js/main-built" src="js/lib/require.js"></script>
-	</head>
-	<body>
-		<div class="column-restraint">
-			<nav>
-				<div><a href="mailto:mr.leon.yu@gmail.com">mr.leon.yu@gmail.com</a></div>
-				<div>917.683.3520</div>
-			</nav>
-			<header>
-				<h1>Leon’s Portfolio</h1>
-			</header>
-			<div class="content clearfix">
-				<div id="portfolio" class="busy"></div>
-			</div>
-			<footer>
-			</footer>
-		</div>
-	</body>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>123</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="styleSheet" href="css/penguin.css" type="text/css" />
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.tools.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".tabs").tabs(".tab-panes > section", { history: true, effect: 'fade' });
+		});
+	</script>
+</head>
+<body>
+	<div class="page-container">
+		<header class="margin-restraint">
+				<hgroup>
+					<h1>Leon Yu</h1>
+					<h2>Software Engineer</h2>
+				</hgroup>
+				<hgroup>
+					<h3>917.683.3520</h3>
+					<h3>mr.leon.yu@gmail.com</h3>
+				</hgroup>
+		</header>
+		<nav class="margin-restraint">
+			<ul class="tabs">
+				<li><a href="#cpp">C/C++</a></li>
+				<li><a href="#php">PHP</a></li>
+				<li><a href="#js">JavaScript</a></li>
+				<li><a href="#dotnet">.NET</a></li>
+				<li><a href="#others">Others</a></li>
+				<li><a href="#about">About</a></li>
+			</ul>
+		</nav>
+		<section class="content margin-restraint tab-panes">
+			<section id="cpp">
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+			</section>
+			<section id="php">
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+			</section>
+			<section id="js">
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+				<article>
+					<h2>cookiejar.pl</h2>
+					<ul>
+						<li>Demo</li>
+						<li>Source Code</li>
+					</ul>
+					<p>I wrote this around 2002, when the common browsers did not come with a cookie manager. It has fallen into disuse due to the fact that browser-based debugging tools are widely available now and Perl servers are no longer widespread.</p>
+				</article>
+			</section>
+			<section id="dotnet">
+				.NET
+			</section>
+			<section id="others">
+				Others
+			</section>
+			<section id="about">
+				About
+			</section>
+		</section>
+		<footer>
+			2011 | MR.LEON.YU@GMAIL.COM
+		</footer>
+	</div>
+</body>
 </html>

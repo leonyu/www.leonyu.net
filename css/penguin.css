@@ -1,0 +1,17 @@
+html { margin: 0; padding: 0; }
+body { margin: 0; padding: 0; font: 15px "HelveticaNeueLT Com 47 LtCn", sans-serif; color: #222; background-color: #eee; }
+.page-container { margin: 0 auto; padding: 0 0 20px; width: 800px; border: 1px solid #222; background-color: #fff; -webkit-box-shadow: 0px 0px 10px 0px #666; -moz-box-shadow: 0px 0px 10px 0px #666; box-shadow: 0px 0px 10px 0px #666; }
+.margin-restraint { padding-left: 80px; padding-right: 80px; }
+header { background-color: #222; color: #fff; margin: 0; padding: 0; font-size: 13px; font-family: "HelveticaNeueLT Com 55 Roman", sans-serif; text-transform: uppercase; padding-top: 40px; padding-bottom: 40px; }
+header h1 { margin: 0; font-weight: normal; font-size: 13px; display: inline-block; }
+header h2 { margin: 0; font-weight: normal; font-size: 13px; display: inline-block; font-family: "HelveticaNeueLT Com 25 UltLt", sans-serif; }
+header h3 { margin: 0; font-weight: normal; font-size: 13px; display: inline-block; }
+nav { margin-top: 40px; margin-bottom: 40px; font: normal 12px/12px "HelveticaNeueLT Com 55 Roman", sans-serif; color: #999; }
+nav ul { display: block; padding: 0; }
+nav ul li { display: inline-block; margin-right: 50px; padding-left: 5px; border-left: 1px solid #999; }
+nav ul li a { text-decoration: none; color: inherit; }
+article { margin-bottom: 60px; }
+article h2 { font: normal 15px/15px "HelveticaNeueLT Com 67 MdCn", sans-serif; }
+article ul { font: normal 15px/15px "HelveticaNeueLT Com 67 MdCn", sans-serif; color: #999; padding: 0; }
+article ul li { display: inline-block; border-width: 0 1px; border-style: solid; border-color: #999; padding: 0 10px;}
+footer { text-align: center; text-transform: uppercase; font: 11px "HelveticaNeueLT Com 45 Lt", sans-serif; color: #999;}
