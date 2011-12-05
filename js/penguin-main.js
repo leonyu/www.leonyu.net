@@ -36,14 +36,14 @@ $(document).ready(function () {
 			var $article = $('<article><h2></h2><ul></ul><p></p></article>');
 			$article.find('h2').text(v.name);
 			$article.find('p').text(v.description);
-			if (v.homepage != null) {
+			if (v.homepage != '') {
 				var $li = $('<li><a href="#">Demonstration</a></li>');
 				$li.find('a').attr({
 					'href': v.homepage
 				});
 				$article.find('ul').append($li);
 			}
-			if (v.html_url != null) {
+			if (v.html_url != '') {
 				var $li = $('<li><a href="#">Source Code</a></li>');
 				$li.find('a').attr({
 					'href': v.html_url
