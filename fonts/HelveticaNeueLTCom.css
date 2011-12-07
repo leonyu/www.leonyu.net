@@ -1,5 +1,8 @@
+/* http://www.fontspring.com/blog/fixing-ie9-font-face-problems */
+
 @font-face {
 	font-family: 'HelveticaNeueLT Com 45 Lt';
+	src: url('HelveticaNeueLTCom-Lt.eot');
 	src: url('HelveticaNeueLTCom-Lt.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-Lt.woff') format('woff'), 
 		url('HelveticaNeueLTCom-Lt.ttf') format('truetype');
@@ -8,6 +11,7 @@
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 47 LtCn';
+	src: url('HelveticaNeueLTCom-LtCn.eot'); 
 	src: url('HelveticaNeueLTCom-LtCn.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-LtCn.woff') format('woff'), 
 		url('HelveticaNeueLTCom-LtCn.ttf') format('truetype');
@@ -16,6 +20,7 @@
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 67 MdCn';
+	src: url('HelveticaNeueLTCom-MdCn.eot');
 	src: url('HelveticaNeueLTCom-MdCn.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-MdCn.woff') format('woff'), 
 		url('HelveticaNeueLTCom-MdCn.ttf') format('truetype');
@@ -24,6 +29,7 @@
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 55 Roman';
+	src: url('HelveticaNeueLTCom-Roman.eot');
 	src: url('HelveticaNeueLTCom-Roman.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-Roman.woff') format('woff'), 
 		url('HelveticaNeueLTCom-Roman.ttf') format('truetype');
@@ -32,6 +38,7 @@
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 25 UltLt';
+	src: url('HelveticaNeueLTCom-UltLt.eot');
 	src: url('HelveticaNeueLTCom-UltLt.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-UltLt.woff') format('woff'), 
 		url('HelveticaNeueLTCom-UltLt.ttf') format('truetype');
