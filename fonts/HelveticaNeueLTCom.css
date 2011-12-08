@@ -6,8 +6,6 @@
 	src: url('HelveticaNeueLTCom-Lt.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-Lt.woff') format('woff'), 
 		url('HelveticaNeueLTCom-Lt.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 47 LtCn';
@@ -15,8 +13,6 @@
 	src: url('HelveticaNeueLTCom-LtCn.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-LtCn.woff') format('woff'), 
 		url('HelveticaNeueLTCom-LtCn.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 67 MdCn';
@@ -24,8 +20,6 @@
 	src: url('HelveticaNeueLTCom-MdCn.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-MdCn.woff') format('woff'), 
 		url('HelveticaNeueLTCom-MdCn.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 55 Roman';
@@ -33,8 +27,6 @@
 	src: url('HelveticaNeueLTCom-Roman.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-Roman.woff') format('woff'), 
 		url('HelveticaNeueLTCom-Roman.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 25 UltLt';
@@ -42,7 +34,5 @@
 	src: url('HelveticaNeueLTCom-UltLt.eot?#iefix') format('embedded-opentype'), 
 		url('HelveticaNeueLTCom-UltLt.woff') format('woff'), 
 		url('HelveticaNeueLTCom-UltLt.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 
