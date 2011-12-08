@@ -15,8 +15,8 @@ nav ul li a { margin-right: 50px; padding-left: 5px; border-left: 1px solid #999
 nav ul li a.current { color: #222; border-left-color: #222; }
 .content { font: 15px "HelveticaNeueLT Com 47 LtCn", sans-serif; }
 article { margin-bottom: 60px; }
-article h2 { font: 700 15px "HelveticaNeueLT Com 67 MdCn", sans-serif; margin: 10px 0; float: left; }
-article ul { font: 700 15px "HelveticaNeueLT Com 67 MdCn", sans-serif; color: #999; margin: 10px 0; float: right; border-right: 1px solid #999; }
+article h2 { font: 400 15px "HelveticaNeueLT Com 67 MdCn", sans-serif; margin: 10px 0; float: left; }
+article ul { font: 400 15px "HelveticaNeueLT Com 67 MdCn", sans-serif; color: #999; margin: 10px 0; float: right; border-right: 1px solid #999; }
 article ul li { display: inline; border-left: 1px solid #999; padding: 0 10px; }
 article p { clear: both; text-align: justify; }
 a { text-decoration: none; color: #999; }
