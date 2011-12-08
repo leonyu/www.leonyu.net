@@ -1,4 +1,4 @@
-TTFS=HelveticaNeueLTCom-LtCn.ttf  HelveticaNeueLTCom-Lt.ttf  HelveticaNeueLTCom-MdCn.ttf  HelveticaNeueLTCom-Roman.ttf  HelveticaNeueLTCom-UltLt.ttf
+TTFS=HelveticaNeueLTCom-LtCn.ttf HelveticaNeueLTCom-MdCn.ttf HelveticaNeueLTCom-Roman.ttf HelveticaNeueLTCom-UltLt.ttf
 WOFFS=$(TTFS:.ttf=.woff)
 EOTS=$(TTFS:.ttf=.eot)
 SVGS=$(TTFS:.ttf=.svg)
