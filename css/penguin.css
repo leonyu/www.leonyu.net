@@ -6,7 +6,7 @@ body { font-family: "HelveticaNeueLT Com 55 Roman", sans-serif; color: #222; bac
 header { background-color: #222; color: #fff; font-size: 13px; text-transform: uppercase; padding-top: 40px; padding-bottom: 40px; }
 header a { color: #fff; }
 header h1 { font-weight: 400; font-size: 13px; display: inline-block; padding-right: 20px; }
-header h2 { font: 400 13px "HelveticaNeueLT Com 25 UltLt", sans-serif; display: inline-block; letter-spacing: 1px; }
+header h2 { font-weight: 400; font-size: 13px; color: #999; display: inline-block; }
 header h3 { font-weight: 400; font-size: 13px; display: inline-block; padding-right: 20px; }
 nav { margin-top: 40px; margin-bottom: 40px; font-weight: 400; font-size: 12px; }
 nav ul { display: block; }

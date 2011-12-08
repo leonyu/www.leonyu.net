@@ -21,11 +21,4 @@
 		url('HelveticaNeueLTCom-Roman.woff') format('woff'), 
 		url('HelveticaNeueLTCom-Roman.ttf') format('truetype');
 }
-@font-face {
-	font-family: 'HelveticaNeueLT Com 25 UltLt';
-	src: url('HelveticaNeueLTCom-UltLt.eot');
-	src: url('HelveticaNeueLTCom-UltLt.eot?#iefix') format('embedded-opentype'), 
-		url('HelveticaNeueLTCom-UltLt.woff') format('woff'), 
-		url('HelveticaNeueLTCom-UltLt.ttf') format('truetype');
-}
 
