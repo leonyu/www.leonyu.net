@@ -54,6 +54,6 @@ $(document).ready(function () {
 		});
 
 
-		$(".tabs").tabs(".tab-panes > section", { history: true });
+		$('.tabs').tabs('.tab-panes > section', { history: true }).delegate('a.current', 'click', function(evt){ evt.preventDefault(); });
 		});
 	});
