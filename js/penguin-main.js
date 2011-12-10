@@ -33,7 +33,7 @@ $(document).ready(function () {
 					break;
 			}
 
-			var $article = $('<article><h2></h2><ul></ul><p></p></article>');
+			var $article = $('<article><hr class="bar"/><h2></h2><ul></ul><p></p></article>');
 			$article.find('h2').text(v.name);
 			$article.find('p').text(v.description);
 			if (v.homepage != '') {
