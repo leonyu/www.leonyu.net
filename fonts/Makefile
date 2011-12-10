@@ -18,19 +18,22 @@ eot: $(EOTS)
 
 src/%.ttx: src/%.ttf
 	ttx $<
-	sed -i 's/fsType value="00000000 00000100"/fsType value="00000000 00000000"/' $@
+#	sed -i 's/fsType value="00000000 00000100"/fsType value="00000000 00000000"/' $@
 
-%.ttf: src/%.ttx
+build/%.ttf : src/%.ttx
 	rm -f $@
-	ttx -d . $<
+	ttx -d build/ $<
 
-%.woff: %.ttf
+%.ttf: src/%.ttf
 	fontforge -c "import fontforge; f=fontforge.open('$<'); f.generate('$@');"
 
-%.svg: %.ttf
+%.woff: src/%.ttf
 	fontforge -c "import fontforge; f=fontforge.open('$<'); f.generate('$@');"
 
-%.eot: %.ttf
+%.svg: src/%.ttf
+	fontforge -c "import fontforge; f=fontforge.open('$<'); f.generate('$@');"
+
+%.eot: build/%.ttf
 	ttf2eot $< > $@
 
 clean:

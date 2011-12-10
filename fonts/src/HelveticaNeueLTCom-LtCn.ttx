@@ -57819,6 +57819,57 @@
     <namerecord nameID="18" platformID="1" platEncID="0" langID="0x0">
       HelveticaNeueLT Com 47 LtCn
     </namerecord>
+    <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
+      Part of the digitally encoded machine readable outline data for producing the Typefaces provided is copyrighted &#169; 2003 - 2006 Linotype GmbH, www.linotype.com. All rights reserved. This software is the property of Linotype GmbH, and may not be reproduced, modified, disclosed or transferred without the express written approval of Linotype GmbH. Copyright &#169; 1988, 1990, 1993 Adobe Systems Incorporated. All Rights Reserved. Helvetica is a trademark of Heidelberger Druckmaschinen AG, exclusively licensed through Linotype GmbH, and may be registered in certain jurisdictions. This typeface is original artwork of Linotype Design Studio. The design may be protected in certain jurisdictions.
+    </namerecord>
+    <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
+      HelveticaNeueLT Com 47 LtCn
+    </namerecord>
+    <namerecord nameID="2" platformID="3" platEncID="1" langID="0x409">
+      Regular
+    </namerecord>
+    <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
+      Linotype GmbH:Helvetica Neue LT Com 47 Light Condensed:2006
+    </namerecord>
+    <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
+      Helvetica Neue LT Com 47 Light Condensed
+    </namerecord>
+    <namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">
+      Version 2.01;2006
+    </namerecord>
+    <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
+      HelveticaNeueLTCom-LtCn
+    </namerecord>
+    <namerecord nameID="7" platformID="3" platEncID="1" langID="0x409">
+      Helvetica is a trademark of Heidelberger Druckmaschinen AG, exclusively licensed through Linotype GmbH, and may be registered in certain jurisdictions.
+    </namerecord>
+    <namerecord nameID="8" platformID="3" platEncID="1" langID="0x409">
+      Linotype GmbH
+    </namerecord>
+    <namerecord nameID="9" platformID="3" platEncID="1" langID="0x409">
+      Linotype Design Studio
+    </namerecord>
+    <namerecord nameID="10" platformID="3" platEncID="1" langID="0x409">
+      Helvetica is one of the most famous and popular typefaces in the world. It lends an air of lucid efficiency to any typographic message with its clean, no-nonsense shapes. The original typeface was called Haas Grotesk, and was designed in 1957 by Max Miedinger for the Haas'sche Schriftgiesserei (Haas Type Foundry) in Switzerland. In 1960 the name was changed to Helvetica (an adaptation of "Helvetia", the Latin name for Switzerland). Over the years, the Helvetica family was expanded to include many different weights, but these were not as well coordinated with each other as they might have been. In 1983, D. Stempel AG and Linotype re-designed and digitized Neue Helvetica and updated it into a cohesive font family. Today, the original Helvetica family consists of 34 different font weights, and the Neue Helvetica family consists of 51 font weights. The Helvetica family now forms an integral part of many digital printers and operating systems and has become a stylistic anchor in our visual culture. It is the quintessential sans serif font, timeless and neutral, and can be used for all types of communication. Helvetica World, an update to the classic Helvetica design using the OpenType font format, contains the following Microsoft code pages: 1252 Latin 1, 1250 Latin 2 Eastern, 1251 Cyrillic, 1253 Greek, 1254 Turk, 1255 Hebrew, 1256 Arabic, 1257 Windows Baltic, 1258 Windows Vietnamese, as well as a mixture of box drawing element glyphs and mathematical symbols &amp; operators. In total, each weight of Helvetica World contains more than 1850 different glyph characters!
+    </namerecord>
+    <namerecord nameID="11" platformID="3" platEncID="1" langID="0x409">
+      http://www.linotype.com
+    </namerecord>
+    <namerecord nameID="12" platformID="3" platEncID="1" langID="0x409">
+      http://www.linotype.com/fontdesigners
+    </namerecord>
+    <namerecord nameID="13" platformID="3" platEncID="1" langID="0x409">
+      NOTIFICATION OF LICENSE AGREEMENT&#13;&#10;&#13;&#10;You have obtained this typeface software either directly from Linotype GmbH or together with software distributed by one of Linotype's licensees.&#13;&#10;&#13;&#10;This software is a valuable asset of Linotype GmbH. Unless you have entered into a specific license agreement granting you additional rights, your use of this software is limited to your workstation for your own use. You may not copy or distribute this software. If you have any questions regarding your license terms, please review the license agreement you received with the software.&#13;&#10;&#13;&#10;General license terms and usage rights can be viewed at www.linotype.com/license.&#13;&#10;&#13;&#10;Generelle Lizenzbedingungen und Nutzungsrechte finden Sie unter www.linotype.com/license.&#13;&#10;&#13;&#10;Pour plus d'informaci&#243;n concernant la contrat d'utilisation du logiciel de polices, veuillez consultez notre site www.linotype.com/license.&#13;&#10;&#13;&#10;Linotype GmbH can be contacted at:&#13;&#10;Tel.: +49(0)6172 484-418
+    </namerecord>
+    <namerecord nameID="14" platformID="3" platEncID="1" langID="0x409">
+      http://www.linotype.com/license
+    </namerecord>
+    <namerecord nameID="16" platformID="3" platEncID="1" langID="0x409">
+      Helvetica Neue LT Com
+    </namerecord>
+    <namerecord nameID="17" platformID="3" platEncID="1" langID="0x409">
+      47 Light Condensed
+    </namerecord>
   </name>
 
   <post>
