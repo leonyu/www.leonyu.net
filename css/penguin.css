@@ -3,7 +3,7 @@ body { font-family: "HelveticaNeueLT Com 55 Roman", sans-serif; color: #222; bac
 .margin-restraint { padding-left: 80px; padding-right: 80px; }
 .page-container { margin: 0 auto 10px; padding-bottom: 20px; max-width: 800px; background-color: #fff; 
 -webkit-box-shadow: 0px 0px 8px 0px #666; -moz-box-shadow: 0px 0px 8px 0px #666; box-shadow: 0px 0px 8px 0px #666; }
-header { background-color: #222; color: #fff; font-size: 13px; text-transform: uppercase; padding-top: 40px; padding-bottom: 40px; }
+header { background-color: #222; color: #fff; text-transform: uppercase; padding-top: 30px; padding-bottom: 30px; letter-spacing: 1px; line-height: 17px; }
 header a { color: #fff; }
 header h1 { font-weight: 400; font-size: 13px; display: inline-block; padding-right: 20px; }
 header h2 { font-weight: 400; font-size: 13px; color: #999; display: inline-block; }
