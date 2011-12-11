@@ -1,5 +1,5 @@
 html { overflow-y: scroll; }
-body { font-family: "HelveticaNeueLT Com 55 Roman", sans-serif; color: #222; background-color: #eee; }
+body { font-family: "HelveticaNeueLTStd55Roman", sans-serif; color: #222; background-color: #eee; }
 .margin-restraint { padding-left: 80px; padding-right: 80px; }
 .page-container { margin: 0 auto 10px; padding-bottom: 20px; max-width: 800px; background-color: #fff; 
 -webkit-box-shadow: 0px 0px 8px 0px #666; -moz-box-shadow: 0px 0px 8px 0px #666; box-shadow: 0px 0px 8px 0px #666; }
@@ -13,11 +13,11 @@ nav ul { display: block; }
 nav ul li { display: inline; }
 nav ul li a { margin-right: 50px; padding-left: 5px; border-left: 1px solid #999; }
 nav ul li a.current { color: #222; border-left-color: #222; }
-.content { font: 15px "HelveticaNeueLT Com 47 LtCn", sans-serif; }
+.content { font: 15px "HelveticaNeueLTStd47LtCn", sans-serif; }
 article { margin-bottom: 60px; position: relative; }
-article h2 { font: 400 15px "HelveticaNeueLT Com 67 MdCn", sans-serif; margin: 10px 0; float: left; }
+article h2 { font: 400 15px "HelveticaNeueLTStd67MdCn", sans-serif; margin: 10px 0; float: left; }
 article hr { width: 75px; height: 4px; margin: 16px 0; background-color: #222; position: absolute; left: -80px; border: 0; }
-article ul { font: 400 15px "HelveticaNeueLT Com 67 MdCn", sans-serif; color: #999; margin: 10px 0; float: right; border-right: 1px solid #999; }
+article ul { font: 400 15px "HelveticaNeueLTStd67MdCn", sans-serif; color: #999; margin: 10px 0; float: right; border-right: 1px solid #999; }
 article ul li { display: inline; border-left: 1px solid #999; padding: 0 10px; }
 article p { clear: both; text-align: justify; }
 a { text-decoration: none; color: #999; }
