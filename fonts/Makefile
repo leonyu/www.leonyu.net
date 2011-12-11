@@ -17,8 +17,9 @@ svg: $(SVGS)
 eot: $(EOTS)
 
 src/%.ttx: src/%.ttf
+	rm -f $@
 	ttx $<
-#	sed -i 's/fsType value="00000000 00000100"/fsType value="00000000 00000000"/' $@
+	sed -i 's/fsType value="00000000 00000100"/fsType value="00000000 00000000"/' $@
 
 build/%.ttf : src/%.ttx
 	rm -f $@
