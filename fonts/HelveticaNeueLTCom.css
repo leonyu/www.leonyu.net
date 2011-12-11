@@ -2,23 +2,14 @@
 
 @font-face {
 	font-family: 'HelveticaNeueLT Com 47 LtCn';
-	src: url('HelveticaNeueLTCom-LtCn.eot'); 
-	src: url('HelveticaNeueLTCom-LtCn.eot?#iefix') format('embedded-opentype'), 
-		url('HelveticaNeueLTCom-LtCn.woff') format('woff'), 
-		url('HelveticaNeueLTCom-LtCn.ttf') format('truetype');
+	src: url('HelveticaNeueLTCom-LtCn.woff') format('woff'), url('HelveticaNeueLTCom-LtCn.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 67 MdCn';
-	src: url('HelveticaNeueLTCom-MdCn.eot');
-	src: url('HelveticaNeueLTCom-MdCn.eot?#iefix') format('embedded-opentype'), 
-		url('HelveticaNeueLTCom-MdCn.woff') format('woff'), 
-		url('HelveticaNeueLTCom-MdCn.ttf') format('truetype');
+	src: url('HelveticaNeueLTCom-MdCn.woff') format('woff'), url('HelveticaNeueLTCom-MdCn.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'HelveticaNeueLT Com 55 Roman';
-	src: url('HelveticaNeueLTCom-Roman.eot');
-	src: url('HelveticaNeueLTCom-Roman.eot?#iefix') format('embedded-opentype'), 
-		url('HelveticaNeueLTCom-Roman.woff') format('woff'), 
-		url('HelveticaNeueLTCom-Roman.ttf') format('truetype');
+	src: url('HelveticaNeueLTCom-Roman.woff') format('woff'), url('HelveticaNeueLTCom-Roman.ttf') format('truetype');
 }
 
