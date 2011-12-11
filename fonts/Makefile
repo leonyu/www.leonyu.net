@@ -26,7 +26,8 @@ build/%.ttf : src/%.ttx
 	ttx -d build/ $<
 
 %.ttf: src/%.ttf
-	fontforge -c "import fontforge; f=fontforge.open('$<'); f.generate('$@');"
+	cp $< $@
+	#fontforge -c "import fontforge; f=fontforge.open('$<'); f.generate('$@');"
 
 %.woff: src/%.ttf
 	fontforge -c "import fontforge; f=fontforge.open('$<'); f.generate('$@');"
