@@ -19,15 +19,12 @@ $(document).ready(function () {
 					assignedTab = '#dotnet';
 					break;
 				case 'PHP':
-					assignedTab = '#php';
+				case 'Perl':
+					assignedTab = '#lamp';
 					break;
 				case 'C':
 				case 'C++':
-					assignedTab = '#cpp';
-					break;
 				case 'Lua':
-					assignedTab = '#lua';
-					break;
 				default:
 					assignedTab = '#others';
 					break;
