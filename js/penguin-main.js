@@ -13,15 +13,13 @@ $(document).ready(function () {
 			var assignedTab;
 			switch (v.language) {
 				case 'JavaScript':
+				case 'PHP':
 					assignedTab = '#js';
 					break;
 				case 'C#':
 					assignedTab = '#dotnet';
 					break;
-				case 'PHP':
 				case 'Perl':
-					assignedTab = '#lamp';
-					break;
 				case 'C':
 				case 'C++':
 				case 'Lua':
