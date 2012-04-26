@@ -6,10 +6,7 @@ $(document).ready(function () {
 	$('.tab-panes > section').eq(0).text('Calling the GitHub API...');
 	$.getJSON('js/data/data.json', function (data, status, xhr) {
 		$('.tab-panes > section').eq(0).empty();
-		$.each(data.data, function (i, v) {
-			if (v.name == 'leonyu.net'|| v.name == 'leonyu.github.com') {
-				return;
-			}
+		$.each(data, function (i, v) {
 			var assignedTab;
 			switch (v.language) {
 				case 'JavaScript':
