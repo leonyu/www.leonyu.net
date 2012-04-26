@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
 	$('.tab-panes > section').eq(0).text('Calling the GitHub API...');
-	$.getJSON('https://api.github.com/users/leonyu/repos?callback=?', function (data, status, xhr) {
+	$.getJSON('js/data/data.json', function (data, status, xhr) {
 		$('.tab-panes > section').eq(0).empty();
 		$.each(data.data, function (i, v) {
 			if (v.name == 'leonyu.net'|| v.name == 'leonyu.github.com') {
