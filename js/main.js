@@ -2,7 +2,7 @@
  * @author leonyu
  */
 require.config({
-	baseUrl : 'js'
+	baseUrl : ''
 });
 
 define(['controllers/portfolio'], function(Controller){
