@@ -357,9 +357,9 @@ var Detectors = (function(Promise){
   function detect() {
     var result = Promise.race(executeStep('detect'));
     result.then(function(s){
-      console.log('Success: ' + s);
+      alert('Success: ' + s);
     }, function(s){
-      console.log('Failure: ' + s);
+      alert('Failure: ' + s);
     });
     return result;
   }
@@ -769,7 +769,11 @@ var Router = (function(window, Controller, HistoryManager){
   return Router;
 }(window, Controller, HistoryManager));
 document.addEventListener('DOMContentLoaded', function(){
-  new Router({autoLaunch: true});
+  try {
+    new Router({autoLaunch: true});
+  } catch (e) {
+    alert(e);
+  }
 });
 
 }(window, document, setTimeout));
