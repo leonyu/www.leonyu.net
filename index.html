@@ -1,6 +1,8 @@
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+<script>
 (function(window, document, setTimeout){
 
 // https://github.com/jgallen23/querystring
@@ -771,11 +773,25 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 }(window, document, setTimeout));
+</script>
 
-    </script>
-  </head>
-  <body>
-  </body>
+<script id="templ" type="text/template">
+  <article>
+    <section>
+      <div><img class="icon" src="{app_icon}" title="{app_title}"></div>
+      <div class="install">
+        <div><a class="btn" href="{install_link}">{install_button}</a></div>
+        <div class="hr"><span>OR</span></div>
+      </div>
+      <div class="launch">
+        <div><a class="btn" href="{launch_link}">OPEN APP</a></div>
+        <div class="hr"><span>OR</span></div>
+      </div>
+      <div><a class="btn fallback" href="{fallback_link}">Continue to mobile site.</a></div>
+    </section>
+    <footer>POWERED BY <span>{bitly_svg}</span></footer>
+  </article>
+</script>
+</head>
+<body></body>
 </html>
-
-
