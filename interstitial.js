@@ -1,12 +1,12 @@
 
 var urls = [{
-    name : 'Good',
-    url: 'itms-apps://itunes.apple.com/us/app/bitly/id525106063'
+    name : 'iTunes',
+    url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063'
   }, {
     name : 'PWC',
     url: 'pwc365://11.\tcontent-detail-page?id=138201&type=modular_article',
   }, {
-    name : 'Bad',
+    name : 'Bad Link',
     url: 'badlink://badlink',
 }];
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
           evt.preventDefault();
           impl(url);
       });
-      aTag.appendChild(document.createTextNode(urlname + ' ' + techname));
+      aTag.appendChild(document.createTextNode(urlname + ' >>> ' + techname));
       
       var pTag = document.createElement('p');
       pTag.appendChild(aTag);
