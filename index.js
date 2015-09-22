@@ -26,22 +26,32 @@ var techniques = [{
 },{
   name: '<a href> click',
   impl: function (url) {
-    window.location = url;
+    var aTag = document.createElement('a');
+    aTag.href = url;
+    aTag.style.display = 'none';
+    document.body.appendChild(aTag);
+    aTag.click();
   }
 }];
 
 document.onload = function(){
-  for (var i = 0; i < urls.length; i++) {
-    var urlname = urls[i].name;
-    var url = urls[i].url;
-    for (var j = 0; j < techniques.length; j++) {
-      var techname = techniques[j].name;
-      var impl = techniques[j].impl;
+  urls.forEach(function(urlObj){
+    var urlname = urlObj.name;
+    var url = urlObj.url;
+    techniques.forEach(function(techObj){
+      var techname = techObj.name;
+      var impl = techObj.impl;
       var aTag = document.createElement('a');
       aTag.href = '#';
+      aTag.addEventListener('click', function(evt){
+          evt.preventDefault();
+          impl(url);
+      });
       aTag.appendChild(document.createTextNode(urlname + ' ' + techname));
-      document.body.appendChild(aTag);
-      document.body.appendChild(document.createElemnent('br'));
-    }
-  }
+      
+      var pTag = document.createElement('p');
+      pTag.appendChild(aTag);
+      document.body.appendChild(pTag);
+    })
+  });
 };
