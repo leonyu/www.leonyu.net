@@ -34,7 +34,7 @@ var techniques = [{
   }
 }];
 
-document.onload = function(){
+document.addEventListener('DOMContentLoaded', function(){
   urls.forEach(function(urlObj){
     var urlname = urlObj.name;
     var url = urlObj.url;
@@ -54,4 +54,4 @@ document.onload = function(){
       document.body.appendChild(pTag);
     })
   });
-};
+});
