@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function(){
       aTag.href = '#';
       aTag.addEventListener('click', function(evt){
           evt.preventDefault();
-          impl(url);
+          setTimeout(function(){
+              impl(url);
+          }, 100)
       });
       aTag.appendChild(document.createTextNode(urlname + ' >>> ' + techname));
       
