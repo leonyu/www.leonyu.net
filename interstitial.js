@@ -84,7 +84,7 @@ var techniques = techniques.reduce(function(accum, techObj){
 }, []);
 
 document.addEventListener('DOMContentLoaded', function() {
-    var colWidth = '' + Math.floor(100 / urls.length) + '%';
+    var colWidth = '200px';
     urls.forEach(function(urlObj) {
         var urlname = urlObj.name;
         var url = urlObj.url;
