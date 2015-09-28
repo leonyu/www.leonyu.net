@@ -72,7 +72,7 @@ var techniques = techniques.reduce(function(accum, techObj){
 var techniques = techniques.reduce(function(accum, techObj){
     accum.push(techObj);
     accum.push({
-        name: techObj.name + ' + reload',
+        name: techObj.name + ' + ↻',
         impl: function(urlObj) {
             techObj.impl(urlObj);
             setTimeout(function(){
