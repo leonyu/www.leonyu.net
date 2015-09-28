@@ -20,29 +20,31 @@ var urls = [{
 
 var techniques = [{
     name: 'location',
-    impl: function(url) {
-        window.location = url;
+    impl: function(win, url) {
+        win.location = url;
     }
 }, {
 //     name: 'eval location',
-//     impl: function(url) {
-//         eval('window.location = "' + url + '";');
+//     impl: function(win, url) {
+//         win.eval('window.location = "' + url + '";');
 //     }
 // }, {
     name: 'iframe.src',
-    impl: function(url) {
-        var iframe = document.createElement('iframe');
+    impl: function(win, url) {
+        var doc = window.document;
+        var iframe = doc.createElement('iframe');
         iframe.src = url;
         iframe.style.display = 'none';
-        document.body.appendChild(iframe);
+        doc.body.appendChild(iframe);
     }
 }, {
     name: '<a> click',
-    impl: function(url) {
-        var aTag = document.createElement('a');
+    impl: function(window, url) {
+        var doc = window.document;
+        var aTag = doc.createElement('a');
         aTag.href = url;
         aTag.style.display = 'none';
-        document.body.appendChild(aTag);
+        doc.body.appendChild(aTag);
         aTag.click();
     }
 }];
@@ -72,35 +74,8 @@ var techniques = techniques.reduce(function(accum, techObj){
         }
     });
 
-    accum.push({
-        name: techObj.name + ' iframe ↻',
-        impl: function(urlObj) {
-            var iframe = document.createElement('iframe');
-            iframe.src = 'about:blank';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-            
-            
-            
-            iframe.contentWindow.location = url;
-
-            techObj.impl(urlObj);
-            setTimeout(function(){
-                    window.location.reload();
-                }, 1000);
-        }
-    });
-
     return accum;
 }, []);
-
-var uid = 0; 
-var uid_prefix = 'id';
-function getUid() {
-    var id = uid_prefix + uid; 
-    uid++;
-    return id;
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     var colWidth = '200px';
@@ -119,12 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var techname = techObj.name;
             var impl = techObj.impl;
             var aTag = document.createElement('a');
-            aTag.id = getUid();
             aTag.href = '#';
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
                 setTimeout(function() {
-                    impl(url);
+                    impl(top, url);
                 }, 100)
             });
             aTag.appendChild(document.createTextNode(techname));
@@ -132,6 +106,25 @@ document.addEventListener('DOMContentLoaded', function() {
             var pTag = document.createElement('p');
             pTag.appendChild(aTag);
             divTag.appendChild(pTag);
+
+
+            var techname = techObj.name;
+            var impl = techObj.impl;
+            var aTag = document.createElement('a');
+            aTag.href = '#';
+            aTag.addEventListener('click', function(evt) {
+                evt.preventDefault();
+                setTimeout(function() {
+                    impl(window, url);
+                }, 100)
+            });
+            aTag.appendChild(document.createTextNode(techname + ' iframe'));
+
+            var pTag = document.createElement('p');
+            pTag.appendChild(aTag);
+            divTag.appendChild(pTag);
+
+
         });
         document.body.appendChild(divTag);
     });
