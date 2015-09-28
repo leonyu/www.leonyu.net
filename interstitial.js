@@ -46,7 +46,7 @@ var techniques = [{
         iframe.contentWindow.eval('window.location = "' + url + '";');
     }
 }, {
-    name: '<A> click',
+    name: '<a> click',
     impl: function(url) {
         var aTag = document.createElement('a');
         aTag.href = url;
