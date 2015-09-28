@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 evt.preventDefault();
 
                 var iframe = doc.createElement('iframe');
-                iframe.src = url;
+                iframe.src = 'about:blank';
                 iframe.style.display = 'none';
                 doc.body.appendChild(iframe);
 
