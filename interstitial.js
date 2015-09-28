@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aTag.href = '#';
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
-                impl(top, url);
+                impl(window, url);
             });
             aTag.appendChild(document.createTextNode(techname));
 
@@ -112,7 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
             aTag.href = '#';
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
-                impl(window, url);
+
+                var iframe = doc.createElement('iframe');
+                iframe.src = url;
+                iframe.style.display = 'none';
+                doc.body.appendChild(iframe);
+
+                impl(iframe.contentWindow, url);
             });
             aTag.appendChild(document.createTextNode(techname + ' iframe'));
 
