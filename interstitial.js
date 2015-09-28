@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   impl(iframe.contentWindow, url);
                 }, 20);
             });
-            aTag.appendChild(document.createTextNode(techname + ' iframe'));
+            aTag.appendChild(document.createTextNode(techname + ' (iframed)'));
 
             var pTag = document.createElement('p');
             pTag.appendChild(aTag);
