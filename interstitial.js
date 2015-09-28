@@ -19,9 +19,26 @@ var techniques = [{
     document.body.appendChild(iframe);
   }
 },{
+  name: 'iframe setTimeout',
+  impl: function (url) {
+    setTimeout(function(){
+        var iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+    }, 20);
+  }
+},{
   name: 'location',
   impl: function (url) {
     window.location = url;
+  }
+},{
+  name: 'location setTimeout',
+  impl: function (url) {
+    setTimeout(function(){
+        window.location = url;
+    }, 20);
   }
 },{
   name: '<a href> click',
@@ -31,6 +48,17 @@ var techniques = [{
     aTag.style.display = 'none';
     document.body.appendChild(aTag);
     aTag.click();
+  }
+},{
+  name: '<a href> click setTimeout',
+  impl: function (url) {
+    setTimeout(function(){
+        var aTag = document.createElement('a');
+        aTag.href = url;
+        aTag.style.display = 'none';
+        document.body.appendChild(aTag);
+        aTag.click();
+    }, 20);
   }
 }];
 
