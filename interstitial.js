@@ -15,12 +15,26 @@ var techniques = [{
         window.location = url;
     }
 }, {
+    name: 'eval location',
+    impl: function(url) {
+        eval('window.location = "' + url + '";';
+    }
+}, {
     name: 'iframe',
     impl: function(url) {
         var iframe = document.createElement('iframe');
         iframe.src = url;
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
+    }
+}, {
+    name: 'iframe location',
+    impl: function(url) {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'about:blank';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        iframe.contentWindow.eval('window.location = "' + url + '";');
     }
 }, {
     name: 'A[href] click',
