@@ -88,6 +88,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var divTag = document.createElement('div');
         divTag.style.float = 'left';
         divTag.style.width = '30%';
+        
+        var h3Tag = document.createElement('h3');
+        h3Tag.appendChild(document.createTextNode(urlname));
+        divTag.appendChild(h3Tag);
+
         techniques.forEach(function(techObj) {
             var techname = techObj.name;
             var impl = techObj.impl;
@@ -99,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     impl(url);
                 }, 100)
             });
-            aTag.appendChild(document.createTextNode(urlname + ' >>> ' + techname));
+            aTag.appendChild(document.createTextNode(techname));
 
             var pTag = document.createElement('p');
             pTag.appendChild(aTag);
