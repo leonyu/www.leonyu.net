@@ -67,10 +67,10 @@ var techniques = techniques.reduce(function(accum, techObj){
     accum.push({
         name: techObj.name + ' ↻',
         impl: function(win, urlObj) {
-            techObj.impl(urlObj);
+            techObj.impl(win, urlObj);
             win.setTimeout(function(){
-                    win.location.reload();
-                }, 1000);
+                win.location.reload();
+            }, 1000);
         }
     });
 
