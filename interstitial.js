@@ -81,12 +81,13 @@ var techniques = techniques.reduce(function(accum, techObj){
 }, []);
 
 document.addEventListener('DOMContentLoaded', function() {
+    var colWidth = '' + Math.floor(100 / urls.length) + '%';
     urls.forEach(function(urlObj) {
         var urlname = urlObj.name;
         var url = urlObj.url;
         var divTag = document.createElement('div');
         divTag.style.float = 'left';
-        divTag.style.width = '30%';
+        divTag.style.width = colWidth;
         
         var h3Tag = document.createElement('h3');
         h3Tag.appendChild(document.createTextNode(urlname));
