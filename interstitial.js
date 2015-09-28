@@ -80,20 +80,6 @@ var techniques = techniques.reduce(function(accum, techObj){
     return accum;
 }, []);
 
-var techniques = techniques.reduce(function(accum, techObj){
-    accum.push(techObj);
-    accum.push({
-        name: techObj.name + ' + alert',
-        impl: function(urlObj) {
-            techObj.impl(urlObj);
-            setTimeout(function(){
-                    alert('OK');
-                }, 1000);
-        }
-    });
-    return accum;
-}, []);
-
 document.addEventListener('DOMContentLoaded', function() {
     var colWidth = '' + Math.floor(100 / urls.length) + '%';
     urls.forEach(function(urlObj) {
