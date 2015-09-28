@@ -85,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
     urls.forEach(function(urlObj) {
         var urlname = urlObj.name;
         var url = urlObj.url;
+        var divTag = document.createElement('div');
+        divTag.style.float = 'left';
+        divTag.style.width = '30%';
         techniques.forEach(function(techObj) {
             var techname = techObj.name;
             var impl = techObj.impl;
@@ -100,7 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             var pTag = document.createElement('p');
             pTag.appendChild(aTag);
-            document.body.appendChild(pTag);
-        })
+            divTag.appendChild(pTag);
+        });
+        document.body.appendChild(divTag);
     });
 });
