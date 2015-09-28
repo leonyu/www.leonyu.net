@@ -13,6 +13,9 @@ var urls = [{
 }, {
     name: 'Bad Link',
     url: 'badlink://badlink',
+}, {
+    name: 'mailto',
+    url: 'mailto:?subject=test',
 }];
 
 var techniques = [{
