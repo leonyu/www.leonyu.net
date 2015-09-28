@@ -10,17 +10,17 @@ var urls = [{
 }];
 
 var techniques = [{
+    name: 'location',
+    impl: function(url) {
+        window.location = url;
+    }
+}, {
     name: 'iframe',
     impl: function(url) {
         var iframe = document.createElement('iframe');
         iframe.src = url;
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
-    }
-}, {
-    name: 'location',
-    impl: function(url) {
-        window.location = url;
     }
 }, {
     name: 'A[href] click',
