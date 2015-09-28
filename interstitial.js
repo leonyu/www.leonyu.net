@@ -33,20 +33,22 @@ var techniques = [{
     }
 }];
 
-var asyncTechniques = techniques.map(function(techObj){
-    return {
+var techniques = techniques.reduce(function(accum, techObj){
+    accum.push(techObj);
+    accum.push({
         name: techObj.name + ' (async)',
         impl: function(urlObj) {
             setTimeout(function(){
                 techObj.impl(urlObj);
             }, 20);
         }
-    };
-});
-techniques.push.apply(techniques, asyncTechniques);
+    });
+    return accum;
+}, []);
 
-var reloadTechniques = techniques.map(function(techObj){
-    return {
+var techniques = techniques.reduce(function(accum, techObj){
+    accum.push(techObj);
+    accum.push({
         name: techObj.name + ' / reload',
         impl: function(urlObj) {
             techObj.impl(urlObj);
@@ -54,19 +56,8 @@ var reloadTechniques = techniques.map(function(techObj){
                     window.location.reload();
                 }, 1000);
         }
-    };
-});
-techniques.push.apply(techniques, reloadTechniques);
-
-techniques.sort(function(a, b){
-  if (a.name > b.name) {
-    return 1;
-  }
-  if (a.name < b.name) {
-    return -1;
-  }
-  return 0;
-});
+    });
+}, []);
 
 document.addEventListener('DOMContentLoaded', function() {
     urls.forEach(function(urlObj) {
