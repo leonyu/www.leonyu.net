@@ -31,7 +31,7 @@ var techniques = [{
 // }, {
     name: 'iframe.src',
     impl: function(win, url) {
-        var doc = window.document;
+        var doc = win.document;
         var iframe = doc.createElement('iframe');
         iframe.src = url;
         iframe.style.display = 'none';
@@ -39,8 +39,8 @@ var techniques = [{
     }
 }, {
     name: '<a> click',
-    impl: function(window, url) {
-        var doc = window.document;
+    impl: function(win, url) {
+        var doc = win.document;
         var aTag = doc.createElement('a');
         aTag.href = url;
         aTag.style.display = 'none';
@@ -53,9 +53,9 @@ var techniques = techniques.reduce(function(accum, techObj){
     accum.push(techObj);
     accum.push({
         name: techObj.name + ' (async)',
-        impl: function(urlObj) {
-            setTimeout(function(){
-                techObj.impl(urlObj);
+        impl: function(win, urlObj) {
+            win.setTimeout(function(){
+                techObj.impl(win, urlObj);
             }, 20);
         }
     });
@@ -66,10 +66,10 @@ var techniques = techniques.reduce(function(accum, techObj){
     accum.push(techObj);
     accum.push({
         name: techObj.name + ' ↻',
-        impl: function(urlObj) {
+        impl: function(win, urlObj) {
             techObj.impl(urlObj);
-            setTimeout(function(){
-                    window.location.reload();
+            win.setTimeout(function(){
+                    win.location.reload();
                 }, 1000);
         }
     });
@@ -97,9 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aTag.href = '#';
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
-                setTimeout(function() {
-                    impl(top, url);
-                }, 100)
+                impl(top, url);
             });
             aTag.appendChild(document.createTextNode(techname));
 
@@ -114,9 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aTag.href = '#';
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
-                setTimeout(function() {
-                    impl(window, url);
-                }, 100)
+                impl(window, url);
             });
             aTag.appendChild(document.createTextNode(techname + ' iframe'));
 
