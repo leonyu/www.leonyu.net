@@ -1,7 +1,4 @@
 var urls = [{
-    name: 'iTunes',
-    url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063'
-}, {
     name: 'Twitter',
     url: 'twitter://user?screen_name=bitly'
 }, {
@@ -14,7 +11,10 @@ var urls = [{
     name: 'Bad Link',
     url: 'badlink://badlink',
 }, {
-    name: 'mailto',
+    name: 'iTunes\n(whitelisted)',
+    url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063'
+}, {
+    name: 'mailto\n(whitelisted)',
     url: 'mailto:?subject=test',
 }];
 
