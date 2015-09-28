@@ -43,7 +43,7 @@ var techniques = [{
         iframe.contentWindow.eval('window.location = "' + url + '";');
     }
 }, {
-    name: 'A[href] click',
+    name: '<A> click',
     impl: function(url) {
         var aTag = document.createElement('a');
         aTag.href = url;
@@ -56,7 +56,7 @@ var techniques = [{
 var techniques = techniques.reduce(function(accum, techObj){
     accum.push(techObj);
     accum.push({
-        name: 'async ' + techObj.name,
+        name: techObj.name + ' (async)',
         impl: function(urlObj) {
             setTimeout(function(){
                 techObj.impl(urlObj);
