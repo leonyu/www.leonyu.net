@@ -17,7 +17,7 @@ var techniques = [{
 }, {
     name: 'eval location',
     impl: function(url) {
-        eval('window.location = "' + url + '";';
+        eval('window.location = "' + url + '";');
     }
 }, {
     name: 'iframe',
