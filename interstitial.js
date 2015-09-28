@@ -18,34 +18,9 @@ var techniques = [{
         document.body.appendChild(iframe);
     }
 }, {
-    name: 'iframe (async)',
-    impl: function(url) {
-        setTimeout(function() {
-            var iframe = document.createElement('iframe');
-            iframe.src = url;
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-        }, 20);
-    }
-}, {
     name: 'location',
     impl: function(url) {
         window.location = url;
-    }
-}, {
-    name: 'location / reload',
-    impl: function(url) {
-        window.location = url;
-        setTimeout(function() {
-            window.location.reload();
-        }, 500);
-    }
-}, {
-    name: 'location (async)',
-    impl: function(url) {
-        setTimeout(function() {
-            window.location = url;
-        }, 20);
     }
 }, {
     name: 'A[href] click',
@@ -56,30 +31,32 @@ var techniques = [{
         document.body.appendChild(aTag);
         aTag.click();
     }
-}, {
-    name: 'A[href] click / reload',
-    impl: function(url) {
-        var aTag = document.createElement('a');
-        aTag.href = url;
-        aTag.style.display = 'none';
-        document.body.appendChild(aTag);
-        aTag.click();
-        setTimeout(function() {
-            window.location.reload();
-        }, 500);
-    }
-}, {
-    name: 'A[href] click (async)',
-    impl: function(url) {
-        setTimeout(function() {
-            var aTag = document.createElement('a');
-            aTag.href = url;
-            aTag.style.display = 'none';
-            document.body.appendChild(aTag);
-            aTag.click();
-        }, 20);
-    }
 }];
+
+var asyncTechniques = techniques.map(function(techObj){
+    return {
+        name: techObj.name + ' (async)',
+        impl: function(urlObj) {
+            setTimeout(function(){
+                techObj.impl(urlObj);
+            }, 20);
+        }
+    };
+});
+techniques.push.apply(techniques, asyncTechniques);
+
+var reloadTechniques = techniques.map(function(techObj){
+    return {
+        name: techObj.name + ' / reload',
+        impl: function(urlObj) {
+            techObj.impl(urlObj);
+            setTimeout(function(){
+                    window.location.reload();
+                }, 1000);
+        }
+    };
+});
+techniques.push.apply(techniques, reloadTechniques);
 
 document.addEventListener('DOMContentLoaded', function() {
     urls.forEach(function(urlObj) {
