@@ -2,6 +2,12 @@ var urls = [{
     name: 'iTunes',
     url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063'
 }, {
+    name: 'Twitter',
+    url: 'twitter://user?screen_name=bitly'
+}, {
+    name: 'FB',
+    url: 'fb://profile/bitly'
+}, {
     name: 'PWC',
     url: 'pwc365://11.\tcontent-detail-page?id=138201&type=modular_article',
 }, {
