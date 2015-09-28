@@ -29,21 +29,12 @@ var techniques = [{
 //         eval('window.location = "' + url + '";');
 //     }
 // }, {
-    name: 'iframe',
+    name: 'iframe.src',
     impl: function(url) {
         var iframe = document.createElement('iframe');
         iframe.src = url;
         iframe.style.display = 'none';
         document.body.appendChild(iframe);
-    }
-}, {
-    name: 'iframe location',
-    impl: function(url) {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'about:blank';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-        iframe.contentWindow.location = url;
     }
 }, {
     name: '<a> click',
@@ -80,8 +71,36 @@ var techniques = techniques.reduce(function(accum, techObj){
                 }, 1000);
         }
     });
+
+    accum.push({
+        name: techObj.name + ' iframe ↻',
+        impl: function(urlObj) {
+            var iframe = document.createElement('iframe');
+            iframe.src = 'about:blank';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            
+            
+            iframe.contentWindow.location = url;
+
+            techObj.impl(urlObj);
+            setTimeout(function(){
+                    window.location.reload();
+                }, 1000);
+        }
+    });
+
     return accum;
 }, []);
+
+var uid = 0; 
+var uid_prefix = 'id';
+function getUid() {
+    var id = uid_prefix + uid; 
+    uid++;
+    return id;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     var colWidth = '200px';
@@ -100,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var techname = techObj.name;
             var impl = techObj.impl;
             var aTag = document.createElement('a');
+            aTag.id = getUid();
             aTag.href = '#';
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
