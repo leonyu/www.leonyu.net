@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
 
-                var iframe = doc.createElement('iframe');
+                var iframe = document.createElement('iframe');
                 iframe.src = 'about:blank';
                 iframe.style.display = 'none';
-                doc.body.appendChild(iframe);
+                document.body.appendChild(iframe);
 
                 impl(iframe.contentWindow, url);
             });
