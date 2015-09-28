@@ -6,7 +6,7 @@ var urls = [{
     url: 'twitter://user?screen_name=bitly'
 }, {
     name: 'FB',
-    url: 'fb://page/bitly'
+    url: 'fb://feed'
 }, {
     name: 'PWC',
     url: 'pwc365://11.content-detail-page?id=138201&type=modular_article',
