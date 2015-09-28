@@ -34,6 +34,12 @@ var techniques = [{
     window.location = url;
   }
 },{
+  name: 'location reload',
+  impl: function (url) {
+    window.location = url;
+    window.location.reload();
+  }
+},{
   name: 'location setTimeout',
   impl: function (url) {
     setTimeout(function(){
