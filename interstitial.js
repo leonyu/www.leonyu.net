@@ -57,6 +57,7 @@ var techniques = techniques.reduce(function(accum, techObj){
                 }, 1000);
         }
     });
+    return accum;
 }, []);
 
 document.addEventListener('DOMContentLoaded', function() {
