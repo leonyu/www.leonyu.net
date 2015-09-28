@@ -9,7 +9,7 @@ var urls = [{
     url: 'fb://profile/bitly'
 }, {
     name: 'PWC',
-    url: 'pwc365://11.\tcontent-detail-page?id=138201&type=modular_article',
+    url: 'pwc365://11.content-detail-page?id=138201&type=modular_article',
 }, {
     name: 'Bad Link',
     url: 'badlink://badlink',
