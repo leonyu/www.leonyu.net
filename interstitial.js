@@ -56,7 +56,7 @@ var techniques = techniques.reduce(function(accum, techObj){
         impl: function(win, urlObj) {
             win.setTimeout(function(){
                 techObj.impl(win, urlObj);
-            }, 20);
+            }, 500);
         }
     });
     return accum;
@@ -70,7 +70,7 @@ var techniques = techniques.reduce(function(accum, techObj){
             techObj.impl(win, urlObj);
             win.setTimeout(function(){
                 win.location.reload();
-            }, 1000);
+            }, 2000);
         }
     });
 
