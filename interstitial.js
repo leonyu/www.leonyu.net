@@ -8,6 +8,9 @@ var urls = [{
     name: 'PWC',
     url: 'pwc365://11.content-detail-page?id=138201&type=modular_article',
 }, {
+    name: 'Intent',
+    url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+}, {
     name: 'Bad Link',
     url: 'badlink://badlink',
 }, {
