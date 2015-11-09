@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "bitly.ios9-universal-links",
+                "paths": [ "*" ]
+            }
+        ]
+    }
+}
