@@ -41,6 +41,21 @@ var techniques = [{
         doc.body.appendChild(iframe);
     }
 }, {
+    name: 'img.src',
+    impl: function(win, url) {
+        var doc = win.document;
+        var img = doc.createElement('img');
+        img.src = url;
+        img.style.display = 'none';
+        doc.body.appendChild(img);
+    }
+}, {
+    name: 'body.backgroundImage',
+    impl: function(win, url) {
+        var doc = win.document;
+        doc.body.style.backgroundImage = "url('"+ url +"')";
+    }
+}, {
     name: '<a> click',
     impl: function(win, url) {
         var doc = win.document;
