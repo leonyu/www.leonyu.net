@@ -57,10 +57,12 @@ var techniques = [{
         xhr.open('POST', url, true);
         //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
         xhr.send(null);
-    }, {
+    }
+}, {
     name: 'navigator.sendBeacon',
     impl: function(win, url) {
         win.navigator.sendBeacon(url, null);
+    }
 }];
 
 var techniques = techniques.reduce(function(accum, techObj){
