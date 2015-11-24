@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var techname = techObj.name;
             var impl = techObj.impl;
             var aTag = document.createElement('a');
-            aTag.href = techObj.url;
+            aTag.href = url;
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
                 setTimeout(function(){
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var techname = techObj.name;
             var impl = techObj.impl;
             var aTag = document.createElement('a');
-            aTag.href = techObj.url;
+            aTag.href = url;
             aTag.addEventListener('click', function(evt) {
                 evt.preventDefault();
 
