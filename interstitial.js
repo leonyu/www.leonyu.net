@@ -119,7 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
         divTag.style.width = colWidth;
         
         var h3Tag = document.createElement('h3');
-        h3Tag.appendChild(document.createTextNode(urlname));
+        var h3Atag = document.createElement('a');
+        h3Atag.innerText = urlname;
+        h3Atag.href = url;
+        h3Tag.appendChild(h3Atag);
         divTag.appendChild(h3Tag);
 
         techniques.forEach(function(techObj) {
@@ -133,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   impl(window, url);
                 }, 20);
             });
-            aTag.appendChild(document.createTextNode(techname));
+            aTag.innerText = techname;
 
             var pTag = document.createElement('p');
             pTag.appendChild(aTag);
@@ -156,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   impl(iframe.contentWindow, url);
                 }, 20);
             });
-            aTag.appendChild(document.createTextNode(techname + ' (iframed)'));
+            aTag.innerText = techname + ' (iframed)';
 
             var pTag = document.createElement('p');
             pTag.appendChild(aTag);
