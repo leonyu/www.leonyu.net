@@ -109,6 +109,9 @@ var techniques = techniques.reduce(function(accum, techObj){
 }, []);
 
 document.addEventListener('DOMContentLoaded', function() {
+    if (window.webkit && window.webkit.messageHandlers) {
+        document.body.append(document.createTextNode(Object.keys(window.webkit.messageHandlers)));
+    }
     var colWidth = '200px';
     urls.forEach(function(urlObj) {
         var urlname = urlObj.name;
