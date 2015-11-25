@@ -80,7 +80,7 @@ var techniques = [{
     }
 }];
 
-var techniques = techniques.reduce(function(accum, techObj){
+techniques = techniques.reduce(function(accum, techObj){
     accum.push(techObj);
     accum.push({
         name: techObj.name + ' (async)',
@@ -93,7 +93,7 @@ var techniques = techniques.reduce(function(accum, techObj){
     return accum;
 }, []);
 
-var techniques = techniques.reduce(function(accum, techObj){
+techniques = techniques.reduce(function(accum, techObj){
     accum.push(techObj);
     accum.push({
         name: techObj.name + ' ↻',
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var urlname = urlObj.name;
         var url = urlObj.url;
         var divTag = document.createElement('div');
-        divTag.style.float = 'left';
+        divTag.style.cssFloat = 'left';
         divTag.style.width = colWidth;
         
         var h3Tag = document.createElement('h3');
@@ -166,7 +166,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         document.body.appendChild(divTag);
     });
-    if (window.webkit && window.webkit.messageHandlers) {
-        document.body.append(document.createTextNode(Object.keys(window.webkit.messageHandlers)));
-    }
+	try {
+		if (window.webkit && window.webkit.messageHandlers) {
+			document.body.append(document.createTextNode(JSON.stringify(Object.keys(window.webkit.messageHandlers))));
+		}
+	} catch (e) {}
 });
