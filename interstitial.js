@@ -17,6 +17,9 @@ var urls = [{
     name: 'App Index Chrome',
     url: 'android-app://com.android.chrome/http/www.yahoo.com/',
 }, {
+    name: 'App Index Chrome',
+    url: 'ios-app://25106063/http/www.bitly.com/',
+}, {
     name: 'Bad Link',
     url: 'badlink://badlink',
 }, {
