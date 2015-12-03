@@ -12,7 +12,7 @@ var urls = [{
     url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
 }, {
     name: 'App Index',
-    url: 'android-app://com.facebook.katana/http/www.yahoo.com/',
+    url: 'android-app://com.facebook.katana/http/www.facebook.com/leon.yu.378',
 }, {
     name: 'Bad Link',
     url: 'badlink://badlink',
