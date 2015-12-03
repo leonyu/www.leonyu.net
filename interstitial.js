@@ -14,6 +14,9 @@ var urls = [{
     name: 'App Index',
     url: 'android-app://com.facebook.katana/fb/page/111454522278222/',
 }, {
+    name: 'App Index Chrome',
+    url: 'android-app://com.android.chrome/http/www.yahoo.com/',
+}, {
     name: 'Bad Link',
     url: 'badlink://badlink',
 }, {
