@@ -89,6 +89,11 @@
           aTag.click();
       }
   }, {
+      name: 'window.open',
+      impl: function(win, url) {
+        win.open(url);
+      }
+  }, {
       name: 'XHR',
       impl: function(win, url) {
           var xhr = new XMLHttpRequest();
