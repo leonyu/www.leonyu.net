@@ -107,12 +107,12 @@
         }, 2000);
       }
   }, {
-      name: 'window.open + focus',
+      name: 'window.open + alert',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
-            win.focus();
+            win.alert(1);
           }, 1000)
         }
       }
