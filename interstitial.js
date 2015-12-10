@@ -101,6 +101,9 @@
           setTimeout(function(){
             popup.alert('2');
           }, 2000);
+          setTimeout(function(){
+            popup.close();
+          }, 2000);
         }
       }
   }, {
