@@ -94,12 +94,12 @@
         win.open(url);
       }
   }, {
-      name: 'window.open + yahoo',
+      name: 'window.open + slashdot',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
-            popup.reload('http://www.yahoo.com');
+            popup.location = 'http://slashdot.org';
             popup.close();
           }, 2000);
         }
