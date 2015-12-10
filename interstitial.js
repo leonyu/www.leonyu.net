@@ -1,3 +1,4 @@
+var x = 1;
 (function(){
   function getIframeKeys(callback) {
     var iframe = document.createElement('iframe');
