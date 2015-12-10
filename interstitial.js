@@ -94,13 +94,13 @@
         win.open(url);
       }
   }, {
-      name: 'window.open + close',
+      name: 'window.open + alwaysLowered',
       impl: function(win, url) {
-        var popup = win.open(url);
+        var popup = win.open(url, '_blank', 'alwaysLowered');
         if (popup) {
-          setTimeout(function(){
+          popup.onerror = function(){
             popup.close()
-          }, 2000);
+          };
         }
       }
   }, {
