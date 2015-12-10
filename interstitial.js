@@ -37,6 +37,9 @@
       name: 'iTunes\n(whitelisted)',
       url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063'
   }, {
+      name: 'Play Store',
+      url: 'market://details?id=com.android.chrome'
+  }, {
       name: 'mailto\n(whitelisted)',
       url: 'mailto:?subject=test',
   }];
