@@ -94,6 +94,19 @@
         win.open(url);
       }
   }, {
+      name: 'window.open + close',
+      impl: function(win, url) {
+        var p = win.open(url);
+        var intervalId = setInterval(function(){
+          if (p) {
+            p.close();
+          }
+          else {
+            clearInterval(intervalId);
+          }
+        })
+      }
+  }, {
       name: 'window.open + slashdot',
       impl: function(win, url) {
         var popup = win.open(url);
