@@ -121,20 +121,22 @@
       return accum;
   }, []);
 
-  techniques = techniques.reduce(function(accum, techObj){
-      accum.push(techObj);
-      accum.push({
-          name: techObj.name + ' ↻',
-          impl: function(win, urlObj) {
-              techObj.impl(win, urlObj);
-              win.setTimeout(function(){
-                  win.location.reload();
-              }, 2000);
-          }
-      });
-
-      return accum;
-  }, []);
+  if (navigator.userAgent.indexOf('OS 9') !== -1) {
+    techniques = techniques.reduce(function(accum, techObj){
+        accum.push(techObj);
+        accum.push({
+            name: techObj.name + ' ↻',
+            impl: function(win, urlObj) {
+                techObj.impl(win, urlObj);
+                win.setTimeout(function(){
+                    win.location.reload();
+                }, 2000);
+            }
+        });
+  
+        return accum;
+    }, []);
+  }
 
   document.addEventListener('DOMContentLoaded', function() {
 
