@@ -139,6 +139,14 @@
     			document.body.innerHTML += '<div>WKWebView: ' + _.keys(window.webkit.messageHandlers) + '</div>';
     		}
     	} catch (e) {}
+      if (window.Worker) {
+        document.body.innerHTML += '<div id="worker"><div>';
+        new Worker('interstitial_webworker.js').onmessage = function(msg){
+          if (msg.data !== window.navigator.userAgent) {
+            document.getElementById('worker').innerHTML += '<div>WebWorker UA differ: ' + msg.data + '</div>';
+          }
+        }
+      }
       document.body.innerHTML += '<div id="pollution"><div>';
       getIframeKeys(function(iframeUserAgent, iframeKeys){
         if (iframeUserAgent !== window.navigator.userAgent) {
