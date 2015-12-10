@@ -100,7 +100,7 @@
         if (popup) {
           setTimeout(function(){
             var popup2 = win.open(url);
-          });
+          }, 2000);
         }
       }
   }, {
