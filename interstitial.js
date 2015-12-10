@@ -107,11 +107,13 @@
         }, 2000);
       }
   }, {
-      name: 'window.open + onerror',
+      name: 'window.open + focus',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
-          popup.onerror = function(err) { popup.document.body.innerHTML += err; }
+          setTimeout(function(){
+            win.focus();
+          }, 1000)
         }
       }
   }, {
