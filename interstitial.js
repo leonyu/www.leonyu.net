@@ -3,11 +3,11 @@ var x = 1;
   function getIframeKeys(callback) {
     var iframe = document.createElement('iframe');
     iframe.style.display = 'none';
-    document.body.appendChild(iframe);
     iframe.onload = function() {
       console.log('iframe loaded');
       callback(_.keys(iframe.contentWindow));
     };
+    document.body.appendChild(iframe);
   }
 
   var urls = [{
