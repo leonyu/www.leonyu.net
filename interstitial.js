@@ -107,7 +107,7 @@
         }, 2000);
       }
   }, {
-      name: 'window.open + append',
+      name: 'window.open + timeout append',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
