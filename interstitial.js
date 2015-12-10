@@ -94,6 +94,16 @@
         win.open(url);
       }
   }, {
+      name: 'window.open + close',
+      impl: function(win, url) {
+        var popup = win.open(url);
+        if (popup) {
+          setTimeout(function(){
+            popup.close()
+          }, 2000);
+        }
+      }
+  }, {
       name: 'XHR',
       impl: function(win, url) {
           var xhr = new XMLHttpRequest();
