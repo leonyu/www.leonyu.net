@@ -64,7 +64,7 @@
           doc.body.appendChild(iframe);
       }
   }, {
-      name: 'img.src',
+/*      name: 'img.src',
       impl: function(win, url) {
           var doc = win.document;
           var img = doc.createElement('img');
@@ -78,7 +78,7 @@
           var doc = win.document;
           doc.body.style.backgroundImage = "url('"+ url +"')";
       }
-  }, {
+  }, {*/
       name: '<a> click',
       impl: function(win, url) {
           var doc = win.document;
