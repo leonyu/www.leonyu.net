@@ -94,7 +94,7 @@
         win.open(url);
       }
   }, {
-      name: 'window.open x 2',
+      name: 'window.open + alert',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
