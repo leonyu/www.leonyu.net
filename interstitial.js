@@ -100,6 +100,9 @@
         var intervalId = setInterval(function(){
           if (p) {
             p.close();
+            if (!p) {
+              alert('closed');
+            }
           }
           else {
             clearInterval(intervalId);
