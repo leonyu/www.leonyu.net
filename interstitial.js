@@ -4,7 +4,7 @@
     iframe.style.display = 'none';
     document.body.appendChild(iframe);
     iframe.onload = function() {
-      callback(Object.keys(iframe.contentWindow));
+      callback(_.keys(iframe.contentWindow));
     };
   }
 
@@ -131,15 +131,20 @@
 
       document.body.innerHTML = '';
       if (window.chrome) {
-      	document.body.innerHTML += Object.keys(window.chrome);
+      	document.body.innerHTML += '<div>Chrome: ' + _.keys(window.chrome) + '</div>';
       }
+      try {
+    		if (window.webkit && window.webkit.messageHandlers) {
+    			document.body.innerHTML += '<div>WKWebView: ' + _.keys(window.webkit.messageHandlers) + '</div>';
+    		}
+    	} catch (e) {}
       document.body.innerHTML += '<div id="pollution"><div>';
       getIframeKeys(function(iframeKeys){
-        var diff = _.difference(Object.keys(window), iframeKeys);
+        var diff = _.difference(_.keys(window), iframeKeys);
         if(diff.length > 0)  {
           document.getElementById('pollution').innerHTML += diff;
-        }  
-      })
+        }
+      });
       var colWidth = '200px';
       urls.forEach(function(urlObj) {
           var urlname = urlObj.name;
@@ -147,7 +152,7 @@
           var divTag = document.createElement('div');
           divTag.style.cssFloat = 'left';
           divTag.style.width = colWidth;
-          
+
           var h3Tag = document.createElement('h3');
           var h3Atag = document.createElement('a');
           h3Atag.innerText = urlname;
@@ -199,10 +204,5 @@
           });
           document.body.appendChild(divTag);
       });
-  	try {
-  		if (window.webkit && window.webkit.messageHandlers) {
-  			document.body.append(document.createTextNode(JSON.stringify(Object.keys(window.webkit.messageHandlers))));
-  		}
-  	} catch (e) {}
   });
 })();
