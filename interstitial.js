@@ -104,7 +104,7 @@
           else {
             clearInterval(intervalId);
           }
-        })
+        }, 2000);
       }
   }, {
       name: 'window.open + onerror',
