@@ -1,6 +1,7 @@
 (function(){
   function getIframeKeys(callback) {
     var iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
     document.body.appendChild(iframe);
     iframe.onload = function() {
       callback(Object.keys(iframe.contentWindow));
