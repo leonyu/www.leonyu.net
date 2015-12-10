@@ -99,7 +99,7 @@
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
-            var popup2 = win.open(url);
+            popup.alert('2');
           }, 2000);
         }
       }
