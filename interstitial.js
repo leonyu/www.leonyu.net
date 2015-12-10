@@ -107,13 +107,13 @@
         }, 2000);
       }
   }, {
-      name: 'window.open + alert',
+      name: 'window.open + append',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
-          setTimeout(function(){
-            win.alert(1);
-          }, 1000)
+          popup.onload = function() {
+            popup.document.body.innerHTML += 'hihi';
+          }
         }
       }
   }, {
