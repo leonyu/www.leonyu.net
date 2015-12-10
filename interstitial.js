@@ -118,10 +118,11 @@ techniques = techniques.reduce(function(accum, techObj){
 }, []);
 
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.twttr) alert(window.twttr);
-    if (window.FB) alert(window.FB);
 
     document.body.innerHTML = '';
+    if (window.chrome) {
+    	document.body.innerHTML += Object.keys(window.chrome);
+    }
     var colWidth = '200px';
     urls.forEach(function(urlObj) {
         var urlname = urlObj.name;
