@@ -107,14 +107,11 @@
         })
       }
   }, {
-      name: 'window.open + slashdot',
+      name: 'window.open + onerror',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
-          setTimeout(function(){
-            popup.location = 'http://slashdot.org';
-            popup.close();
-          }, 2000);
+          popup.onerror = function(err) { popup.document.body.innerHTML += err; }
         }
       }
   }, {
