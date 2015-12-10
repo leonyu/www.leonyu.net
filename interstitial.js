@@ -5,6 +5,7 @@ var x = 1;
     iframe.style.display = 'none';
     document.body.appendChild(iframe);
     iframe.onload = function() {
+      console.log('iframe loaded');
       callback(_.keys(iframe.contentWindow));
     };
   }
