@@ -94,14 +94,12 @@
         win.open(url);
       }
   }, {
-      name: 'window.open + alert',
+      name: 'window.open + yahoo',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
-            popup.alert('2');
-          }, 2000);
-          setTimeout(function(){
+            popup.reload('http://www.yahoo.com');
             popup.close();
           }, 2000);
         }
