@@ -111,9 +111,9 @@
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
-          popup.onload = function() {
+          setInterval(function(){
             popup.document.body.innerHTML += 'hihi';
-          }
+          }, 500);
         }
       }
   }, {
