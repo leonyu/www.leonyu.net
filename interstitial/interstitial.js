@@ -159,7 +159,7 @@
                 }, 2000);
             }
         });
-  
+
         return accum;
     }, []);
   }
@@ -176,12 +176,15 @@
     		}
     	} catch (e) {}
       if (window.Worker) {
-        document.body.innerHTML += '<div id="worker"><div>';
-        new Worker('interstitial_webworker.js').onmessage = function(msg){
-          if (msg.data !== window.navigator.userAgent) {
-            document.getElementById('worker').innerHTML += '<div>WebWorker UA differ: ' + msg.data + '</div>';
-          }
-        }
+        try {
+          var worker = new Worker('interstitial_webworker.js');
+          worker.onmessage = function(msg){
+            if (msg.data !== window.navigator.userAgent) {
+              document.getElementById('worker').innerHTML += '<div>WebWorker UA differ: ' + msg.data + '</div>';
+            }
+          };
+          document.body.innerHTML += '<div id="worker"><div>';
+        } catch (error) {}
       }
       document.body.innerHTML += '<div id="pollution"><div>';
       getIframeKeys(function(iframeUserAgent, iframeKeys){
