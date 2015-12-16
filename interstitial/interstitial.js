@@ -26,7 +26,7 @@
       url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
   }, {
       name: 'Intent with hash',
-      url: 'intent://scan/#hi#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+      url: 'intent://scan/#hifad#!/sfsafsdafa#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
   }, {
       name: 'App Index',
       url: 'android-app://com.facebook.katana/fb/page/111454522278222/',
