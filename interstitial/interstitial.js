@@ -19,6 +19,9 @@
       name: 'PWC',
       url: 'pwc365://11.content-detail-page?id=138201&type=modular_article',
   }, {
+      name: 'Amazon',
+      url: 'com.amazon.mobile.shopping://amazon.com/deals?tag=tsa030-20&ascsubtag=ptw-NUL-1-5-1448846263526PE&ref_=ptw_NUL_1_5_1448846263526PE',
+  }, {
       name: 'Intent',
       url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
   }, {
