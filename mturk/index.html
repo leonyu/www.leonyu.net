@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   	<link rel="stylesheet" href="../css/normalize.css" type="text/css" />
     <title>Survey 1</title>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var timeoutID = setTimeout(function(){
+        document.body.innerHTML = 'Sorry your device is not supported'.
+      }, 5000);
+
+      window.addEventListener('devicemotion', function(){
+        clearTimeout(timeoutID);
+        document.body.innerHTML = '<p>Thank you Turker</p><p></p><a href="http://j.mp/mturk1220">Click Here to launch deeplink</a></p>'
+      });
+      
+    });
+    </script>
   </head>
   <body style="font-size: 72px;">
-    <p>Thank you Turker</p>
-    <p></p><a href="http://j.mp/mturk1220">Click Here to launch deeplink</a></p>
+    Please shake your device.
   </body>
 </html>
