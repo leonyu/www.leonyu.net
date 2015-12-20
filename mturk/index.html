@@ -7,15 +7,12 @@
     <title>Survey 1</title>
     <script>
     document.addEventListener('DOMContentLoaded', function(){
-      var timeoutID = setTimeout(function(){
+      var _flash_installed = ((typeof navigator.plugins != "undefined" && typeof navigator.plugins["Shockwave Flash"] == "object") || (window.ActiveXObject && (new ActiveXObject("ShockwaveFlash.ShockwaveFlash")) != false));
+      if (_flash_installed){
         document.body.innerHTML = 'Sorry your device is not supported.';
-      }, 5000);
-
-      window.addEventListener('devicemotion', function(){
-        clearTimeout(timeoutID);
+      } else {
         document.body.innerHTML = '<p>Thank you Turker</p><p></p><a href="http://j.mp/mturk1220">Click Here to launch deeplink</a></p>'
-      });
-      
+      }
     });
     </script>
   </head>
