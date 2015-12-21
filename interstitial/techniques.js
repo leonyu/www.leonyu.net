@@ -131,7 +131,7 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + p',
+    name: 'win.open(javascript)',
     impl: function(win, url) {
       var popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="javascript:setTimeout(function(){alert(parent)},100)"},250);');
     },
