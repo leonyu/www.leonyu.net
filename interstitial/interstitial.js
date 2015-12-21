@@ -68,10 +68,8 @@
           TECHNIQUES.forEach(function(techObj) {
               var techname = techObj.name;
               var impl = techObj.impl;
-              if (techObj.condition) {
-                if (!techObj.condition()) {
-                  return;
-                }
+              if (techObj.condition && !techObj.condition()) {
+                return;
               }
               var aTag = document.createElement('a');
               aTag.href = url;
