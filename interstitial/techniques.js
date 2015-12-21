@@ -1,23 +1,27 @@
+function logRAF() {
+  var raf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var iraf = 0;
+  function rafLoop(start) {
+    win.requestAnimationFrame(function(){
+      var end = Date.now();
+      raf[iraf] = end - start;
+      iraf++;
+      if (iraf < 10) {
+        rafLoop(Date.now());
+      } else {
+        Logger.log(raf);
+      }
+    });
+  }
+  rafLoop(Date.now());
+}
+
 var TECHNIQUES = (function(){
   var techniques = [{
       name: 'location',
       impl: function(win, url) {
-          var raf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-          var iraf = 0;
-          function rafLoop(start) {
-            win.requestAnimationFrame(function(){
-              var end = Date.now();
-              raf[iraf] = end - start;
-              iraf++;
-              if (iraf < 10) {
-                rafLoop(Date.now());
-              } else {
-                Logger.log(raf);
-              }
-            });
-          }
-          rafLoop(Date.now());
-          win.location = url;
+        logRAF();
+        win.location = url;
       }
   }, {
   //     name: 'eval location',
@@ -31,6 +35,7 @@ var TECHNIQUES = (function(){
           var iframe = doc.createElement('iframe');
           iframe.src = url;
           iframe.style.display = 'none';
+          logRAF();
           doc.body.appendChild(iframe);
       }
   }, {
@@ -56,6 +61,7 @@ var TECHNIQUES = (function(){
           aTag.href = url;
           aTag.style.display = 'none';
           doc.body.appendChild(aTag);
+          logRAF();
           aTag.click();
       }
   }, {
@@ -132,6 +138,7 @@ var TECHNIQUES = (function(){
           xhr.open('GET', url, true);
           //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
           try {
+            logRAF();
             xhr.send(null);
           } catch (e) {
             Logger.append('XHR Error: ' + e.name + ', ' + e.message);
@@ -140,6 +147,7 @@ var TECHNIQUES = (function(){
   }, {
       name: 'nav.sendBeacon',
       impl: function(win, url) {
+          logRAF();
           win.navigator.sendBeacon(url, null);
       },
       condition: function() {
