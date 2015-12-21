@@ -65,12 +65,12 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + reload',
+      name: 'win.open + append',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
-            popup.window.location.reload();
+            popup.window.document.body.innerHTML += '<br>' + popup.window.location;
           }, 250);
         }
       }
