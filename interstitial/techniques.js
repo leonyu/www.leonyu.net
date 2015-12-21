@@ -150,7 +150,7 @@ var TECHNIQUES = (function(){
       });
       origin = win.location.href;
       var dataUri = "data:text/html,<script>if(opener){opener.postMessage('msg','{{origin}}');setTimeout(function(){opener.postMessage('not_installed','{{origin}}');close()},1000)}</script>".replace('{{origin}}', origin);
-      popup = win.open('javascript:location="{{url}}";last=Date.now();setInterval(function(){now=Date.now();if(now-last>100){last=now;return};location="{{dataUri}}"},50)'.replace('{{url}}', url).replace('{{dataUri}}', dataUri));
+      popup = win.open('javascript:location="{{url}}";last=Date.now();setInterval(function(){now=Date.now();if(now-last>75){last=now;return};location="{{dataUri}}"},50)'.replace('{{url}}', url).replace('{{dataUri}}', dataUri));
     },
   }, {
     name: 'win.open + open + open',
