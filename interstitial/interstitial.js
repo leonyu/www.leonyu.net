@@ -3,7 +3,7 @@
     var iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.onload = function() {
-      //Log.append('iframe loaded');
+      //Logger.log('iframe loaded');
       callback(iframe.contentWindow.navigator.userAgent, _.keys(iframe.contentWindow));
     };
     document.body.appendChild(iframe);
@@ -21,28 +21,28 @@
       if ('visibilityState' in document) {
         document.title = document.visibilityState;
         document.addEventListener("visibilitychange", function() {
-          Log.append('visibilitychange: ' + document.visibilityState);
+          Logger.log('visibilitychange: ' + document.visibilityState);
           document.title = document.visibilityState;
         });
       }
       // window.addEventListener("focus", function() {
-      //   Log.append('focus: ' + (document.hasFocus ? document.hasFocus() : 'focus'));
+      //   Logger.log('focus: ' + (document.hasFocus ? document.hasFocus() : 'focus'));
       // });
       // window.addEventListener("blur", function() {
-      //   Log.append('blur: ' + (document.hasFocus ? document.hasFocus() : 'blur'));
+      //   Logger.log('blur: ' + (document.hasFocus ? document.hasFocus() : 'blur'));
       // });
       window.addEventListener("beforeunload", function() {
-        Log.append('beforeunload');
+        Logger.log('beforeunload');
       });
       window.onerror = function(e) {
-        Log.append('window.onerror: ' + e + ', '+ e.name + ', ' + e.message);
+        Logger.log('window.onerror: ' + e + ', '+ e.name + ', ' + e.message);
       };
       if (window.chrome) {
-          Log.append('Chrome: ' + _.keys(window.chrome));
+          Logger.log('Chrome: ' + _.keys(window.chrome));
       }
       try {
     		if (window.webkit && window.webkit.messageHandlers) {
-          Log.append('WKWebView: ' + _.keys(window.webkit.messageHandlers));
+          Logger.log('WKWebView: ' + _.keys(window.webkit.messageHandlers));
     		}
     	} catch (e) {}
       if (window.Worker) {
@@ -50,7 +50,7 @@
           var worker = new Worker('interstitial_webworker.js');
           worker.onmessage = function(msg){
             if (msg.data !== window.navigator.userAgent) {
-              Log.append('WebWorker UA differ: ' + msg.data);
+              Logger.log('WebWorker UA differ: ' + msg.data);
             }
           };
         } catch (error) {}
@@ -58,12 +58,12 @@
       getIframeKeys(function(iframeUserAgent, iframeKeys){
         var KNOWN_GLOBALS = ['_', 'URL_DATA', 'TECHNIQUES', 'Log'];
         if (iframeUserAgent !== window.navigator.userAgent) {
-          Log.append('Iframe UA differ: ' + iframeUserAgent);
+          Logger.log('Iframe UA differ: ' + iframeUserAgent);
         }
         var diff = _.difference(_.keys(window), iframeKeys);
         diff = _.difference(diff, KNOWN_GLOBALS);
         if(diff.length !== 0)  {
-          Log.append('Globals: ' + diff);
+          Logger.log('Globals: ' + diff);
         }
       });
       URL_DATA.forEach(function(urlObj) {
