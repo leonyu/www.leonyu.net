@@ -94,6 +94,20 @@ var TECHNIQUES = (function(){
         }, 250);
       }
     }
+  }, {
+    name: 'win.open + html',
+    impl: function(win, url) {
+      var popup = win.open(url);
+      if (popup) {
+        setTimeout(function(){
+          if (popup) {
+            Log.append('popup.location: ' + popup.window.location);
+            Log.logTo(popup.window.document.body);
+            popup.window.location = 'https://bitly.com';
+          }
+        }, 250);
+      }
+    }
 }, {
       name: 'XHR',
       impl: function(win, url) {
