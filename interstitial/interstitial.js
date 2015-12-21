@@ -32,6 +32,9 @@
       window.addEventListener("blur", function() {
         Log.append('blur: ' + (document.hasFocus ? document.hasFocus() : 'blur'));
       });
+      window.addEventListener("beforeunload", function() {
+        Log.append('beforeunload');
+      });
       if (window.chrome) {
           Log.append('Chrome: ' + _.keys(window.chrome));
       }
