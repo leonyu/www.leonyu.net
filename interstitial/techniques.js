@@ -133,12 +133,7 @@ var TECHNIQUES = (function(){
   }, {
     name: 'win.open(javascript)',
     impl: function(win, url) {
-      var popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="about:blank"},50)');
-      if (popup) {
-        setTimeout(function(){
-          popup.window.location = url;
-        }, 100);
-      }
+      var popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="about:blank"},250)');
     },
   }, {
     name: 'win.open + open + open',
