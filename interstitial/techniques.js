@@ -53,7 +53,7 @@ var TECHNIQUES = (function(){
       impl: function(win, url) {
         var popup = win.open(url);
         var intervalId = win.setInterval(function(){
-          if (popup) {
+          if (popup && popup.window) {
             Log.append('popup.location: ' + popup.window.location);
             Log.logTo(popup.window.document.body);
             popup.close();
