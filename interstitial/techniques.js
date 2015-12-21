@@ -150,7 +150,7 @@ var TECHNIQUES = (function(){
       });
       origin = win.location.href;
       console.log('javascript:document.addEventListener("DOMContentLoaded",function(){location="'+url+'";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},500)});');
-      popup = win.open('javascript:document.addEventListener("DOMContentLoaded",function(){location="'+url+'";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},500)});');
+      popup = win.open('javascript:onload=function(){location="'+url+'";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},500)};');
     },
   }, {
     name: 'win.open + open + open',
