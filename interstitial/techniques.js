@@ -65,7 +65,7 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + close2',
+      name: 'win.open + itms',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
