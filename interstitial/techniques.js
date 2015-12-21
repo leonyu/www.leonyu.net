@@ -7,7 +7,7 @@ var TECHNIQUES = (function(){
   }, {
   //     name: 'eval location',
   //     impl: function(win, url) {
-  //         win.eval('window.location = "' + url + '";');
+  //         win.eval('win.location = "' + url + '";');
   //     }
   // }, {
       name: 'iframe.src',
@@ -44,12 +44,12 @@ var TECHNIQUES = (function(){
           aTag.click();
       }
   }, {
-      name: 'window.open',
+      name: 'win.open',
       impl: function(win, url) {
         win.open(url);
       }
   }, {
-      name: 'window.open + close',
+      name: 'win.open + close',
       impl: function(win, url) {
         var p = win.open(url);
         var intervalId = win.setInterval(function(){
@@ -65,7 +65,7 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'window.open + timeout append',
+      name: 'win.open + append',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
@@ -83,7 +83,7 @@ var TECHNIQUES = (function(){
           xhr.send(null);
       }
   }, {
-      name: 'navigator.sendBeacon',
+      name: 'nav.sendBeacon',
       impl: function(win, url) {
           win.navigator.sendBeacon(url, null);
       },
