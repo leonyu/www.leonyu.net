@@ -93,8 +93,11 @@ var TECHNIQUES = (function(){
       var popup = win.open(url, 'named');
       if (popup) {
         setTimeout(function(){
+          win.open('about:blank', 'named');
+        }, 50);
+        setTimeout(function(){
           win.open('itms-appss://itunes.apple.com/us/app/bitly/id525106063', 'named');
-        });
+        }, 100);
       }
     },
   }, {
