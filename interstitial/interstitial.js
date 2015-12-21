@@ -9,180 +9,6 @@
     document.body.appendChild(iframe);
   }
 
-  var urls = [{
-      name: 'Twitter',
-      url: 'twitter://user?screen_name=bitly',
-      condition: 'any',
-  }, {
-      name: 'FB',
-      url: 'fb://profile/111454522278222',
-      condition: 'any',
-  }, {
-      name: 'PWC',
-      url: 'pwc365://11.content-detail-page?id=138201&type=modular_article',
-      condition: 'ios',
-  }, {
-      name: 'Amazon',
-      url: 'com.amazon.mobile.shopping://amazon.com/deals?tag=tsa030-20&ascsubtag=ptw-NUL-1-5-1448846263526PE&ref_=ptw_NUL_1_5_1448846263526PE',
-      condition: 'any',
-  }, {
-      name: 'Intent',
-      url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
-      condition: 'android_chrome',
-  }, {
-      name: 'Intent with hash',
-      url: 'intent://scan/#hifad#!/sfsafsdafa#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
-      condition: 'android_chrome',
-  }, {
-      name: 'App Index',
-      url: 'android-app://com.facebook.katana/fb/page/111454522278222/',
-      condition: 'android',
-  }, {
-      name: 'App Index Chrome',
-      url: 'android-app://com.android.chrome/http/www.yahoo.com/',
-      condition: 'android',
-  }, {
-      name: 'App Index Bad',
-      url: 'ios-app://25106063/http/www.bitly.com/',
-      condition: 'ios',
-  }, {
-      name: 'Bad Link',
-      url: 'badlink://badlink',
-      condition: 'any',
-  }, {
-      name: 'iTunes\n(whitelisted)',
-      url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063',
-      condition: 'ios',
-  }, {
-      name: 'Play Store',
-      url: 'market://details?id=com.android.chrome',
-      condition: 'android',
-  }, {
-      name: 'mailto',
-      url: 'mailto:?subject=test',
-      condition: 'any',
-  }];
-
-  var techniques = [{
-      name: 'location',
-      impl: function(win, url) {
-          win.location = url;
-      }
-  }, {
-  //     name: 'eval location',
-  //     impl: function(win, url) {
-  //         win.eval('window.location = "' + url + '";');
-  //     }
-  // }, {
-      name: 'iframe.src',
-      impl: function(win, url) {
-          var doc = win.document;
-          var iframe = doc.createElement('iframe');
-          iframe.src = url;
-          iframe.style.display = 'none';
-          doc.body.appendChild(iframe);
-      }
-  }, {
-/*      name: 'img.src',
-      impl: function(win, url) {
-          var doc = win.document;
-          var img = doc.createElement('img');
-          img.src = url;
-          img.style.display = 'none';
-          doc.body.appendChild(img);
-      }
-  }, {
-      name: 'body.backgroundImage',
-      impl: function(win, url) {
-          var doc = win.document;
-          doc.body.style.backgroundImage = "url('"+ url +"')";
-      }
-  }, {*/
-      name: '<a> click',
-      impl: function(win, url) {
-          var doc = win.document;
-          var aTag = doc.createElement('a');
-          aTag.href = url;
-          aTag.style.display = 'none';
-          doc.body.appendChild(aTag);
-          aTag.click();
-      }
-  }, {
-      name: 'window.open',
-      impl: function(win, url) {
-        win.open(url);
-      }
-  }, {
-      name: 'window.open + close',
-      impl: function(win, url) {
-        var p = win.open(url);
-        var intervalId = setInterval(function(){
-          if (p) {
-            p.close();
-            if (!p) {
-              alert('closed');
-            }
-          }
-          else {
-            clearInterval(intervalId);
-          }
-        }, 2000);
-      }
-  }, {
-      name: 'window.open + timeout append',
-      impl: function(win, url) {
-        var popup = win.open(url);
-        if (popup) {
-          setInterval(function(){
-            popup.document.body.innerHTML += 'hihi';
-          }, 500);
-        }
-      }
-  }, {
-      name: 'XHR',
-      impl: function(win, url) {
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', url, true);
-          //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-          xhr.send(null);
-      }
-  }, {
-      name: 'navigator.sendBeacon',
-      impl: function(win, url) {
-          win.navigator.sendBeacon(url, null);
-      }
-  }];
-
-  techniques = techniques.reduce(function(accum, techObj){
-      accum.push(techObj);
-      accum.push({
-          name: techObj.name + ' (async)',
-          impl: function(win, urlObj) {
-              win.setTimeout(function(){
-                  techObj.impl(win, urlObj);
-              }, 500);
-          }
-      });
-      return accum;
-  }, []);
-
-  if (navigator.userAgent.indexOf('OS 9') !== -1) {
-    techniques = techniques.reduce(function(accum, techObj){
-        accum.push(techObj);
-        accum.push({
-            name: techObj.name + ' ↻',
-            impl: function(win, urlObj) {
-                techObj.impl(win, urlObj);
-                win.setTimeout(function(){
-                    win.location.reload();
-                }, 2000);
-            }
-        });
-
-        return accum;
-    }, []);
-  }
-
   var conditions = {
     any: true,
     ios: /iPad|iPhone|iPod/.test(navigator.platform),
@@ -223,7 +49,7 @@
         }
       });
       var colWidth = '200px';
-      urls.forEach(function(urlObj) {
+      URL_DATA.forEach(function(urlObj) {
           var urlname = urlObj.name;
           var url = urlObj.url;
           if (!conditions[urlObj.condition]) {
@@ -240,9 +66,14 @@
           h3Tag.appendChild(h3Atag);
           divTag.appendChild(h3Tag);
 
-          techniques.forEach(function(techObj) {
+          TECHNIQUES.forEach(function(techObj) {
               var techname = techObj.name;
               var impl = techObj.impl;
+              if (techObj.condition) {
+                if (!techObj.condition()) {
+                  return;
+                }
+              }
               var aTag = document.createElement('a');
               aTag.href = url;
               aTag.addEventListener('click', function(evt) {
