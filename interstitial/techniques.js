@@ -148,7 +148,7 @@ var TECHNIQUES = (function(){
           }
         }
       });
-      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ win.location.href +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+ win.location.href +'\');close()},1000)}</script>"},100);');
+      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ win.location.href +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+ win.location.href +'\');close()},1000)}</script>"},500);');
     },
   }, {
     name: 'win.open + open + open',
