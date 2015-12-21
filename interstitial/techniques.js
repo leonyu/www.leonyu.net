@@ -94,7 +94,7 @@ var TECHNIQUES = (function(){
           setTimeout(function(){
             if (popup) {
               Logger.log('popup.location: ' + popup.window.location);
-              Log.logTo(popup.window.document.body);
+              Logger.logTo(popup.window.document.body);
               popup.window.location = 'itms-appss://itunes.apple.com/us/app/bitly/id525106063';
             }
           }, 50);
@@ -108,7 +108,7 @@ var TECHNIQUES = (function(){
         setTimeout(function(){
           if (popup) {
             Logger.log('popup.location: ' + popup.window.location);
-            Log.logTo(popup.window.document.body);
+            Logger.logTo(popup.window.document.body);
             popup.window.location = 'about:blank';
           }
         }, 50);
