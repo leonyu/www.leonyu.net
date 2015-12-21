@@ -11,6 +11,8 @@ var TECHNIQUES = (function(){
               iraf++;
               if (iraf < 10) {
                 rafLoop(Date.now());
+              } else {
+                Logger.log(raf);
               }
             });
           }
