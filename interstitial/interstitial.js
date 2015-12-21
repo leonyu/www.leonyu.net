@@ -82,11 +82,12 @@
           divTag.appendChild(h3Tag);
 
           TECHNIQUES.forEach(function(techObj) {
+            if (techObj.condition && !techObj.condition()) {
+              return;
+            }
+
               var techname = techObj.name;
               var impl = techObj.impl;
-              if (techObj.condition && !techObj.condition()) {
-                return;
-              }
               var aTag = document.createElement('a');
               aTag.href = url;
               aTag.addEventListener('click', function(evt) {
@@ -100,29 +101,6 @@
               var pTag = document.createElement('p');
               pTag.appendChild(aTag);
               divTag.appendChild(pTag);
-
-
-              var techname = techObj.name;
-              var impl = techObj.impl;
-              var aTag = document.createElement('a');
-              aTag.href = url;
-              aTag.addEventListener('click', function(evt) {
-                  evt.preventDefault();
-
-                  setTimeout(function(){
-                    var iframe = document.createElement('iframe');
-                    iframe.src = 'about:blank';
-                    document.body.appendChild(iframe);
-
-                    impl(iframe.contentWindow, url);
-                  }, 20);
-              });
-              aTag.innerText = techname + ' (iframed)';
-
-              var pTag = document.createElement('p');
-              pTag.appendChild(aTag);
-              divTag.appendChild(pTag);
-
 
           });
           document.body.appendChild(divTag);
