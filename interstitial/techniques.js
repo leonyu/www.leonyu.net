@@ -2,9 +2,19 @@ var TECHNIQUES = (function(){
   var techniques = [{
       name: 'location',
       impl: function(win, url) {
-          win.getAnimationFrame(function(){
-            Logger.append
-          })
+          var raf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+          var iraf = 0;
+          function rafLoop(start) {
+            win.getAnimationFrame(function(){
+              var end = Date.now();
+              raf[iraf] = end - start;
+              iraf++;
+              if (iraf < 10) {
+                rafLoop(Date.now());
+              }
+            });
+          }
+          rafLoop(Date.now());
           win.location = url;
       }
   }, {
