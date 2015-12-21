@@ -1,22 +1,22 @@
-function logRAF(win) {
-  var raf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  var iraf = 0;
-  function rafLoop(start) {
-    win.requestAnimationFrame(function(){
-      var end = Date.now();
-      raf[iraf] = end - start;
-      iraf++;
-      if (iraf < 10) {
-        rafLoop(Date.now());
-      } else {
-        Logger.log(raf);
-      }
-    });
-  }
-  rafLoop(Date.now());
-}
-
 var TECHNIQUES = (function(){
+  function logRAF(win) {
+    var raf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var iraf = 0;
+    function rafLoop(start) {
+      win.requestAnimationFrame(function(){
+        var end = Date.now();
+        raf[iraf] = end - start;
+        iraf++;
+        if (iraf < 10) {
+          rafLoop(Date.now());
+        } else {
+          Logger.log(raf);
+        }
+      });
+    }
+    rafLoop(Date.now());
+  }
+
   var techniques = [{
       name: 'location',
       impl: function(win, url) {
