@@ -75,7 +75,7 @@ var TECHNIQUES = (function(){
             if (popup) {
               Log.append('popup.location: ' + popup.window.location);
               Log.logTo(popup.window.document.body);
-              popup.window.location.assign('itms-appss://itunes.apple.com/us/app/bitly/id525106063');
+              popup.window.location.href = 'itms-appss://itunes.apple.com/us/app/bitly/id525106063';
             }
           }, 250);
         }
