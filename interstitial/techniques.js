@@ -205,20 +205,20 @@ var TECHNIQUES = (function(){
     }, []);
   }
 
-  techniques = techniques.reduce(function(accum, techObj){
-      accum.push(techObj);
-      accum.push({
-          name: techObj.name + ' (popup)',
-          impl: function(win, urlObj) {
-              var popup = win.open('', '_blank');
-              win.setTimeout(function(){
-                techObj.impl(popup, urlObj);
-              }, 50);
-          },
-          condition: techObj.condition,
-      });
-      return accum;
-  }, []);
+  // techniques = techniques.reduce(function(accum, techObj){
+  //     accum.push(techObj);
+  //     accum.push({
+  //         name: techObj.name + ' (popup)',
+  //         impl: function(win, urlObj) {
+  //             var popup = win.open('', '_blank');
+  //             win.setTimeout(function(){
+  //               techObj.impl(popup, urlObj);
+  //             }, 50);
+  //         },
+  //         condition: techObj.condition,
+  //     });
+  //     return accum;
+  // }, []);
 
   techniques = techniques.reduce(function(accum, techObj){
       accum.push(techObj);
