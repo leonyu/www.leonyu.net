@@ -131,7 +131,7 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(js) + data uri',
+    name: 'win.open(js) + data-uri(postMessage)',
     impl: function(win, url) {
       var popup;
       var isInstalled = true;
@@ -148,7 +148,7 @@ var TECHNIQUES = (function(){
       popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');setTimeout(function(){opener.postMessage(\'not_installed\',\'http://www.leonyu.net/\');close()},1000)}</script>"},100);');
     },
   }, {
-    name: 'win.open(javascript) + page',
+    name: 'win.open(js) + page(postMessage)',
     impl: function(win, url) {
       var popup;
       var isInstalled = true;
