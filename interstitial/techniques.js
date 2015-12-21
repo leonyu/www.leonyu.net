@@ -51,11 +51,11 @@ var TECHNIQUES = (function(){
   }, {
       name: 'win.open + close',
       impl: function(win, url) {
-        var p = win.open(url);
+        var popup = win.open(url);
         var intervalId = win.setInterval(function(){
-          if (p) {
-            p.close();
-            if (!p) {
+          if (popup) {
+            popup.close();
+            if (!popup) {
               alert('closed');
             }
           }
@@ -65,14 +65,13 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + append2',
+      name: 'win.open + close2',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
             popup.window.document.body.innerHTML += '<br>' + popup.window.location;
-            popup.window.location.href = url;
-            popup.window.document.body.innerHTML += '<br>' + popup.window.location;
+            popup.window.close();
           }, 250);
         }
       }
