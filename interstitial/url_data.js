@@ -19,23 +19,23 @@ var URL_DATA = [{
     url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
     condition: 'android_chrome',
 }, {
-    name: 'Intent with hash',
-    url: 'intent://scan/#hifad#!/sfsafsdafa#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
-    condition: 'android_chrome',
-}, {
-    name: 'App Index',
+//     name: 'Intent (malformed)',
+//     url: 'intent://scan/#hifad#!/sfsafsdafa#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+//     condition: 'android_chrome',
+// }, {
+    name: 'App Index (FB)',
     url: 'android-app://com.facebook.katana/fb/page/111454522278222/',
     condition: 'android',
 }, {
-    name: 'App Index Chrome',
-    url: 'android-app://com.android.chrome/http/www.yahoo.com/',
-    condition: 'android',
-}, {
-    name: 'App Index Bad ID',
+//     name: 'App Index (Chrome)',
+//     url: 'android-app://com.android.chrome/http/www.yahoo.com/',
+//     condition: 'android',
+// }, {
+    name: 'App Index (Bad ID)',
     url: 'android-app://fasdfsdfasf/http/www.yahoo.com/',
     condition: 'android',
 }, {
-    name: 'Google App Index (iOS)',
+    name: 'App Index (iOS)',
     url: 'ios-app://25106063/http/www.bitly.com/',
     condition: 'ios',
 }, {
