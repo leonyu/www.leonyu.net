@@ -143,6 +143,9 @@ var TECHNIQUES = (function(){
       win.document.addEventListener('visibilitychange', function(){
         if (win.document.visibilityState === 'visible') {
           Logger.log('isInstalled: ' + isInstalled);
+          if (isInstalled) {
+            window.location = url;
+          }
         }
       });
       popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ win.location.href +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+ win.location.href +'\');close()},1000)}</script>"},100);');
