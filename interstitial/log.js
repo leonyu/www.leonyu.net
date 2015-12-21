@@ -3,7 +3,7 @@ var Log = (function(){
 
   function append(text) {
     log.push(text);
-    if (log.length > 10) {
+    if (log.length > 6) {
       log.shift();
     }
     var logEl = document.getElementById('log');
