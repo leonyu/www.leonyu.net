@@ -88,7 +88,7 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open + win.open',
+    name: 'win.open + open + open',
     impl: function(win, url) {
       var popup = win.open(url, 'named');
       if (popup) {
@@ -97,7 +97,7 @@ var TECHNIQUES = (function(){
         }, 50);
         setTimeout(function(){
           win.open('itms-appss://itunes.apple.com/us/app/bitly/id525106063', 'named');
-        }, 100);
+        }, 200);
       }
     },
   }, {
