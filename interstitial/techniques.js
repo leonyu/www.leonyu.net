@@ -133,7 +133,8 @@ var TECHNIQUES = (function(){
   }, {
     name: 'win.open(javascript) + data-uri',
     impl: function(win, url) {
-      var popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html;,<script>opener.Logger.log("closing");close()</script>"},250);');
+      win.onmessage = function (m) { Logger.log(m.data); };
+      win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html;,<script>opener&&opener.postMessage(\'closing\', \'' + win.location.href + '\');close()</script>"},250);');
     },
   }, {
     name: 'win.open + open + open',
