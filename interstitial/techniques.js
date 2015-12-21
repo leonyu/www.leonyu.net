@@ -131,10 +131,10 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + data-uri',
+    name: 'win.open(javascript) + page',
     impl: function(win, url) {
       win.onmessage = function (m) { Logger.log(m.data); };
-      win.open('popup.html?url=' + encodeURIComponent(url));
+      win.open('javascript:location="' + url + '"setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
     },
   }, {
     name: 'win.open + open + open',
