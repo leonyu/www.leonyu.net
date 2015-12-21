@@ -131,14 +131,14 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + data uri',
+    name: 'win.open(javascript) + data uri/',
     impl: function(win, url) {
       var popup;
       win.onmessage = function (m) {
         Logger.log(m.data);
         setTimeout(function() {
-          Logger.log('popup: not self closed');
-          if (popup) {
+          if (popup && popup.window) {
+            Logger.log('popup: not self closed');
             popup.close();
           }
         }, 500);
@@ -152,8 +152,8 @@ var TECHNIQUES = (function(){
       win.onmessage = function (m) {
         Logger.log(m.data);
         setTimeout(function() {
-          Logger.log('popup: not self closed');
-          if (popup) {
+          if (popup && popup.window) {
+            Logger.log('popup: not self closed');
             popup.close();
           }
         }, 500);
