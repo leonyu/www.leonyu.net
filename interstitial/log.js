@@ -1,16 +1,23 @@
 var Log = (function(){
   var log = [];
 
+  function logTo(logEl) {
+    if (logEl) {
+      logEl.innerHTML = log.join('<br>');
+    }
+  }
+
   function append(text) {
     log.push(text);
     if (log.length > 6) {
       log.shift();
     }
     var logEl = document.getElementById('log');
-    if (logEl) {
-      logEl.innerHTML = log.join('<br>');
-    }
+    logTo(logEl);
   }
 
-  return { append: append };
+  return {
+    append: append,
+    logTo: logTo
+  };
 })();
