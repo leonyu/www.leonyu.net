@@ -75,13 +75,13 @@ var TECHNIQUES = (function(){
         win.open(url, '_self');
       }
   }, {
-      name: 'win.open + itms3',
+      name: 'win.open + itms',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
             if (popup) {
-              Logger.append('popup.location: ' + popup.window.location);
+              Logger.log('popup.location: ' + popup.window.location);
               Log.logTo(popup.window.document.body);
               popup.window.location = 'itms-appss://itunes.apple.com/us/app/bitly/id525106063';
             }
@@ -95,16 +95,16 @@ var TECHNIQUES = (function(){
       if (popup) {
         setTimeout(function(){
           if (popup) {
-            Logger.append('popup.location: ' + popup.window.location);
+            Logger.log('popup.location: ' + popup.window.location);
             Log.logTo(popup.window.document.body);
             popup.window.location = 'about:blank';
           }
         }, 50);
         setTimeout(function(){
-          Logger.append('popup: ' + (popup && popup.window));
+          Logger.log('popup: ' + (popup && popup.window));
         }, 200);
         setTimeout(function(){
-          Logger.append('popup: ' + (popup && popup.window));
+          Logger.log('popup: ' + (popup && popup.window));
         }, 400);
       }
     }
@@ -141,7 +141,7 @@ var TECHNIQUES = (function(){
             logRAF(win);
             xhr.send(null);
           } catch (e) {
-            Logger.append('XHR Error: ' + e.name + ', ' + e.message);
+            Logger.log('XHR Error: ' + e.name + ', ' + e.message);
           }
       }
   }, {
