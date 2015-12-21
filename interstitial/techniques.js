@@ -131,9 +131,9 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript)',
+    name: 'win.open(javascript) + unload',
     impl: function(win, url) {
-      var popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="javascript:setTimeout(function(){alert(parent)},100)"},250);');
+      var popup = win.open('javascript:onbeforeunload=function(){opener.Logger.log("closing")};location="' + url + '";setTimeout(function(){location="about:blank"},250);');
     },
   }, {
     name: 'win.open + open + open',
