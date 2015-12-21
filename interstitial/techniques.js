@@ -131,10 +131,34 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + p',
+    name: 'win.open(javascript) + data uri',
     impl: function(win, url) {
-      win.onmessage = function (m) { Logger.log(m.data); };
-      win.open('javascript:location="' + url + '";setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
+      var popup;
+      win.onmessage = function (m) {
+        Logger.log(m.data);
+        setTimeout(function() {
+          Logger.log('popup: not self closed');
+          if (popup) {
+            popup.close();
+          }
+        }, 200);
+      };
+      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');close();}</script>"},100);');
+    },
+  }, {
+    name: 'win.open(javascript) + page',
+    impl: function(win, url) {
+      var popup;
+      win.onmessage = function (m) {
+        Logger.log(m.data);
+        setTimeout(function() {
+          Logger.log('popup: not self closed');
+          if (popup) {
+            popup.close();
+          }
+        }, 200);
+      };
+      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
     },
   }, {
     name: 'win.open + open + open',
