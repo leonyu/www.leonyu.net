@@ -56,7 +56,7 @@
         } catch (error) {}
       }
       getIframeKeys(function(iframeUserAgent, iframeKeys){
-        var KNOWN_GLOBALS = ['_', 'URL_DATA', 'TECHNIQUES', 'Log'];
+        var KNOWN_GLOBALS = ['_', 'URL_DATA', 'TECHNIQUES', 'Logger'];
         if (iframeUserAgent !== window.navigator.userAgent) {
           Logger.log('Iframe UA differ: ' + iframeUserAgent);
         }
