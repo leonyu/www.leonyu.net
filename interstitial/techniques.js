@@ -109,15 +109,12 @@ var TECHNIQUES = (function(){
           if (popup) {
             Logger.log('popup.location: ' + popup.window.location);
             Logger.logTo(popup.window.document.body);
-            var start = Date.now();
-            popup.window.onbeforeunload = function(){
-              Logger.log('popup: closing: ' + (Date.now() - start));
-            };
             popup.window.location = 'about:blank';
           }
         }, 50);
+        var start = Date.now();
         var intervalId = setInterval(function(){
-          Logger.log('popup: ' + (popup && popup.window));
+          Logger.log('popup: ' + (Date.now() - start) + ' ' + (popup && popup.window));
           if (!(popup && popup.window)) {
             clearInterval(intervalId);
           }
