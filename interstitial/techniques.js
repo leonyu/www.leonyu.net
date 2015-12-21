@@ -88,20 +88,16 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open + html',
+    name: 'win.open + win.open',
     impl: function(win, url) {
-      var popup = win.open(url);
+      var popup = win.open(url, 'named');
       if (popup) {
         setTimeout(function(){
-          if (popup) {
-            Log.append('popup.location: ' + popup.window.location);
-            Log.logTo(popup.window.document.body);
-            popup.window.location = 'https://bitly.com';
-          }
-        }, 50);
+          win.open('about:blank', 'named');
+        });
       }
-    }
-}, {
+    },
+  }, {
       name: 'XHR',
       impl: function(win, url) {
           var xhr = new XMLHttpRequest();
