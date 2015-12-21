@@ -25,6 +25,12 @@
           Log.append('visibilitychange: ' + document.visibilityState);
         });
       }
+      window.addEventListener("focus", function() {
+        Log.append('focus: ' + document.visibilityState);
+      });
+      window.addEventListener("blur", function() {
+        Log.append('blur: ' + document.visibilityState);
+      });
       if (window.chrome) {
           Log.append('Chrome: ' + _.keys(window.chrome));
       }
