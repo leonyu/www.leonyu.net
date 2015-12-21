@@ -71,6 +71,7 @@ var TECHNIQUES = (function(){
         if (popup) {
           setTimeout(function(){
             popup.window.document.body.innerHTML += '<br>' + popup.window.location;
+            popup.window.location = url;
           }, 250);
         }
       }
