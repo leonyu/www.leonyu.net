@@ -49,6 +49,11 @@ var TECHNIQUES = (function(){
         win.open(url);
       }
   }, {
+      name: 'win.open _self',
+      impl: function(win, url) {
+        win.open(url, '_self');
+      }
+  }, {
       name: 'win.open + close',
       impl: function(win, url) {
         var popup = win.open(url);
