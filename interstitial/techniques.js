@@ -54,24 +54,6 @@ var TECHNIQUES = (function(){
         win.open(url, '_self');
       }
   }, {
-      name: 'win.open + close',
-      impl: function(win, url) {
-        var popup = win.open(url);
-        var intervalId = win.setInterval(function(){
-          if (popup && popup.window) {
-            Log.append('popup.location: ' + popup.window.location);
-            Log.logTo(popup.window.document.body);
-            popup.close();
-            if (!popup) {
-              alert('closed');
-            }
-          }
-          else {
-            win.clearInterval(intervalId);
-          }
-        }, 2000);
-      }
-  }, {
       name: 'win.open + itms3',
       impl: function(win, url) {
         var popup = win.open(url);
@@ -97,6 +79,12 @@ var TECHNIQUES = (function(){
             popup.window.location = 'about:blank';
           }
         }, 50);
+        setTimeout(function(){
+          Log.append('popup: ' + popup && popup.window);
+        }, 100);
+        setTimeout(function(){
+          Log.append('popup: ' + popup && popup.window);
+        }, 200);
       }
     }
   }, {
