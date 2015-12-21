@@ -88,7 +88,7 @@ var TECHNIQUES = (function(){
           win.navigator.sendBeacon(url, null);
       },
       condition: function() {
-          return !!win.navigator.sendBeacon;
+          return !!window.navigator.sendBeacon;
       }
   }];
 
