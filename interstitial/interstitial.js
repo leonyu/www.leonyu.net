@@ -50,16 +50,13 @@
           document.getElementById('pollution').innerHTML += '<div>Globals: ' + diff + '</div>';
         }
       });
-      var colWidth = '200px';
       URL_DATA.forEach(function(urlObj) {
           var urlname = urlObj.name;
           var url = urlObj.url;
           if (!conditions[urlObj.condition]) {
             return;
           }
-          var divTag = document.createElement('div');
-          divTag.style.cssFloat = 'left';
-          divTag.style.width = colWidth;
+          var divTag = document.createElement('section');
 
           var h3Tag = document.createElement('h3');
           var h3Atag = document.createElement('a');
@@ -101,7 +98,6 @@
                   setTimeout(function(){
                     var iframe = document.createElement('iframe');
                     iframe.src = 'about:blank';
-                    iframe.style.display = 'none';
                     document.body.appendChild(iframe);
 
                     impl(iframe.contentWindow, url);
