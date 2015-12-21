@@ -136,12 +136,6 @@ var TECHNIQUES = (function(){
       var popup;
       win.onmessage = function (m) {
         Logger.log(m.data);
-        setTimeout(function() {
-          if (popup && popup.window) {
-            Logger.log('popup: not self closed');
-            popup.close();
-          }
-        }, 1000);
       };
       popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');setTimeout(function(){opener.postMessage(\'not_installed\',\'http://www.leonyu.net/\');close()},500)}</script>"},100);');
     },
@@ -151,12 +145,6 @@ var TECHNIQUES = (function(){
       var popup;
       win.onmessage = function (m) {
         Logger.log(m.data);
-        setTimeout(function() {
-          if (popup && popup.window) {
-            Logger.log('popup: not self closed');
-            popup.close();
-          }
-        }, 1000);
       };
       popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
     },
