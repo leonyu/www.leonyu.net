@@ -77,7 +77,7 @@ var TECHNIQUES = (function(){
               Log.logTo(popup.window.document.body);
               popup.window.location = 'itms-appss://itunes.apple.com/us/app/bitly/id525106063';
             }
-          }, 250);
+          }, 100);
         }
       }
   }, {
@@ -91,7 +91,7 @@ var TECHNIQUES = (function(){
             Log.logTo(popup.window.document.body);
             popup.window.location = 'about:blank';
           }
-        }, 250);
+        }, 100);
       }
     }
   }, {
@@ -105,7 +105,7 @@ var TECHNIQUES = (function(){
             Log.logTo(popup.window.document.body);
             popup.window.location = 'https://bitly.com';
           }
-        }, 250);
+        }, 100);
       }
     }
 }, {
