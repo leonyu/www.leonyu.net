@@ -19,7 +19,6 @@
   document.addEventListener('DOMContentLoaded', function() {
       document.body.innerHTML = '<div id="log"></div>';
       if ('visibilityState' in document) {
-        document.body.className = document.visibilityState;
         document.title = document.visibilityState;
         document.addEventListener("visibilitychange", function() {
           Log.append('visibilitychange: ' + document.visibilityState);
