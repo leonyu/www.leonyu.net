@@ -23,6 +23,7 @@
         document.title = document.visibilityState;
         document.addEventListener("visibilitychange", function() {
           Log.append('visibilitychange: ' + document.visibilityState);
+          document.title = document.visibilityState;
         });
       }
       window.addEventListener("focus", function() {
