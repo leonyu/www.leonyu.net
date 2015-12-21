@@ -65,13 +65,14 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + append',
+      name: 'win.open + append2',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
             popup.window.document.body.innerHTML += '<br>' + popup.window.location;
-            popup.window.location = url;
+            popup.window.location.href = url;
+            popup.window.document.body.innerHTML += '<br>' + popup.window.location;
           }, 250);
         }
       }
