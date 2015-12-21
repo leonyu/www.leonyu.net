@@ -65,13 +65,13 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + append',
+      name: 'win.open + reload',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
-          setInterval(function(){
-            popup.document.body.innerHTML += 'hihi';
-          }, 500);
+          setTimeout(function(){
+            popup.window.location.reload();
+          }, 250);
         }
       }
   }, {
