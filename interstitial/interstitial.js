@@ -3,7 +3,7 @@
     var iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.onload = function() {
-      // console.log('iframe loaded');
+      //Log.append('iframe loaded');
       callback(iframe.contentWindow.navigator.userAgent, _.keys(iframe.contentWindow));
     };
     document.body.appendChild(iframe);
@@ -16,28 +16,21 @@
     android_chrome: (navigator.userAgent.toLowerCase().indexOf('android') !== -1) && ('chrome' in window),
   };
 
-  function log(text) {
-    var logEl = document.getElementById('log');
-    if (logEl) {
-      logEl.innerHTML += text + '<br>';
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
       document.body.innerHTML = '<div id="log"></div>';
       if ('visibilityState' in document) {
         document.body.className = document.visibilityState;
         document.title = document.visibilityState;
         document.addEventListener("visibilitychange", function() {
-          log(document.visibilityState);
+          Log.append(document.visibilityState);
         });
       }
       if (window.chrome) {
-          log('Chrome: ' + _.keys(window.chrome));
+          Log.append('Chrome: ' + _.keys(window.chrome));
       }
       try {
     		if (window.webkit && window.webkit.messageHandlers) {
-          log('WKWebView: ' + _.keys(window.webkit.messageHandlers));
+          Log.append('WKWebView: ' + _.keys(window.webkit.messageHandlers));
     		}
     	} catch (e) {}
       if (window.Worker) {
@@ -45,7 +38,7 @@
           var worker = new Worker('interstitial_webworker.js');
           worker.onmessage = function(msg){
             if (msg.data !== window.navigator.userAgent) {
-              log('WebWorker UA differ: ' + msg.data);
+              Log.append('WebWorker UA differ: ' + msg.data);
             }
           };
         } catch (error) {}
@@ -53,12 +46,12 @@
       getIframeKeys(function(iframeUserAgent, iframeKeys){
         var KNOWN_GLOBALS = ['_', 'URL_DATA', 'TECHNIQUES'];
         if (iframeUserAgent !== window.navigator.userAgent) {
-          log('Iframe UA differ: ' + iframeUserAgent);
+          Log.append('Iframe UA differ: ' + iframeUserAgent);
         }
         var diff = _.difference(_.keys(window), iframeKeys);
         diff = _.difference(diff, KNOWN_GLOBALS);
         if(diff.length !== 0)  {
-          log('Globals: ' + diff);
+          Log.append('Globals: ' + diff);
         }
       });
       URL_DATA.forEach(function(urlObj) {
