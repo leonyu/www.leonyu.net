@@ -36,7 +36,7 @@
         Log.append('beforeunload');
       });
       window.onerror = function(e) {
-        Log.append('window.onerror: ' + e.name + ', ' + e.message);
+        Log.append('window.onerror: ' + e + ', '+ e.name + ', ' + e.message);
       };
       if (window.chrome) {
           Log.append('Chrome: ' + _.keys(window.chrome));
