@@ -43,7 +43,7 @@ var URL_DATA = [{
     url: 'badlink://badlink',
     condition: 'any',
 }, {
-    name: 'iTunes\n(whitelisted)',
+    name: 'iTunes',
     url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063',
     condition: 'ios',
 }, {
