@@ -31,7 +31,11 @@ var URL_DATA = [{
     url: 'android-app://com.android.chrome/http/www.yahoo.com/',
     condition: 'android',
 }, {
-    name: 'App Index Bad',
+    name: 'App Index Bad ID',
+    url: 'android-app://fasdfsdfasf/http/www.yahoo.com/',
+    condition: 'android',
+}, {
+    name: 'Google App Index (iOS)',
     url: 'ios-app://25106063/http/www.bitly.com/',
     condition: 'ios',
 }, {
