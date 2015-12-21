@@ -67,7 +67,7 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + itms',
+      name: 'win.open + itms2',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
@@ -81,6 +81,20 @@ var TECHNIQUES = (function(){
         }
       }
   }, {
+    name: 'win.open + js',
+    impl: function(win, url) {
+      var popup = win.open(url);
+      if (popup) {
+        setTimeout(function(){
+          if (popup) {
+            Log.append('popup.location: ' + popup.window.location);
+            Log.logTo(popup.window.document.body);
+            popup.window.location.href = 'javascript:window.close()';
+          }
+        }, 250);
+      }
+    }
+}, {
       name: 'XHR',
       impl: function(win, url) {
           var xhr = new XMLHttpRequest();
