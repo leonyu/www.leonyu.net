@@ -3,7 +3,7 @@
     var iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.onload = function() {
-      console.log('iframe loaded');
+      // console.log('iframe loaded');
       callback(iframe.contentWindow.navigator.userAgent, _.keys(iframe.contentWindow));
     };
     document.body.appendChild(iframe);
@@ -11,43 +11,56 @@
 
   var urls = [{
       name: 'Twitter',
-      url: 'twitter://user?screen_name=bitly'
+      url: 'twitter://user?screen_name=bitly',
+      condition: 'any',
   }, {
       name: 'FB',
-      url: 'fb://feed'
+      url: 'fb://profile/111454522278222',
+      condition: 'any',
   }, {
       name: 'PWC',
       url: 'pwc365://11.content-detail-page?id=138201&type=modular_article',
+      condition: 'ios',
   }, {
       name: 'Amazon',
       url: 'com.amazon.mobile.shopping://amazon.com/deals?tag=tsa030-20&ascsubtag=ptw-NUL-1-5-1448846263526PE&ref_=ptw_NUL_1_5_1448846263526PE',
+      condition: 'any',
   }, {
       name: 'Intent',
       url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+      condition: 'android_chrome',
   }, {
       name: 'Intent with hash',
       url: 'intent://scan/#hifad#!/sfsafsdafa#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+      condition: 'android_chrome',
   }, {
       name: 'App Index',
       url: 'android-app://com.facebook.katana/fb/page/111454522278222/',
+      condition: 'android',
   }, {
       name: 'App Index Chrome',
       url: 'android-app://com.android.chrome/http/www.yahoo.com/',
+      condition: 'android',
   }, {
       name: 'App Index Bad',
       url: 'ios-app://25106063/http/www.bitly.com/',
+      condition: 'ios',
   }, {
       name: 'Bad Link',
       url: 'badlink://badlink',
+      condition: 'any',
   }, {
       name: 'iTunes\n(whitelisted)',
-      url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063'
+      url: 'itms-appss://itunes.apple.com/us/app/bitly/id525106063',
+      condition: 'ios',
   }, {
       name: 'Play Store',
-      url: 'market://details?id=com.android.chrome'
+      url: 'market://details?id=com.android.chrome',
+      condition: 'android',
   }, {
-      name: 'mailto\n(whitelisted)',
+      name: 'mailto',
       url: 'mailto:?subject=test',
+      condition: 'any',
   }];
 
   var techniques = [{
@@ -170,6 +183,13 @@
     }, []);
   }
 
+  var conditions = {
+    any: true,
+    ios: /iPad|iPhone|iPod/.test(navigator.platform),
+    android: navigator.userAgent.toLowerCase().indexOf('android') !== -1,
+    android_chrome: (navigator.userAgent.toLowerCase().indexOf('android') !== -1) && ('chrome' in window),
+  };
+
   document.addEventListener('DOMContentLoaded', function() {
 
       document.body.innerHTML = '';
@@ -206,6 +226,9 @@
       urls.forEach(function(urlObj) {
           var urlname = urlObj.name;
           var url = urlObj.url;
+          if (!conditions[urlObj.condition]) {
+            return;
+          }
           var divTag = document.createElement('div');
           divTag.style.cssFloat = 'left';
           divTag.style.width = colWidth;
