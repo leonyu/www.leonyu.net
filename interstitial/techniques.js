@@ -131,7 +131,7 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + page',
+    name: 'win.open(javascript) + p',
     impl: function(win, url) {
       win.onmessage = function (m) { Logger.log(m.data); };
       win.open('javascript:location="' + url + '";setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
