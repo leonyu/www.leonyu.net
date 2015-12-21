@@ -148,7 +148,9 @@ var TECHNIQUES = (function(){
           }
         }
       });
-      popup = win.open('javascript:document.addEventListener("DOMContentLoaded",function(){location="'+url+'";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ win.location.href +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+ win.location.href +'\');close()},100)}</script>"},500)});');
+      origin = win.location.href;
+      console.log('javascript:document.addEventListener("DOMContentLoaded",function(){location="'+url+'";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},500)});');
+      popup = win.open('javascript:document.addEventListener("DOMContentLoaded",function(){location="'+url+'";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},500)});');
     },
   }, {
     name: 'win.open + open + open',
