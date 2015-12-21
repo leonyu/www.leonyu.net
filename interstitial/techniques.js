@@ -113,12 +113,21 @@ var TECHNIQUES = (function(){
           }
         }, 50);
         var start = Date.now();
-        var intervalId = setInterval(function(){
-          Logger.log('popup: ' + (Date.now() - start) + ' ' + (popup && popup.window));
-          if (!(popup && popup.window)) {
-            clearInterval(intervalId);
-          }
-        }, 50);
+        setTimeout(function(){
+          Logger.log('popup: ' + (Date.now() - start)+ ' ' + (popup && popup.window));
+        }, 100);
+        setTimeout(function(){
+          Logger.log('popup: ' + (Date.now() - start)+ ' ' + (popup && popup.window));
+        }, 200);
+        setTimeout(function(){
+          Logger.log('popup: ' + (Date.now() - start)+ ' ' + (popup && popup.window));
+        }, 300);
+        setTimeout(function(){
+          Logger.log('popup: ' + (Date.now() - start)+ ' ' + (popup && popup.window));
+        }, 400);
+        setTimeout(function(){
+          Logger.log('popup: ' + (Date.now() - start)+ ' ' + (popup && popup.window));
+        }, 500);
       }
     }
   }, {
