@@ -36,7 +36,7 @@ var URL_DATA = [{
     condition: 'android',
 }, {
     name: 'App Index (iOS)',
-    url: 'ios-app://25106063/http/www.bitly.com/',
+    url: 'ios-app://525106063/http/www.bitly.com/',
     condition: 'ios',
 }, {
     name: 'Bad Link',
