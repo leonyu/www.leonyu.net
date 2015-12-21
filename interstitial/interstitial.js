@@ -27,10 +27,10 @@
         });
       }
       window.addEventListener("focus", function() {
-        Log.append('focus: ' + document.visibilityState);
+        Log.append('focus: ' + document.hasFocus ? document.hasFocus() : 'focus');
       });
       window.addEventListener("blur", function() {
-        Log.append('blur: ' + document.visibilityState);
+        Log.append('blur: ' + document.hasFocus ? document.hasFocus() : 'blur');
       });
       if (window.chrome) {
           Log.append('Chrome: ' + _.keys(window.chrome));
