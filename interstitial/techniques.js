@@ -53,9 +53,9 @@ var TECHNIQUES = (function(){
       impl: function(win, url) {
         var popup = win.open(url);
         var intervalId = win.setInterval(function(){
-          Log.append('popup.location: ' + popup.window.location);
-          Log.logTo(popup.window.document.body);
           if (popup) {
+            Log.append('popup.location: ' + popup.window.location);
+            Log.logTo(popup.window.document.body);
             popup.close();
             if (!popup) {
               alert('closed');
@@ -72,9 +72,11 @@ var TECHNIQUES = (function(){
         var popup = win.open(url);
         if (popup) {
           setTimeout(function(){
-            Log.append('popup.location: ' + popup.window.location);
-            Log.logTo(popup.window.document.body);
-            popup.window.location.assign('itms-appss://itunes.apple.com/us/app/bitly/id525106063');
+            if (popup) {
+              Log.append('popup.location: ' + popup.window.location);
+              Log.logTo(popup.window.document.body);
+              popup.window.location.assign('itms-appss://itunes.apple.com/us/app/bitly/id525106063');
+            }
           }, 250);
         }
       }
