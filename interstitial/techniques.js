@@ -81,7 +81,7 @@ var TECHNIQUES = (function(){
         }
       }
   }, {
-    name: 'win.open + js',
+    name: 'win.open + about',
     impl: function(win, url) {
       var popup = win.open(url);
       if (popup) {
@@ -89,7 +89,7 @@ var TECHNIQUES = (function(){
           if (popup) {
             Log.append('popup.location: ' + popup.window.location);
             Log.logTo(popup.window.document.body);
-            popup.window.location.href = 'javascript:window.close()';
+            popup.window.location = 'about:blank';
           }
         }, 250);
       }
