@@ -100,7 +100,8 @@ var TECHNIQUES = (function(){
               win.setTimeout(function(){
                   techObj.impl(win, urlObj);
               }, 500);
-          }
+          },
+          condition: techObj.condition,
       });
       return accum;
   }, []);
@@ -115,7 +116,8 @@ var TECHNIQUES = (function(){
                 win.setTimeout(function(){
                     win.location.reload();
                 }, 2000);
-            }
+            },
+            condition: techObj.condition,
         });
 
         return accum;
