@@ -65,6 +65,18 @@ var TECHNIQUES = (function(){
           aTag.click();
       }
   }, {
+    name: '<a target=_top> click',
+    impl: function(win, url) {
+        var doc = win.document;
+        var aTag = doc.createElement('a');
+        aTag.href = url;
+        aTag.target = '_top';
+        aTag.style.display = 'none';
+        doc.body.appendChild(aTag);
+        logRAF(win);
+        aTag.click();
+    }
+}, {
       name: 'win.open',
       impl: function(win, url) {
         win.open(url);
