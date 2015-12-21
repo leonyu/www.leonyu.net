@@ -131,13 +131,13 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + data uri',
+    name: 'win.open(js) + data uri',
     impl: function(win, url) {
       var popup;
       win.onmessage = function (m) {
         Logger.log(m.data);
       };
-      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');setTimeout(function(){opener.postMessage(\'not_installed\',\'http://www.leonyu.net/\');close()},500)}</script>"},100);');
+      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');setTimeout(function(){opener.postMessage(\'not_installed\',\'http://www.leonyu.net/\');close()},1000)}</script>"},100);');
     },
   }, {
     name: 'win.open(javascript) + page',
