@@ -145,24 +145,7 @@ var TECHNIQUES = (function(){
           Logger.log('isInstalled: ' + isInstalled);
         }
       });
-      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');setTimeout(function(){opener.postMessage(\'not_installed\',\'http://www.leonyu.net/\');close()},1000)}</script>"},100);');
-    },
-  }, {
-    name: 'win.open(js) + page(pm)',
-    impl: function(win, url) {
-      var popup;
-      var isInstalled = true;
-      win.onmessage = function (m) {
-        if (m.data == 'not_installed') {
-          isInstalled = false;
-        }
-      };
-      win.document.addEventListener('visibilitychange', function(){
-        if (win.document.visibilityState === 'visible') {
-          Logger.log('isInstalled: ' + isInstalled);
-        }
-      });
-      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
+      popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ win.location.href +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+ win.location.href +'\');close()},1000)}</script>"},100);');
     },
   }, {
     name: 'win.open + open + open',
