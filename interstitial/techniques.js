@@ -88,6 +88,16 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
+    name: 'win.open(blank) + win.open',
+    impl: function(win, url) {
+      var popup = win.open('about:blank', 'named');
+      if (popup) {
+        setTimeout(function(){
+          win.open(url, 'named');
+        }, 50);
+      }
+    },
+  }, {
     name: 'win.open + open + open',
     impl: function(win, url) {
       var popup = win.open(url, 'named');
