@@ -1,4 +1,4 @@
-function logRAF() {
+function logRAF(win) {
   var raf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   var iraf = 0;
   function rafLoop(start) {
@@ -20,7 +20,7 @@ var TECHNIQUES = (function(){
   var techniques = [{
       name: 'location',
       impl: function(win, url) {
-        logRAF();
+        logRAF(win);
         win.location = url;
       }
   }, {
@@ -35,7 +35,7 @@ var TECHNIQUES = (function(){
           var iframe = doc.createElement('iframe');
           iframe.src = url;
           iframe.style.display = 'none';
-          logRAF();
+          logRAF(win);
           doc.body.appendChild(iframe);
       }
   }, {
@@ -61,7 +61,7 @@ var TECHNIQUES = (function(){
           aTag.href = url;
           aTag.style.display = 'none';
           doc.body.appendChild(aTag);
-          logRAF();
+          logRAF(win);
           aTag.click();
       }
   }, {
@@ -138,7 +138,7 @@ var TECHNIQUES = (function(){
           xhr.open('GET', url, true);
           //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
           try {
-            logRAF();
+            logRAF(win);
             xhr.send(null);
           } catch (e) {
             Logger.append('XHR Error: ' + e.name + ', ' + e.message);
@@ -147,7 +147,7 @@ var TECHNIQUES = (function(){
   }, {
       name: 'nav.sendBeacon',
       impl: function(win, url) {
-          logRAF();
+          logRAF(win);
           win.navigator.sendBeacon(url, null);
       },
       condition: function() {
