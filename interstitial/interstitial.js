@@ -40,11 +40,13 @@
       }
       document.body.innerHTML += '<div id="pollution"><div>';
       getIframeKeys(function(iframeUserAgent, iframeKeys){
+        var KNOWN_GLOBALS = ['_', 'URL_DATA', 'TECHNIQUES'];
         if (iframeUserAgent !== window.navigator.userAgent) {
           document.getElementById('pollution').innerHTML += '<div>Iframe UA differ: ' + iframeUserAgent + '</div>';
         }
         var diff = _.difference(_.keys(window), iframeKeys);
-        if(diff.length > 1)  {
+        diff = _.difference(diff, KNOWN_GLOBALS);
+        if(diff.length !== 0)  {
           document.getElementById('pollution').innerHTML += '<div>Globals: ' + diff + '</div>';
         }
       });
