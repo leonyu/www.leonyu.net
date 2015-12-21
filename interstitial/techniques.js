@@ -116,6 +116,12 @@ var TECHNIQUES = (function(){
             popup.window.location = 'about:blank';
           }
         }, 50);
+        let intervalId = setInterval(function(){
+          Logger.log('popup: ' + (popup && popup.window));
+          if (!(popup && popup.window)) {
+            clearInterval(intervalId);
+          }
+        }, 50);
       }
     }
   }, {
