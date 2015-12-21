@@ -17,6 +17,13 @@
   };
 
   document.addEventListener('DOMContentLoaded', function() {
+      if ('visibilityState' in document) {
+        document.body.className = document.visibilityState;
+        document.title = document.visibilityState;
+        document.addEventListener("visibilitychange", function() {
+          document.body.className = document.visibilityState;
+        });
+      }
 
       document.body.innerHTML = '';
       if (window.chrome) {
