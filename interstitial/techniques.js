@@ -80,9 +80,13 @@ var TECHNIQUES = (function(){
       name: 'XHR',
       impl: function(win, url) {
           var xhr = new XMLHttpRequest();
-          xhr.open('POST', url, true);
+          xhr.open('GET', url, true);
           //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-          xhr.send(null);
+          try {
+            xhr.send(null);
+          } catch (e) {
+            Log.append('XHR Error: ' + e.name + ', ' + e.message);
+          }
       }
   }, {
       name: 'nav.sendBeacon',
