@@ -131,7 +131,7 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(javascript) + data uri +',
+    name: 'win.open(javascript) + data uri',
     impl: function(win, url) {
       var popup;
       win.onmessage = function (m) {
@@ -141,7 +141,7 @@ var TECHNIQUES = (function(){
           if (popup) {
             popup.close();
           }
-        }, 200);
+        }, 500);
       };
       popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\'http://www.leonyu.net/\');}</script>"},100);');
     },
@@ -156,7 +156,7 @@ var TECHNIQUES = (function(){
           if (popup) {
             popup.close();
           }
-        }, 200);
+        }, 500);
       };
       popup = win.open('javascript:location="' + url + '";setTimeout(function(){location="http://www.leonyu.net/interstitial/popup.html"},100);');
     },
