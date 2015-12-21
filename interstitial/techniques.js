@@ -149,7 +149,7 @@ var TECHNIQUES = (function(){
         }
       });
       origin = win.location.href;
-      popup = win.open('location="'+url+'";setInterval(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},50)');
+      popup = win.open('javascript:location="'+url+'";setInterval(function(){location="data:text/html,<script>if(opener){opener.postMessage(\'msg\',\''+ origin +'\');setTimeout(function(){opener.postMessage(\'not_installed\',\''+origin+'\');close()},100)}</script>"},50)');
     },
   }, {
     name: 'win.open + open + open',
