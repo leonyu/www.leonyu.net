@@ -80,10 +80,10 @@ var TECHNIQUES = (function(){
           }
         }, 50);
         setTimeout(function(){
-          Log.append('popup: ' + popup && popup.window);
+          Log.append('popup: ' + (popup && popup.window));
         }, 100);
         setTimeout(function(){
-          Log.append('popup: ' + popup && popup.window);
+          Log.append('popup: ' + (popup && popup.window));
         }, 200);
       }
     }

@@ -25,12 +25,12 @@
           document.title = document.visibilityState;
         });
       }
-      window.addEventListener("focus", function() {
-        Log.append('focus: ' + (document.hasFocus ? document.hasFocus() : 'focus'));
-      });
-      window.addEventListener("blur", function() {
-        Log.append('blur: ' + (document.hasFocus ? document.hasFocus() : 'blur'));
-      });
+      // window.addEventListener("focus", function() {
+      //   Log.append('focus: ' + (document.hasFocus ? document.hasFocus() : 'focus'));
+      // });
+      // window.addEventListener("blur", function() {
+      //   Log.append('blur: ' + (document.hasFocus ? document.hasFocus() : 'blur'));
+      // });
       window.addEventListener("beforeunload", function() {
         Log.append('beforeunload');
       });
