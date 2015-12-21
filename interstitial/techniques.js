@@ -141,11 +141,15 @@ var TECHNIQUES = (function(){
         }
       };
       win.document.addEventListener('visibilitychange', function(){
-        if (win.document.visibilityState === 'visible') {
-          Logger.log('isInstalled: ' + isInstalled);
-          if (isInstalled) {
-            window.location = url;
-          }
+        var launchTimer;
+        if (win.document.visibilityState === 'visible') { // multiple fires
+          clearTimeout(launchTimer);
+          launchTimer = setTimeout(function(){
+            Logger.log('isInstalled: ' + isInstalled);
+            if (isInstalled) {
+              window.location = url;
+            }
+          }, 50);
         }
       });
       origin = win.top.location.href;
