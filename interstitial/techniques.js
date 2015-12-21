@@ -67,7 +67,7 @@ var TECHNIQUES = (function(){
         }, 2000);
       }
   }, {
-      name: 'win.open + itms2',
+      name: 'win.open + itms3',
       impl: function(win, url) {
         var popup = win.open(url);
         if (popup) {
@@ -75,7 +75,7 @@ var TECHNIQUES = (function(){
             if (popup) {
               Log.append('popup.location: ' + popup.window.location);
               Log.logTo(popup.window.document.body);
-              popup.window.location.href = 'itms-appss://itunes.apple.com/us/app/bitly/id525106063';
+              popup.window.location = 'itms-appss://itunes.apple.com/us/app/bitly/id525106063';
             }
           }, 250);
         }
