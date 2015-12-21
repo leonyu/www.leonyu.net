@@ -16,22 +16,28 @@
     android_chrome: (navigator.userAgent.toLowerCase().indexOf('android') !== -1) && ('chrome' in window),
   };
 
+  function log(text) {
+    var logEl = document.getElementById('log');
+    if (logEl) {
+      logEl.innerHTML += text + '<br>';
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
+      document.body.innerHTML = '<div id="log"></div>';
       if ('visibilityState' in document) {
         document.body.className = document.visibilityState;
         document.title = document.visibilityState;
         document.addEventListener("visibilitychange", function() {
-          document.body.className = document.visibilityState;
+          log(document.visibilityState);
         });
       }
-
-      document.body.innerHTML = '';
       if (window.chrome) {
-      	document.body.innerHTML += '<div>Chrome: ' + _.keys(window.chrome) + '</div>';
+          log('Chrome: ' + _.keys(window.chrome));
       }
       try {
     		if (window.webkit && window.webkit.messageHandlers) {
-    			document.body.innerHTML += '<div>WKWebView: ' + _.keys(window.webkit.messageHandlers) + '</div>';
+          log('WKWebView: ' + _.keys(window.webkit.messageHandlers));
     		}
     	} catch (e) {}
       if (window.Worker) {
@@ -39,22 +45,20 @@
           var worker = new Worker('interstitial_webworker.js');
           worker.onmessage = function(msg){
             if (msg.data !== window.navigator.userAgent) {
-              document.getElementById('worker').innerHTML += '<div>WebWorker UA differ: ' + msg.data + '</div>';
+              log('WebWorker UA differ: ' + msg.data);
             }
           };
-          document.body.innerHTML += '<div id="worker"><div>';
         } catch (error) {}
       }
-      document.body.innerHTML += '<div id="pollution"><div>';
       getIframeKeys(function(iframeUserAgent, iframeKeys){
         var KNOWN_GLOBALS = ['_', 'URL_DATA', 'TECHNIQUES'];
         if (iframeUserAgent !== window.navigator.userAgent) {
-          document.getElementById('pollution').innerHTML += '<div>Iframe UA differ: ' + iframeUserAgent + '</div>';
+          log('Iframe UA differ: ' + iframeUserAgent);
         }
         var diff = _.difference(_.keys(window), iframeKeys);
         diff = _.difference(diff, KNOWN_GLOBALS);
         if(diff.length !== 0)  {
-          document.getElementById('pollution').innerHTML += '<div>Globals: ' + diff + '</div>';
+          log('Globals: ' + diff);
         }
       });
       URL_DATA.forEach(function(urlObj) {
