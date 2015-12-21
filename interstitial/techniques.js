@@ -88,13 +88,13 @@ var TECHNIQUES = (function(){
       }
     }
   }, {
-    name: 'win.open(blank) + win.open',
+    name: 'win.open(blank) + win.location',
     impl: function(win, url) {
-      var popup = win.open('about:blank', 'named');
+      var popup = win.open('about:blank');
       if (popup) {
         setTimeout(function(){
-          win.open(url, 'named');
-        }, 50);
+          popup.window.location = url;
+        }, 100);
       }
     },
   }, {
