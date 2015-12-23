@@ -57,7 +57,10 @@ var TECHNIQUES = (function(){
       impl: function(win, url) {
           var doc = win.document;
           logRAF(win);
-          doc.body.innerHTML += '<object data="' + url + '"></object>';
+          doc.body.innerHTML += '<object id="abc" onerror="alert(error)" data="' + url + '"></object>';
+          setTimeout(function(){
+            doc.body.removeChild(doc.getElementById('abc'));
+          }, 30);
       }
   }, {
 /*      name: 'img.src',
