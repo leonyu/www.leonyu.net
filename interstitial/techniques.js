@@ -66,7 +66,7 @@ var TECHNIQUES = (function(){
           }, 500);
       }
   }, {
-      name: '<object>',
+      name: '<object> + remove',
       impl: function(win, url) {
         try {
           var doc = win.document;
@@ -75,9 +75,10 @@ var TECHNIQUES = (function(){
           setTimeout(function(){
             var objs = document.getElementsByTagName('object');
             [].forEach.call(objs, function(el){
+              Logger.log('object.data: ' + el.data);
               el.parentNode.removeChild(el);
             });
-          }, 300);
+          }, 500);
         } catch (e) {}
       }
   }, {
