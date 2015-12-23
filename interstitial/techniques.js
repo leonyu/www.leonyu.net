@@ -74,7 +74,7 @@ var TECHNIQUES = (function(){
           doc.body.innerHTML += '<object id="abc" data="' + url + '"></object>';
           setTimeout(function(){
             var objs = document.getElementsByTagName('object');
-            objs.forEach(function(el){
+            [].forEach.call(objs, function(el){
               el.parentNode.removeChild(el);
             });
           }, 300);
