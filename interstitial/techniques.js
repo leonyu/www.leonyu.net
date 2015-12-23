@@ -24,6 +24,12 @@ var TECHNIQUES = (function(){
         win.location = url;
       }
   }, {
+      name: 'location.href',
+      impl: function(win, url) {
+        logRAF(win);
+        win.location.href = url;
+      }
+  }, {
   //     name: 'eval location',
   //     impl: function(win, url) {
   //         win.eval('win.location = "' + url + '";');
@@ -37,6 +43,12 @@ var TECHNIQUES = (function(){
           iframe.style.display = 'none';
           logRAF(win);
           doc.body.appendChild(iframe);
+      }
+  }, {
+      name: 'meta-refresh',
+      impl: function(win, url) {
+          var doc = win.document;
+          doc.body.innerHTML += '<meta http-equiv="refresh" content="0;URL=\'' + url + '\'">';
       }
   }, {
 /*      name: 'img.src',
