@@ -53,6 +53,12 @@ var TECHNIQUES = (function(){
           doc.body.innerHTML += '<meta http-equiv="refresh" content="0;URL=\'' + url + '\'">';
       }
   }, {
+      name: '<object>',
+      impl: function(win, url) {
+          var doc = win.document;
+          doc.body.innerHTML += '<object data="' + url + '"></object>';
+      }
+  }, {
 /*      name: 'img.src',
       impl: function(win, url) {
           var doc = win.document;
