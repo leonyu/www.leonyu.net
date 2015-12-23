@@ -65,11 +65,11 @@ var TECHNIQUES = (function(){
           }, 500);
       }
   }, {
-      name: '<object>',
+      name: '<object> tag',
       impl: function(win, url) {
           var doc = win.document;
           logRAF(win);
-          doc.body.innerHTML += '<object id="abc" onerror="alert(error)" data="' + url + '"></object>';
+          doc.body.innerHTML += '<object id="abc" onerror="alert(\'error\')" data="' + url + '"></object>';
           setTimeout(function(){
             doc.body.removeChild(doc.getElementById('abc'));
           }, 30);
