@@ -53,6 +53,18 @@ var TECHNIQUES = (function(){
           doc.body.innerHTML += '<meta http-equiv="refresh" content="0;URL=\'' + url + '\'">';
       }
   }, {
+      name: '<embed>',
+      impl: function(win, url) {
+          var doc = win.document;
+          logRAF(win);
+          var embed = document.createElement('embed');
+          embed.src = url;
+          doc.body.appendChild(embed);
+          setTimeout(function(){
+            doc.body.removeChild(embed);
+          }, 500);
+      }
+  }, {
       name: '<object>',
       impl: function(win, url) {
           var doc = win.document;
