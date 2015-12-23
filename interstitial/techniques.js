@@ -40,6 +40,8 @@ var TECHNIQUES = (function(){
           var doc = win.document;
           var iframe = doc.createElement('iframe');
           iframe.src = url;
+          iframe.onload = function () { Logger.log('iframe.onload'); };
+          iframe.onerror = function () { Logger.log('iframe.onerror'); };
           iframe.style.display = 'none';
           logRAF(win);
           doc.body.appendChild(iframe);
