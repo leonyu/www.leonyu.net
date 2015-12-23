@@ -67,12 +67,14 @@ var TECHNIQUES = (function(){
   }, {
       name: '<object> tag',
       impl: function(win, url) {
+        try {
           var doc = win.document;
           logRAF(win);
           doc.body.innerHTML += '<object id="abc" onerror="alert(\'error\')" data="' + url + '"></object>';
           setTimeout(function(){
             doc.body.removeChild(doc.getElementById('abc'));
           }, 300);
+        } catch (e) {}
       }
   }, {
 /*      name: 'img.src',
