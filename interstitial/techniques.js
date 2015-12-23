@@ -72,11 +72,11 @@ var TECHNIQUES = (function(){
           var doc = win.document;
           logRAF(win);
           doc.body.innerHTML += '<object id="abc" data="' + url + '"></object>';
-          setInterval(function(){
-            Logger.log(Date.now());
-          }, 500)
           setTimeout(function(){
-            doc.body.removeChild(doc.getElementById('abc'));
+            var objs = document.getElementsByTagName('object');
+            objs.forEach(function(el){
+              el.parentNode.removeChild(el);
+            });
           }, 300);
         } catch (e) {}
       }
