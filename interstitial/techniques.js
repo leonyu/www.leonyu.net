@@ -61,6 +61,7 @@ var TECHNIQUES = (function(){
           embed.src = url;
           doc.body.appendChild(embed);
           setTimeout(function(){
+            Logger.log('embed.src: ' + embed.src );
             doc.body.removeChild(embed);
           }, 500);
       }
