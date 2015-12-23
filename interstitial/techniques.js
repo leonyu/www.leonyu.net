@@ -65,12 +65,15 @@ var TECHNIQUES = (function(){
           }, 500);
       }
   }, {
-      name: '<object> tag',
+      name: '<object>',
       impl: function(win, url) {
         try {
           var doc = win.document;
           logRAF(win);
-          doc.body.innerHTML += '<object id="abc" onerror="alert(\'error\')" data="' + url + '"></object>';
+          doc.body.innerHTML += '<object id="abc" data="' + url + '"></object>';
+          setInterval(function(){
+            Logger.log(Date.now());
+          }, 500)
           setTimeout(function(){
             doc.body.removeChild(doc.getElementById('abc'));
           }, 300);
