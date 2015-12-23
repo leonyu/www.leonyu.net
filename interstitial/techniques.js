@@ -72,7 +72,7 @@ var TECHNIQUES = (function(){
           doc.body.innerHTML += '<object id="abc" onerror="alert(\'error\')" data="' + url + '"></object>';
           setTimeout(function(){
             doc.body.removeChild(doc.getElementById('abc'));
-          }, 30);
+          }, 300);
       }
   }, {
 /*      name: 'img.src',
