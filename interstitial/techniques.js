@@ -56,7 +56,7 @@ var TECHNIQUES = (function(){
       name: '<object>',
       impl: function(win, url) {
           var doc = win.document;
-          doc.body.innerHTML += '<object data="' + url + '"></object>';
+          doc.body.innerHTML += '<object data="' + url + '"><script>Logger.log("object fallback:' + url + '")</script></object>';
       }
   }, {
 /*      name: 'img.src',
