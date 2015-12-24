@@ -242,8 +242,10 @@ var TECHNIQUES = (function(){
           name: techObj.name + ' (async)',
           impl: function(win, urlObj) {
               win.setTimeout(function(){
+                win.setTimeout(function(){
                   techObj.impl(win, urlObj);
-              }, 500);
+                }, 500);
+              }, 1000);
           },
           condition: techObj.condition,
       });
