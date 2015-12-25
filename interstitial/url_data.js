@@ -22,6 +22,7 @@ var URL_DATA = [{
     name: 'Intent (Store fallback)',
     url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end',
     condition: 'android_chrome',
+}, {
     name: 'Intent (Web fallback)',
     url: 'intent://scan/#Intent;scheme=zxing;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
     condition: 'android_chrome',
