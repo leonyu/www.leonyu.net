@@ -15,8 +15,20 @@ var URL_DATA = [{
     url: 'com.amazon.mobile.shopping://amazon.com/deals?tag=tsa030-20&ascsubtag=ptw-NUL-1-5-1448846263526PE&ref_=ptw_NUL_1_5_1448846263526PE',
     condition: 'any',
 }, {
-    name: 'Intent',
+    name: 'Intent (Store & Web fallback)',
     url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+    condition: 'android_chrome',
+}, {
+    name: 'Intent (Store fallback)',
+    url: 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end',
+    condition: 'android_chrome',
+    name: 'Intent (Web fallback)',
+    url: 'intent://scan/#Intent;scheme=zxing;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end',
+    condition: 'android_chrome',
+}, {
+}, {
+    name: 'Intent (No fallback)',
+    url: 'intent://scan/#Intent;scheme=zxing;end',
     condition: 'android_chrome',
 }, {
 //     name: 'Intent (malformed)',
