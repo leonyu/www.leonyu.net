@@ -32,8 +32,8 @@ body {
 }
 
 .margin-restraint {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 @media (max-width: 360px) {
@@ -52,8 +52,8 @@ body {
 .page-container {
   margin: 0 auto 10px;
   padding-bottom: 20px;
-  max-width: 600px;
-  width: 600px;
+  max-width: 720px;
+  width: 720px;
   background-color: #fff;
   box-shadow: 0px 0px 8px 0px #666;
 }
@@ -85,8 +85,8 @@ header h3 {
 }
 
 section {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-weight: 400;
 }
 
