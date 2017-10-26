@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css" type="text/css" />
   <link rel="stylesheet" href="css/penguin.css" type="text/css" />
+
+  <link rel="stylesheet" type="text/css" href="https://boxing.leonyu.net/css/ui.css" />
+  <script src="https://boxing.leonyu.net/socket.io/socket.io.js"></script>
+  <script src="https://boxing.leonyu.net/js/app.js"></script>
 </head>
 
 <body>
@@ -18,20 +22,21 @@
     </header>
     <section class="content margin-restraint tab-panes">
       <p>Welcome to leonyu.net!</p>
-      <p>Feel free to peruse my personal projects on Bitbucket and open-source pull requests on GitHub.</p>
+      <p>Feel free to peruse my personal projects on Bitbucket and open-source PRs on GitHub.</p>
       <ul>
         <li>
           <a href="https://bitbucket.org/voidvector/">Bitbucket</a> Personal Projects
         </li>
         <li>
-          <a href="https://github.com/leonyu/">GitHub</a> Open Source Pull Requests
+          <a href="https://github.com/leonyu/">GitHub</a> Open Source PRs
         </li>
       </ul>
       <p>Also feel free to play my Websocket Boxing Game.</p>
     </section>
   </div>
+  <div class="page-container" id="game-container"></div>
   <footer>
-    2017 |
+    (c) 2017 |
     <a href="mailto:leon@leonyu.net">leon@leonyu.net</a>
   </footer>
 </body>
