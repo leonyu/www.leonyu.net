@@ -5,11 +5,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
   <title>leonyu.net</title>
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css" type="text/css" />
   <link rel="stylesheet" href="css/penguin.css" type="text/css" />
 
-  <!--[if gt IE 9]><!-->
+  <!--[if gte IE 9]><!-->
   <link rel="stylesheet" type="text/css" href="https://boxing.leonyu.net/css/ui.css" />
   <script src="https://boxing.leonyu.net/socket.io/socket.io.js"></script>
   <script src="https://boxing.leonyu.net/js/app.js"></script>
@@ -35,7 +38,9 @@
       </ul>
     </section>
   </div>
+  <!--[if gte IE 9]><!-->
   <div class="page-container" id="game-container"></div>
+  <!--<![endif]-->
   <footer>
     (c) 2017 |
     <a href="mailto:leon@leonyu.net">leon@leonyu.net</a>
