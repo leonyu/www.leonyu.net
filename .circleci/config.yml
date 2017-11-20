@@ -56,4 +56,4 @@ jobs:
 
       - run:
           name: Deploy to S3
-          command: ./deploy.sh
+          command: PATH=~/.local/bin:$PATH ./deploy.sh
