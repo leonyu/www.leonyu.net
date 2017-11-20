@@ -36,8 +36,6 @@ jobs:
       # run tests!
       # - run: yarn test
 
-    deployment:
-      prod:
-        branch: master
-        commands:
-          - aws s3 sync . s3://www.leonyu.net/
+        - run:
+          name: Deploy to S3
+          commands: ./deploy.sh
