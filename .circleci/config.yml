@@ -37,5 +37,9 @@ jobs:
       # - run: yarn test
 
       - run:
+          name: Install awscli
+          command: pip install awscli --upgrade --user
+
+      - run:
           name: Deploy to S3
           command: ./deploy.sh
