@@ -36,6 +36,6 @@ jobs:
       # run tests!
       # - run: yarn test
 
-        - run:
+      - run:
           name: Deploy to S3
-          commands: ./deploy.sh
+          command: ./deploy.sh
