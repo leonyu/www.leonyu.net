@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Inconsolata', Consolas, Menlo, 'DejaVu Sans Mono', sans-serif;
+  font-family: 'Inconsolata', Consolas, Menlo, 'DejaVu Sans Mono', 'Andale Mono', sans-serif;
   color: #222;
   background-color: #eee;
 }
