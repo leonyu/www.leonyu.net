@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="11px" viewBox="0 0 15 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>cart</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Front-End-Code-Exercise" transform="translate(-1572.000000, -686.000000)" stroke="#FFFFFF">
+            <g id="Group-12" transform="translate(1550.000000, 651.000000)">
+                <g id="cart-button" transform="translate(0.000000, 20.000000)">
+                    <g id="cart" transform="translate(22.000000, 15.000000)">
+                        <polyline id="Path-2" stroke-linecap="round" stroke-linejoin="round" points="0.589765845 0.508115018 3.47548468 0.508115018 5.91627086 6.47403367 12.4213865 6.47403367 14.171459 1.65489999 5.78502722 1.65489999"></polyline>
+                        <polyline id="Path-3" stroke-linecap="round" stroke-linejoin="round" points="12.3910308 8.53771164 5.9918107 8.53771164 5.9918107 6.36401891"></polyline>
+                        <circle id="Oval" fill="#0080C6" cx="7.08333333" cy="9.58333333" r="0.416666667"></circle>
+                        <circle id="Oval-Copy" fill="#0080C6" cx="11.25" cy="9.58333333" r="0.416666667"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
