@@ -1,16 +1,8 @@
-html {
-  overflow-y: scroll;
-}
-
 body {
-  font-family: 'Inconsolata', Consolas, Menlo, 'DejaVu Sans Mono', 'Andale Mono', sans-serif;
+  font-family: Inconsolata, Consolas, Menlo, 'DejaVu Sans Mono', 'Andale Mono', sans-serif;
   color: #222;
   background-color: #eee;
-}
-
-body > * {
-  position: relative;
-  top: 10px;
+  padding-top: 10px;
 }
 
 .margin-restraint {
@@ -46,6 +38,11 @@ body > * {
   box-shadow: 0px 0px 8px 0px #666;
 }
 
+a {
+  text-decoration: none;
+  color: #999;
+}
+
 header {
   background-color: #222;
   color: #fff;
@@ -53,14 +50,8 @@ header {
   padding-bottom: 30px;
 }
 
-header a {
-  color: #fff;
-}
-
 header h2, header h3 {
   font-size: 14pt;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin: 0;
 }
 
@@ -75,21 +66,12 @@ header h3 {
 section {
   padding-top: 30px;
   padding-bottom: 30px;
-  font-weight: 400;
 }
 
 section > ul {
   display: block;
   padding: 0;
-}
-
-section > ul > li {
   list-style: none;
-}
-
-section > ul > li > a {
-  text-decoration: none;
-  color: #999;
 }
 
 section > ul > li > a:after {
@@ -102,9 +84,4 @@ section > ul > li > a:after {
 footer {
   text-align: center;
   padding-top: 10px;
-}
-
-footer a {
-  color: #999;
-  text-decoration: none;
 }
