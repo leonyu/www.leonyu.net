@@ -43,45 +43,45 @@ a {
   color: #999;
 }
 
-header {
+.header {
   background-color: #222;
   color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-header h2, header h3 {
+.header h2, .header h3 {
   font-size: 14pt;
   margin: 0;
 }
 
-header h2 {
+.header h2 {
   text-transform: uppercase;
 }
 
-header h3 {
+.header h3 {
   color: #999;
 }
 
-section {
+.content {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
-section > ul {
+.content > ul {
   display: block;
   padding: 0;
   list-style: none;
 }
 
-section > ul > li > a:after {
+.content > ul > li > a:after {
   content: '\203A';
   margin-left: 5px;
   margin-right: 0px;
   color: #000;
 }
 
-footer {
+.footer {
   text-align: center;
   padding-top: 10px;
 }
