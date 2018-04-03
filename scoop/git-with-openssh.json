@@ -85,6 +85,8 @@
         "usr\\bin\\file.exe",
 
         "usr\\bin\\xxd.exe",
+        "usr\\bin\\tset.exe",
+        "usr\\bin\\reset.exe",
 
         "usr\\bin\\less.exe",
         "usr\\bin\\lesskey.exe",
