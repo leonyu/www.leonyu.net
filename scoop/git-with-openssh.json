@@ -1,16 +1,16 @@
 {
     "##": "Maintainers: when updating this manifest to a new version, you might like to also update git.json",
     "homepage": "https://git-for-windows.github.io/",
-    "license": "GPL2",
-    "version": "2.16.3.windows.1",
+
+    "version": "2.17.0.windows.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/PortableGit-2.16.3-64-bit.7z.exe#/dl.7z",
-            "hash": "b8f321d4bb9c350a9b5e58e4330d592410ac6b39df60c5c25ca2020c6e6b273e"
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.17.0.windows.1/PortableGit-2.17.0-64-bit.7z.exe#/dl.7z",
+            "hash": "9625365ccb67d1c7c52f14824c5dd68af4cca2a1b83a2ba998ba9ba45b708551"
         },
-        "32bit": {
-            "url": "https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/PortableGit-2.16.3-32-bit.7z.exe#/dl.7z",
-            "hash": "a8211cbe833c6eb9676ebb43cf43375484a1f9a5524009e5bf31c5df320f23c7"
+         "32bit": {
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.17.0.windows.1/PortableGit-2.17.0-32-bit.7z.exe#/dl.7z",
+            "hash": "f2344ec1bb2d87a1ab7b05bd2e7bcbbbbf4de6ae8a6b1dc034b9de4b3a1f0ec9"
         }
     },
     "bin": [
@@ -29,15 +29,49 @@
         "usr\\bin\\ssh-keyscan.exe",
         "usr\\bin\\tig.exe",
 
-        "usr\\bin\\ls.exe",
+        "usb\\bin\\basename.exe",
+        "usb\\bin\\cat.exe",
+        "usb\\bin\\chmod.exe",
+        "usb\\bin\\comm.exe",
+        "usb\\bin\\cp.exe",
+        "usb\\bin\\cut.exe",
+        "usb\\bin\\date.exe",
+        "usb\\bin\\dirname.exe",
+        "usb\\bin\\echo.exe",
+        "usb\\bin\\env.exe",
+        "usb\\bin\\expr.exe",
+        "usb\\bin\\false.exe",
+        "usb\\bin\\fold.exe",
+        "usb\\bin\\head.exe",
+        "usb\\bin\\id.exe",
+        "usb\\bin\\install.exe",
+        "usb\\bin\\join.exe",
+        "usb\\bin\\ls.exe",
+        "usb\\bin\\md5sum.exe",
+        "usb\\bin\\mkdir.exe",
+        "usb\\bin\\msysmnt.exe",
+        "usb\\bin\\mv.exe",
+        "usb\\bin\\od.exe",
+        "usb\\bin\\paste.exe",
+        "usb\\bin\\printf.exe",
+        "usb\\bin\\ps.exe",
+        "usb\\bin\\pwd.exe",
+        "usb\\bin\\rm.exe",
+        "usb\\bin\\rmdir.exe",
+        "usb\\bin\\sleep.exe",
+        "usb\\bin\\sort.exe",
+        "usb\\bin\\split.exe",
+        "usb\\bin\\stty.exe",
+        "usb\\bin\\tail.exe",
+        "usb\\bin\\tee.exe",
+        "usb\\bin\\touch.exe",
+        "usb\\bin\\tr.exe",
+        "usb\\bin\\true.exe",
+        "usb\\bin\\uname.exe",
+        "usb\\bin\\uniq.exe",
+        "usb\\bin\\wc.exe",
+
         "usr\\bin\\reset.exe",
-
-        "usr\\bin\\cp.exe",
-        "usr\\bin\\mv.exe",
-        "usr\\bin\\rm.exe",
-
-        "usr\\bin\\mkdir.exe",
-        "usr\\bin\\rmdir.exe",
 
         "usr\\bin\\dos2unix.exe",
         "usr\\bin\\mac2unix.exe",
@@ -46,16 +80,12 @@
 
         "usr\\bin\\iconv.exe",
 
-        "usr\\bin\\touch.exe",
-        "usr\\bin\\tee.exe",
-
         "usr\\bin\\tar.exe",
         "usr\\bin\\gzip.exe",
         "usr\\bin\\unzip.exe",
         "usr\\bin\\funzip.exe",
         "usr\\bin\\unzipsfx.exe",
 
-        "usr\\bin\\md5sum.exe",
         "usr\\bin\\sha1sum.exe",
         "usr\\bin\\sha224sum.exe",
         "usr\\bin\\sha256sum.exe",
@@ -65,13 +95,6 @@
         "usr\\bin\\find.exe",
         "usr\\bin\\xargs.exe",
         "usr\\bin\\grep.exe",
-
-        "usr\\bin\\head.exe",
-        "usr\\bin\\tail.exe",
-
-        "usr\\bin\\wc.exe",
-        "usr\\bin\\uniq.exe",
-        "usr\\bin\\sort.exe",
 
         "usr\\bin\\sed.exe",
         "usr\\bin\\awk.exe",
