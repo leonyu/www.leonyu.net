@@ -1,0 +1,140 @@
+{
+    "##": "Maintainers: when updating this manifest to a new version, you might like to also update git.json",
+    "homepage": "https://git-for-windows.github.io/",
+
+    "version": "2.17.0.windows.1",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.17.0.windows.1/PortableGit-2.17.0-64-bit.7z.exe#/dl.7z",
+            "hash": "9625365ccb67d1c7c52f14824c5dd68af4cca2a1b83a2ba998ba9ba45b708551"
+        },
+         "32bit": {
+            "url": "https://github.com/git-for-windows/git/releases/download/v2.17.0.windows.1/PortableGit-2.17.0-32-bit.7z.exe#/dl.7z",
+            "hash": "f2344ec1bb2d87a1ab7b05bd2e7bcbbbbf4de6ae8a6b1dc034b9de4b3a1f0ec9"
+        }
+    },
+    "bin": [
+        "cmd\\git.exe",
+        "cmd\\gitk.exe",
+        "cmd\\git-gui.exe",
+        "git-bash.exe",
+
+        "usr\\bin\\ssh.exe",
+        "usr\\bin\\sshd.exe",
+        "usr\\bin\\scp.exe",
+        "usr\\bin\\sftp.exe",
+        "usr\\bin\\ssh-add.exe",
+        "usr\\bin\\ssh-agent.exe",
+        "usr\\bin\\ssh-keygen.exe",
+        "usr\\bin\\ssh-keyscan.exe",
+        "usr\\bin\\tig.exe",
+
+        "usr\\bin\\basename.exe",
+        "usr\\bin\\cat.exe",
+        "usr\\bin\\comm.exe",
+        "usr\\bin\\cp.exe",
+        "usr\\bin\\cut.exe",
+        "usr\\bin\\date.exe",
+        "usr\\bin\\dirname.exe",
+        "usr\\bin\\echo.exe",
+        "usr\\bin\\env.exe",
+        "usr\\bin\\expr.exe",
+        "usr\\bin\\false.exe",
+        "usr\\bin\\fold.exe",
+        "usr\\bin\\head.exe",
+        "usr\\bin\\join.exe",
+        "usr\\bin\\ls.exe",
+        "usr\\bin\\md5sum.exe",
+        "usr\\bin\\mkdir.exe",
+        "usr\\bin\\mv.exe",
+        "usr\\bin\\od.exe",
+        "usr\\bin\\paste.exe",
+        "usr\\bin\\printf.exe",
+        "usr\\bin\\ps.exe",
+        "usr\\bin\\rm.exe",
+        "usr\\bin\\rmdir.exe",
+        "usr\\bin\\sleep.exe",
+        "usr\\bin\\sort.exe",
+        "usr\\bin\\split.exe",
+        "usr\\bin\\stty.exe",
+        "usr\\bin\\tail.exe",
+        "usr\\bin\\tee.exe",
+        "usr\\bin\\touch.exe",
+        "usr\\bin\\tr.exe",
+        "usr\\bin\\true.exe",
+        "usr\\bin\\uname.exe",
+        "usr\\bin\\uniq.exe",
+        "usr\\bin\\wc.exe",
+
+        "usr\\bin\\reset.exe",
+
+        "usr\\bin\\dos2unix.exe",
+        "usr\\bin\\mac2unix.exe",
+        "usr\\bin\\unix2dos.exe",
+        "usr\\bin\\unix2mac.exe",
+
+        "usr\\bin\\iconv.exe",
+
+        "usr\\bin\\tar.exe",
+        "usr\\bin\\gzip.exe",
+        "usr\\bin\\unzip.exe",
+        "usr\\bin\\funzip.exe",
+        "usr\\bin\\unzipsfx.exe",
+
+        "usr\\bin\\sha1sum.exe",
+        "usr\\bin\\sha224sum.exe",
+        "usr\\bin\\sha256sum.exe",
+        "usr\\bin\\sha384sum.exe",
+        "usr\\bin\\sha512sum.exe",
+
+        "usr\\bin\\find.exe",
+        "usr\\bin\\xargs.exe",
+        "usr\\bin\\grep.exe",
+
+        "usr\\bin\\sed.exe",
+        "usr\\bin\\awk.exe",
+        "usr\\bin\\gawk.exe",
+
+        "usr\\bin\\cmp.exe",
+        "usr\\bin\\diff.exe",
+        "usr\\bin\\diff3.exe",
+        "usr\\bin\\sdiff.exe",
+
+        "usr\\bin\\file.exe",
+
+        "usr\\bin\\xxd.exe",
+        "usr\\bin\\tset.exe",
+        "usr\\bin\\reset.exe",
+
+        "usr\\bin\\less.exe",
+        "usr\\bin\\lesskey.exe",
+
+        "usr\\bin\\ex.exe",
+        "usr\\bin\\rview.exe",
+        "usr\\bin\\rvim.exe",
+        "usr\\bin\\view.exe",
+        "usr\\bin\\vim.exe",
+        "usr\\bin\\vimdiff.exe"
+    ],
+    "post_install": [
+        "git config --global credential.helper manager"
+    ],
+    "checkver": {
+        "url": "https://github.com/git-for-windows/git/releases/latest",
+        "re": "v(?<version>[\\d\\w.]+)/PortableGit-(?<short>[\\d.]+).*\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/git-for-windows/git/releases/download/v$matchVersion/PortableGit-$matchShort-64-bit.7z.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/git-for-windows/git/releases/download/v$matchVersion/PortableGit-$matchShort-32-bit.7z.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/git-for-windows/git/releases/latest",
+            "find": "<td>$basename<\\/td>\\s*<td>([0-9a-fA-F]+)<\\/td>"
+        }
+    }
+}
