@@ -25,7 +25,7 @@ function queueRender() {
   }
 
   const qrCanvas = document.querySelector<HTMLCanvasElement>('#qr-code')!;
-  const options = { color: { dark: '#222' }, width: getInputWidth() } as any;
+  const options = { color: { dark: '#222' }, width: getContentWidth() } as any;
   if (text) {
     QRCode.toCanvas(qrCanvas, text, options, queueRender);
   } else {
@@ -33,9 +33,9 @@ function queueRender() {
   }
 }
 
-function getInputWidth(): number {
-  const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
-  const computedWidth = window.getComputedStyle(qrText).width;
+function getContentWidth(): number {
+  const contentDiv = document.querySelector<HTMLDivElement>('.content')!;
+  const computedWidth = window.getComputedStyle(contentDiv).width;
   return computedWidth ? parseInt(computedWidth, 10) : 560;
 }
 
