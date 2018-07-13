@@ -16,20 +16,36 @@ function fetchIPAddress() {
   });
 }
 
+const queue: string[] = [];
+
+function queueRender() {
+  const text = queue.shift();
+  if (typeof text === 'undefined') {
+    return;
+  }
+
+  const qrCanvas = document.querySelector<HTMLCanvasElement>('#qr-code')!;
+  const options = { color: { dark: '#222' }, width: getInputWidth() } as any;
+  if (text) {
+    QRCode.toCanvas(qrCanvas, text, options, queueRender);
+  } else {
+    QRCode.toCanvas(qrCanvas, [{ data: text, mode: 'alphanumeric' }], options, queueRender);
+  }
+}
+
+function getInputWidth(): number {
+  const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
+  const computedWidth = window.getComputedStyle(qrText).width;
+  return computedWidth ? parseInt(computedWidth, 10) : 560;
+}
+
 function UpdateQRText(text: string) {
   const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
-  const qrCanvas = document.querySelector<HTMLCanvasElement>('#qr-code')!;
-
-  const computedWidth = window.getComputedStyle(qrText).width;
-  const width = computedWidth ? parseInt(computedWidth, 10) : 560;
   if (qrText.value !== text) {
     qrText.value = text;
   }
-  if (text) {
-    QRCode.toCanvas(qrCanvas, text, { color: { dark: '#222' }, width } as any);
-  } else {
-    QRCode.toCanvas(qrCanvas, [{ data: '', mode: 'alphanumeric' }], { color: { dark: '#222' }, width } as any);
-  }
+  queue.push(text);
+  queueRender();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
