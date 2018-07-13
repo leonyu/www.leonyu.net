@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var qrCode = new QRious({
     element: document.getElementById('qr-code'),
     size: 560,
+    foreground: '#222',
     value: ""
   });
 
