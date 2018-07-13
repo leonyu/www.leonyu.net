@@ -1,3 +1,4 @@
+import 'core-js/es6/promise';
 import 'whatwg-fetch';
 
 import * as QRCode from 'qrcode';
