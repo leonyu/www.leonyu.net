@@ -10,32 +10,35 @@ function fetchIPAddress() {
       throw Error(`${res.status} ${res.statusText}`);
     }
     return res.json();
-  }).then((json) => {
-    return json.ip as string;
+  }).then<string>((json) => {
+    return json.ip;
   });
 }
 
-function UpdateQR(text: string) {
-  const qrCanvas = document.querySelector<HTMLCanvasElement>('#qr-code');
+function UpdateQRText(text: string) {
+  const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
+  const qrCanvas = document.querySelector<HTMLCanvasElement>('#qr-code')!;
+
+  const computedWidth = window.getComputedStyle(qrText).width;
+  const width = computedWidth ? parseInt(computedWidth, 10) : 560;
+  if (qrText.value !== text) {
+    qrText.value = text;
+  }
   if (text) {
-    QRCode.toCanvas(qrCanvas, text, { color: { dark: '#222' }, width: 560 } as any);
+    QRCode.toCanvas(qrCanvas, text, { color: { dark: '#222' }, width } as any);
   } else {
-    QRCode.toCanvas(qrCanvas, [{ data: '', mode: 'alphanumeric' }], { color: { dark: '#222' }, width: 560 } as any);
+    QRCode.toCanvas(qrCanvas, [{ data: '', mode: 'alphanumeric' }], { color: { dark: '#222' }, width } as any);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
-
-  qrText.addEventListener('keyup', () => {
-    UpdateQR(qrText.value);
-  });
+  qrText.addEventListener('keyup', () => UpdateQRText(qrText.value));
+  window.addEventListener('resize', () => UpdateQRText(qrText.value));
 
   fetchIPAddress().then((ipAddress) => {
-    qrText.value = `CLIENT_IP:${ipAddress}`;
-    UpdateQR(qrText.value);
+    UpdateQRText(`CLIENT_IP:${ipAddress}`);
   }).catch((err) => {
-    qrText.value = err.message;
-    UpdateQR(qrText.value);
+    UpdateQRText(err.message);
   });
 });
