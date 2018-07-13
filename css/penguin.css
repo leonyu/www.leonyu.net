@@ -87,11 +87,5 @@ a {
 }
 
 #qr-text {
-  float: left;
-  width: 75%;
-}
-
-#qr-ip-btn {
-  float: right;
-  width: 20%;
+  width: 100%;
 }
