@@ -53,7 +53,7 @@ function UpdateQRText(text: string) {
 
 document.addEventListener('load', () => {
     queueRender();
-})
+});
 document.addEventListener('DOMContentLoaded', () => {
   const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
   qrText.addEventListener('keyup', () => UpdateQRText(qrText.value));
