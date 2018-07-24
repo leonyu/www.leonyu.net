@@ -19,6 +19,9 @@ function fetchIPAddress() {
 const queue: string[] = [];
 
 function queueRender() {
+  if (document.readyState !== 'complete') {
+    return;
+  }
   const text = queue.shift();
   if (typeof text === 'undefined') {
     return;
@@ -48,6 +51,9 @@ function UpdateQRText(text: string) {
   queueRender();
 }
 
+document.addEventListener('load', () => {
+    queueRender();
+})
 document.addEventListener('DOMContentLoaded', () => {
   const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
   qrText.addEventListener('keyup', () => UpdateQRText(qrText.value));
