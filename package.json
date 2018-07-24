@@ -19,11 +19,12 @@
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "html-minifier": "^3.5.19",
     "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
     "clean": "rimraf dist yarn-error.log",
     "lint": "tslint -p . && cspell 'src/**/*.ts' 'public/**/*'",
-    "build": "webpack"
+    "build": "html-minifier --input-dir public/ -c html-minifier.conf --output-dir dist/ && webpack"
   }
 }
