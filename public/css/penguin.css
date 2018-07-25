@@ -90,3 +90,7 @@ a {
   text-align: center;
   width: 100%;
 }
+
+#qr-code {
+  width: 100%;
+}

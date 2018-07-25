@@ -3,46 +3,37 @@ import 'whatwg-fetch';
 
 import * as QRCode from 'qrcode';
 
-function fetchIPAddress() {
-  return fetch(`https://boxing.leonyu.net/ip.json`, {
-    cache: 'no-cache',
-  }).then((res) => {
-    if (!res.ok) {
-      throw Error(`${res.status} ${res.statusText}`);
-    }
-    return res.json();
-  }).then<string>((json) => {
-    return json.ip;
-  });
+async function fetchIPAddress(): Promise<void> {
+  const res = await fetch(`https://boxing.leonyu.net/ip.json`, { cache: 'no-cache' });
+  if (!res.ok) {
+    throw Error(`${res.status} ${res.statusText}`);
+  }
+  return (await res.json()).ip;
 }
 
 const queue: string[] = [];
 
-function queueRender() {
-  if (document.readyState !== 'complete') {
-    return;
-  }
+async function queueRender(): Promise<void> {
   const text = queue.shift();
-  if (typeof text === 'undefined') {
+  if (typeof text !== 'string') {
     return;
   }
 
-  const qrCanvas = document.querySelector<HTMLCanvasElement>('#qr-code')!;
-  const options = { color: { dark: '#222' }, width: getContentWidth() } as any;
-  if (text) {
-    QRCode.toCanvas(qrCanvas, text, options, queueRender);
+  const qrImage = document.querySelector<HTMLImageElement>('#qr-code')!;
+  const options = { color: { dark: '#222' }, width: 560 };
+
+  const dataUri = text ?
+    await QRCode.toDataURL(text, options) :
+    await QRCode.toDataURL([{ data: text, mode: 'alphanumeric' }], options);
+  if (dataUri) {
+    qrImage.src = dataUri;
   } else {
-    QRCode.toCanvas(qrCanvas, [{ data: text, mode: 'alphanumeric' }], options, queueRender);
+    console.error(`Unable to generate QRCode for "${text}"`);
   }
+  setTimeout(queueRender, 50);
 }
 
-function getContentWidth(): number {
-  const contentDiv = document.querySelector<HTMLDivElement>('.content')!;
-  const computedWidth = window.getComputedStyle(contentDiv).width;
-  return computedWidth ? parseInt(computedWidth, 10) : 560;
-}
-
-function UpdateQRText(text: string) {
+function UpdateQRText(text: string): void {
   const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
   if (qrText.value !== text) {
     qrText.value = text;
@@ -51,13 +42,9 @@ function UpdateQRText(text: string) {
   queueRender();
 }
 
-document.addEventListener('load', () => {
-    queueRender();
-});
 document.addEventListener('DOMContentLoaded', () => {
   const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
   qrText.addEventListener('keyup', () => UpdateQRText(qrText.value));
-  window.addEventListener('resize', () => UpdateQRText(qrText.value));
 
   fetchIPAddress().then((ipAddress) => {
     UpdateQRText(`CLIENT_IP:${ipAddress}`);
