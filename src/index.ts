@@ -14,10 +14,10 @@ async function fetchIPAddress(): Promise<void> {
 const queue: string[] = [];
 
 async function queueRender(): Promise<void> {
-  const text = queue.shift();
-  if (typeof text !== 'string') {
+  if (queue.length === 0) {
     return;
   }
+  const text = `${queue.shift()}`;
 
   const qrImage = document.querySelector<HTMLImageElement>('#qr-code')!;
   const options = { color: { dark: '#222' }, width: 560 };
