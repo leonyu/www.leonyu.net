@@ -19,14 +19,14 @@ async function queueRender(): Promise<void> {
   }
   const text = `${queue.shift()}`;
 
-  const qrImage = document.querySelector<HTMLImageElement>('#qr-code')!;
-  const options = { color: { dark: '#222' }, width: 560 };
+  const qrSvgContainer = document.querySelector<HTMLDivElement>('#qr-code')!;
+  const options: QRCode.QRCodeToStringOptions = { type: 'svg', color: { dark: '#222' } };
 
-  const dataUri = text ?
-    await QRCode.toDataURL(text, options) :
-    await QRCode.toDataURL([{ data: text, mode: 'alphanumeric' }], options);
-  if (dataUri) {
-    qrImage.src = dataUri;
+  const svgMarkup = text ?
+    await QRCode.toString(text, options) :
+    await QRCode.toString([{ data: text, mode: 'alphanumeric' }], options);
+  if (svgMarkup) {
+    qrSvgContainer.innerHTML = svgMarkup;
   } else {
     console.error(`Unable to generate QRCode for "${text}"`);
   }
