@@ -94,3 +94,7 @@ a {
   text-align: center;
   width: 100%;
 }
+
+#qr-code svg {
+  min-height: 50vmin; /* for IE9-11 height */
+}
