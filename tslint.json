@@ -1,25 +1,11 @@
 {
-  "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended"
-  ],
-  "jsRules": {},
-  "rules": {
-    "callable-types": false,
-    "interface-name": [
-      false
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
     ],
-    "max-line-length": [true, 180],
-    "no-console": [
-      false
-    ],
-    "object-literal-sort-keys": false,
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double",
-      "avoid-escape"
-    ]
-  },
-  "rulesDirectory": []
+    "jsRules": {},
+    "rules": {
+      "no-console": false
+    },
+    "rulesDirectory": []
 }
