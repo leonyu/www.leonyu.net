@@ -1,7 +1,5 @@
 
 const path = require('path');
-const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -17,13 +15,5 @@ module.exports = {
     rules: [
       { test: /\.tsx?$/, use: 'ts-loader' },
     ]
-  },
-  plugins: [
-    new UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
-  ]
+  }
 };
