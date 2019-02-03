@@ -23,7 +23,7 @@
   },
   "scripts": {
     "clean": "rimraf dist yarn-error.log",
-    "lint": "tslint -p . && cspell 'src/**/*.ts' 'public/**/*'",
+    "lint": "yarn audit && tslint -p . && cspell 'src/**/*.ts' 'public/**/*'",
     "build": "html-minifier --input-dir public/ -c html-minifier.conf --output-dir dist/ && webpack"
   },
   "resolutions": {
