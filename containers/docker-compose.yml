@@ -15,21 +15,21 @@ services:
     restart: always
 
   websocket-boxing-game:
-    image: 419152481628.dkr.ecr.us-east-1.amazonaws.com/websocket-boxing-game:latest
+    image: gcr.io/voidvector/websocket-boxing-game:latest
     ports:
       - 8080:8080
     user: nobody:nobody
     restart: always
 
   solver-webapp:
-    image: 419152481628.dkr.ecr.us-east-1.amazonaws.com/solver-webapp:latest
+    image: gcr.io/voidvector/solver-webapp:latest
     ports:
       - 5000:5000
     user: nobody
     restart: always
 
   showup-services:
-    image: 419152481628.dkr.ecr.us-east-1.amazonaws.com/showup-services:latest
+    image: gcr.io/voidvector/img-resizer:latest
     ports:
       - 3000:3000
     volumes:
