@@ -28,14 +28,14 @@ services:
     user: nobody
     restart: always
 
-  showup-services:
-    image: gcr.io/voidvector/img-resizer:latest
-    ports:
-      - 3000:3000
-    volumes:
-      - /tmp:/tmp
-    user: nobody:nobody
-    restart: always
+  # showup-services:
+  #   image: gcr.io/voidvector/img-resizer:latest
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - /tmp:/tmp
+  #   user: nobody:nobody
+  #   restart: always
 
   shadowsocks:
     image: shadowsocks/shadowsocks-libev
