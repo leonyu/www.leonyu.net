@@ -1,10 +1,10 @@
 steps:
-- name: node:lts-alpine
+- name: gcr.io/cloud-builders/yarn
   entrypoint: yarn
   args: ['install']
-- name: node:lts-alpine
+- name: gcr.io/cloud-builders/yarn
   entrypoint: yarn
   args: ['lint']
-- name: node:lts-alpine
+- name: gcr.io/cloud-builders/yarn
   entrypoint: yarn
   args: ['build']
