@@ -2,11 +2,9 @@ steps:
 - name: node:lts-alpine
   entrypoint: yarn
   args: ['install']
-steps:
 - name: node:lts-alpine
   entrypoint: yarn
   args: ['lint']
-steps:
 - name: node:lts-alpine
   entrypoint: yarn
   args: ['build']
