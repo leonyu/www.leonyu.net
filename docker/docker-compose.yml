@@ -1,18 +1,18 @@
 version: '3.0'
 services:
-  # syncthing:
-  #   image: syncthing/syncthing:latest
-  #   ports:
-  #     - 8384:8384
-  #     - 22000:22000
-  #     - 21027:21027/udp
-  #   environment:
-  #     - PUID=65534
-  #     - PGID=65534
-  #   volumes:
-  #     - /home/leonyu/syncthing/config/:/var/syncthing/config
-  #     - /home/leonyu/syncthing/:/var/syncthing
-  #   restart: always
+  syncthing:
+    image: syncthing/syncthing:latest
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    environment:
+      - PUID=65534
+      - PGID=65534
+    volumes:
+      - /home/leonyu/syncthing/config/:/var/syncthing/config
+      - /home/leonyu/syncthing/:/var/syncthing
+    restart: always
 
   websocket-boxing-game:
     image: gcr.io/voidvector/websocket-boxing-game:latest
