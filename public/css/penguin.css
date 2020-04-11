@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Roboto Mono', Consolas, Menlo, 'DejaVu Sans Mono', 'Andale Mono', sans-serif;
+  font-size: 10pt;
   color: #222;
   background-color: #eee;
   padding-top: 10px;
