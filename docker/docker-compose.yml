@@ -5,13 +5,23 @@ services:
     ports:
       - 8384:8384
       - 22000:22000
-      - 21027:21027/udp
     environment:
       - PUID=65534
       - PGID=65534
     volumes:
-      - /home/leonyu/syncthing/config/:/var/syncthing/config
-      - /home/leonyu/syncthing/:/var/syncthing
+      - ${HOME}/syncthing/:/var/syncthing/
+    restart: always
+
+  haproxy:
+    image: haproxy:alpine
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ${PWD}/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ${PWD}/dhparam:/usr/local/etc/haproxy/dhparam
+      - /etc/ssl/certs/:/etc/ssl/certs/
+      - /etc/ssl/private/:/etc/ssl/private/
     restart: always
 
   websocket-boxing-game:
@@ -25,7 +35,7 @@ services:
     image: gcr.io/voidvector/solver-webapp:latest
     ports:
       - 5000:5000
-    user: nobody
+    user: nobody:nobody
     restart: always
 
   # showup-services:
