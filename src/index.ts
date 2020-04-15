@@ -17,7 +17,7 @@ function init() {
 }
 
 function fetchIPAddress(): Promise<void> {
-  return fetch('/qr/checkip.json', { cache: 'no-cache' })
+  return fetch('/checkip/', { cache: 'no-cache' })
   .then((res) => res.json())
   .then((json) => json.ip);
 }
