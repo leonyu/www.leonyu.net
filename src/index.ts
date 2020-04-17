@@ -1,44 +1,14 @@
-import * as QRCode from 'qrcode';
-import { debounce } from './AsyncUtils';
+import QRView from './QRView';
 
-function init() {
-  const qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
-  qrText.addEventListener('keyup', debounce(() => updateQRCode(qrText.value), 50));
+declare const fetchCheckIP: Promise<string>;
 
-  fetchIPAddress().then((ipAddress) => {
-    const text = `CLIENT_IP:${ipAddress}`;
-    updateTextBox(text);
-    updateQRCode(text);
+function init(ipPromise: Promise<string>) {
+  const view = new QRView();
+  ipPromise.then((ipAddress) => {
+    view.updateInput(`CLIENT_IP:${ipAddress}`);
   }).catch((err) => {
-    const text = `${err}`;
-    updateTextBox(text);
-    updateQRCode(text);
+    view.updateInput(`${err}`);
   });
 }
 
-function fetchIPAddress(): Promise<void> {
-  return fetch('/checkip/', { cache: 'no-cache' })
-  .then((res) => res.json())
-  .then((json) => json.ip);
-}
-
-function updateQRCode(text: string): Promise<void> {
-  const options: QRCode.QRCodeToStringOptions = { type: 'svg', color: { dark: '#222' } };
-
-  return QRCode.toString(text, options)
-  .then((svgMarkup) => {
-    const qrSvgContainer = document.querySelector('#qr-code');
-    if (qrSvgContainer) {
-      qrSvgContainer.innerHTML = svgMarkup;
-    }
-  }).catch((error) => console.error(`Unable to generate QRCode for "${text}": ${error}`));
-}
-
-function updateTextBox(text: string): void {
-  const qrText = document.querySelector<HTMLInputElement>('#qr-text');
-  if (qrText) {
-    qrText.value = text;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => init(fetchCheckIP));
