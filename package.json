@@ -4,7 +4,6 @@
   "author": "Leon Yu <leon@leonyu.net>",
   "description": "www.leonyu.net",
   "private": true,
-  "repository": "git@bitbucket.org:voidvector/www.leonyu.net.git",
   "devDependencies": {
     "@types/qrcode": "^1.3.4",
     "cspell": "^4.0.56",
