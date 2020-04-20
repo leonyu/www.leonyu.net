@@ -7,8 +7,10 @@ export default class QRView {
   qrText: HTMLInputElement;
 
   constructor(container: HTMLElement = document.body) {
-    this.qrSvgContainer = container.querySelector<HTMLDivElement>('#qr-code')!;
-    this.qrText = document.querySelector<HTMLInputElement>('#qr-text')!;
+    this.qrText = document.createElement('input');
+    container.appendChild(this.qrText);
+    this.qrSvgContainer = document.createElement('div');
+    container.appendChild(this.qrSvgContainer);
     this.updateInput('');
     this.qrText.addEventListener('input', debounce(() => this.updateInput(this.qrText.value), 50));
   }
