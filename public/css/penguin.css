@@ -58,6 +58,7 @@ a {
 .header h2,
 .header h3 {
   font-size: 14pt;
+  font-weight: 500;
   margin: 0;
 }
 
