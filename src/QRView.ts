@@ -3,14 +3,14 @@ import * as QRCode from 'qrcode';
 import { debounce } from './AsyncUtils';
 
 export default class QRView {
-  qrSvgContainer: HTMLElement;
+  qrSvg: HTMLElement;
   qrText: HTMLInputElement;
 
-  constructor(container: HTMLElement = document.body) {
+  constructor(container: HTMLElement) {
     this.qrText = document.createElement('input');
     container.appendChild(this.qrText);
-    this.qrSvgContainer = document.createElement('div');
-    container.appendChild(this.qrSvgContainer);
+    this.qrSvg = document.createElement('div');
+    container.appendChild(this.qrSvg);
     this.updateInput('');
     this.qrText.addEventListener('input', debounce(() => this.updateInput(this.qrText.value), 50));
   }
@@ -20,24 +20,16 @@ export default class QRView {
     this.updateQRCode(text);
   }
 
-  private updateQRCode(text: string): Promise<void> {
-    if (!text) {
-      return Promise.resolve();
-    }
+  private async updateQRCode(text: string): Promise<void> {
     const options: QRCode.QRCodeToStringOptions = { type: 'svg', color: { dark: '#222' } };
 
-    return QRCode.toString(text, options)
-    .then((svgMarkup) => {
-      if (this.qrSvgContainer) {
-        this.qrSvgContainer.innerHTML = svgMarkup;
-      }
-    }).catch((error) => console.error(`Unable to generate QRCode for "${text}": ${error}`));
+    const svgMarkup = await QRCode.toString(text || [{ data: '', mode: 'alphanumeric' }], options);
+    this.qrSvg.innerHTML = svgMarkup;
   }
 
   private updateTextBox(text: string): void {
-    const qrText = document.querySelector<HTMLInputElement>('#qr-text');
-    if (qrText && qrText.value !== text) {
-      qrText.value = text;
+    if (this.qrText.value !== text) {
+      this.qrText.value = text;
     }
   }
 }
