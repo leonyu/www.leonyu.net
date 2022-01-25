@@ -24,6 +24,6 @@
     "clean": "rimraf dist yarn-error.log",
     "lint": " eslint . --ext .ts && stylelint public/css && cspell 'src/**/*.ts' 'public/**/*'",
     "build": "html-minifier --input-dir public/ -c html-minifier.conf --output-dir dist/ && webpack",
-    "do-upgrade": "yarn install && yarn upgrade --latest && rimraf node_modules yarn.lock && yarn install && yarn lint && yarn build && yarn test"
+    "do-upgrade": "yarn install && yarn upgrade --latest && rimraf node_modules yarn.lock && yarn install && yarn lint && yarn build"
   }
 }
