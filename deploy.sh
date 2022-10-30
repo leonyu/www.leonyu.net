@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-yarn install
-yarn clean
-yarn lint
-yarn build
+npm install
+npm run clean
+npm run lint
+npm run build
 
 # GCP
 # gsutil web set -m index.html -e error.html gs://www.leonyu.net/
