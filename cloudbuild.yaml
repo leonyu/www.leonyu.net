@@ -1,10 +1,10 @@
 steps:
 - name: node:lts-alpine
-  entrypoint: yarn
+  entrypoint: npm
   args: ['install']
 - name: node:lts-alpine
-  entrypoint: yarn
-  args: ['lint']
+  entrypoint: npm
+  args: ['run', 'lint']
 - name: node:lts-alpine
-  entrypoint: yarn
-  args: ['build']
+  entrypoint: npm
+  args: ['run', 'build']

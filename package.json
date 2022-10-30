@@ -23,9 +23,9 @@
     "webpack-cli": "^4.9.1"
   },
   "scripts": {
-    "clean": "rimraf dist yarn-error.log",
+    "clean": "rimraf dist",
     "lint": " eslint . --ext .ts && stylelint public/css && cspell 'src/**/*.ts' 'public/**/*'",
     "build": "html-minifier --input-dir public/ -c html-minifier.conf --output-dir dist/ && webpack",
-    "do-upgrade": "npm install && npm upgrade --latest && rimraf node_modules yarn.lock && npm install && npm run lint && npm run build"
+    "do-upgrade": "npm install && npm upgrade --latest && rimraf node_modules package-lock.json && npm install && npm run lint && npm run build"
   }
 }
