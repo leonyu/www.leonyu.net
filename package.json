@@ -11,7 +11,7 @@
     "@types/qrcode": "^1.4.2",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.51.0",
-    "cspell": "^6.23.1",
+    "cspell": "^6.27.0",
     "eslint": "^8.33.0",
     "html-minifier": "^4.0.0",
     "rimraf": "^4.1.2",
