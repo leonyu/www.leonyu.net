@@ -5,7 +5,7 @@
   "description": "www.leonyu.net",
   "private": true,
   "dependencies": {
-    "qrcode": "^1.5.0"
+    "qrcode": "^1.5.3"
   },
   "devDependencies": {
     "@types/qrcode": "^1.4.2",
