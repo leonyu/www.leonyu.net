@@ -5,7 +5,8 @@
     "bitbucket",
     "checkip",
     "leonyu",
-    "qrcode"
+    "qrcode",
+    "stylelint"
   ],
   "ignorePaths": ["node_modules/**"],
   "flagWords": []

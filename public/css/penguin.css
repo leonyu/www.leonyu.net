@@ -15,6 +15,7 @@ body {
   padding-right: 80px;
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media (max-width: 480px) {
   .margin-restraint {
     padding-left: 50px;
@@ -22,6 +23,7 @@ body {
   }
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media (max-width: 360px) {
   .margin-restraint {
     padding-left: 40px;
@@ -29,6 +31,7 @@ body {
   }
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media (max-width: 280px) {
   .margin-restraint {
     padding-left: 10px;
