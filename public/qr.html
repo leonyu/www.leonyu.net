@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/css/penguin.css">
 
   <script>
-    const fetchCheckIP = fetch('https://cloud.leonyu.net/boxing/', { method: 'HEAD', referrerPolicy: 'unsafe-url' }).then((res) => res.headers.get('X-Forwarded-For') || '');
+    const fetchCheckIP = fetch('https://cloud.leonyu.net/boxing/', { method: 'HEAD' }).then((res) => res.headers.get('X-Request-IP') || '');
   </script>
   <script defer src="/js/app.js"></script>
 </head>
