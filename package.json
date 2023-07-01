@@ -14,7 +14,7 @@
     "cspell": "^6.31.1",
     "eslint": "^8.39.0",
     "html-minifier": "^4.0.0",
-    "rimraf": "^4.1.2",
+    "rimraf": "^5.0.1",
     "stylelint": "^15.2.0",
     "stylelint-config-standard": "^33.0.0",
     "ts-loader": "^9.2.6",
