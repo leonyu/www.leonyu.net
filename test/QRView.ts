@@ -1,12 +1,13 @@
 import { TextEncoder } from 'node:util';
-globalThis.TextEncoder ??= TextEncoder;
+
+(globalThis as Partial<typeof globalThis>).TextEncoder ??= TextEncoder;
 
 import { describe, afterEach, it, expect } from '@jest/globals'
 
 import QRView from '../src/QRView'
 
 describe('QRView', () => {
-    let div: HTMLDivElement;
+    let div: HTMLDivElement | null = null;
 
     it('should render correct HTML', () => {
         div = document.createElement('div');

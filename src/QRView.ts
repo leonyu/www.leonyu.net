@@ -12,7 +12,7 @@ export default class QRView {
     this.qrSvg = document.createElement('div');
     container.appendChild(this.qrSvg);
     this.updateInput('');
-    this.qrText.addEventListener('input', debounce(() => this.updateInput(this.qrText.value), 50));
+    this.qrText.addEventListener('input', debounce(() => { this.updateInput(this.qrText.value); }, 50));
   }
 
   updateInput(text: string): void {

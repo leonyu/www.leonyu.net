@@ -14,7 +14,7 @@ async function init(ipPromise: Promise<string>): Promise<void> {
       view.updateInput(`CLIENT_IP:${ipAddress}`);
     }
   } catch (err) {
-    view.updateInput(`${err}`);
+    view.updateInput(String(err));
   }
 }
 
