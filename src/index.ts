@@ -18,4 +18,6 @@ async function init(ipPromise: Promise<string>): Promise<void> {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => init(fetchCheckIP));
+document.addEventListener('DOMContentLoaded', () => {
+  void init(fetchCheckIP);
+});

@@ -2,6 +2,8 @@
 import * as QRCode from 'qrcode';
 import { debounce } from './AsyncUtils';
 
+const EMPTY_QRCODE_SEGMENT: QRCode.QRCodeSegment[] = [{ data: '', mode: 'alphanumeric' }];
+
 export default class QRView {
   qrSvg: HTMLElement;
   qrText: HTMLInputElement;
@@ -17,13 +19,13 @@ export default class QRView {
 
   updateInput(text: string): void {
     this.updateTextBox(text);
-    this.updateQRCode(text);
+    void this.updateQRCode(text);
   }
 
   private async updateQRCode(text: string): Promise<void> {
     const options: QRCode.QRCodeToStringOptions = { type: 'svg', color: { dark: '#222' } };
 
-    const svgMarkup = await QRCode.toString(text || [{ data: '', mode: 'alphanumeric' }], options);
+    const svgMarkup = await QRCode.toString(text || EMPTY_QRCODE_SEGMENT, options);
     this.qrSvg.innerHTML = svgMarkup;
   }
 

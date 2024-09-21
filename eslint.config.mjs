@@ -8,5 +8,16 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
-  { plugins: { jest: eslintJest } }
+  {
+    plugins: { jest: eslintJest },
+    languageOptions: {
+      parserOptions: {
+        project: true,
+      }
+    },
+    rules: {
+      "@typescript-eslint/array-type": ["error", { default: "array-simple" }],
+      '@typescript-eslint/restrict-template-expressions': ['off'],
+    }
+  }
 );
