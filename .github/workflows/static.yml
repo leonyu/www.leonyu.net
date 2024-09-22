@@ -32,8 +32,8 @@ jobs:
           NODE_ENV: production
         run: |
           npm ci
-          npm run lint --if-present
           npm run build --if-present
+          npm run lint --if-present
           npm run test --if-present
 
       - name: Upload artifact

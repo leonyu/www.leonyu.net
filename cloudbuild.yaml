@@ -4,10 +4,10 @@ steps:
   args: ['install']
 - name: node:lts-alpine
   entrypoint: npm
-  args: ['run', 'lint']
+  args: ['run', 'build', '--if-present']
 - name: node:lts-alpine
   entrypoint: npm
-  args: ['run', 'test']
+  args: ['run', 'lint', '--if-present']
 - name: node:lts-alpine
   entrypoint: npm
-  args: ['run', 'build']
+  args: ['run', 'test', '--if-present']
