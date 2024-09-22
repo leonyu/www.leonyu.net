@@ -20,13 +20,6 @@
   <link rel="stylesheet" href="/css/penguin.css">
 
   <script defer src="/js/bundle.js"></script>
-  <script>
-    addEventListener('DOMContentLoaded', () => {
-      fetch('https://cloud.leonyu.net/boxing/', { method: 'HEAD' })
-        .then((res) => res.headers.get('X-Request-IP') || '')
-        .then((ipAddress) => { bundle.init(ipAddress); });
-    });
-  </script>
 </head>
 
 <body>

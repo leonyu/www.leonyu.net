@@ -1,6 +1,6 @@
 import QRView from './QRView';
 
-export function init(ipAddress: string): void {
+function init(ipAddress: string): void {
   const qrDiv = document.querySelector<HTMLDivElement>('#qr');
   if (qrDiv == null) {
     throw new Error('Content DIV does not exist.')
@@ -14,3 +14,7 @@ export function init(ipAddress: string): void {
     view.updateInput(String(err));
   }
 }
+
+void fetch('https://cloud.leonyu.net/boxing/', { method: 'HEAD' })
+  .then((res) => res.headers.get('X-Request-IP') ?? '')
+  .then((ipAddress) => { init(ipAddress); });

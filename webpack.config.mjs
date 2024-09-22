@@ -14,6 +14,5 @@ export default {
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(import.meta.dirname, 'dist'),
-    library: { name: 'bundle', type: 'umd' },
   },
 };
