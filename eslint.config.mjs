@@ -13,11 +13,11 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         project: true,
-      }
+      },
     },
     rules: {
       '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
       '@typescript-eslint/restrict-template-expressions': ['off'],
-    }
-  }
+    },
+  },
 );

@@ -3,7 +3,7 @@ import QRView from './QRView';
 function init(ipAddress: string): void {
   const qrDiv = document.querySelector<HTMLDivElement>('#qr');
   if (qrDiv == null) {
-    throw new Error('Content DIV does not exist.')
+    throw new Error('Content DIV does not exist.');
   }
   const view = new QRView(qrDiv);
   try {
@@ -17,4 +17,6 @@ function init(ipAddress: string): void {
 
 void fetch('https://cloud.leonyu.net/boxing/', { method: 'HEAD' })
   .then((res) => res.headers.get('X-Request-IP') ?? '')
-  .then((ipAddress) => { init(ipAddress); });
+  .then((ipAddress) => {
+    init(ipAddress);
+  });

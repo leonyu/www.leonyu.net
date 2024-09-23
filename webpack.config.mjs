@@ -1,4 +1,3 @@
-
 import path from 'node:path';
 import { env } from 'node:process';
 
@@ -7,9 +6,7 @@ export default {
   entry: './src/',
   resolve: { extensions: ['.ts', '.js'] },
   module: {
-    rules: [
-      { test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader' },
-    ],
+    rules: [{ test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader' }],
   },
   output: {
     filename: 'js/bundle.js',
