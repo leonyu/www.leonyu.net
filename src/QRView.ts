@@ -15,18 +15,19 @@ export default class QRView {
     this.qrSvg = document.createElement('div');
     container.appendChild(this.qrSvg);
     this.updateInput('');
-    this.qrText.addEventListener(
-      'input',
-      debounce(() => {
-        this.updateInput(this.qrText.value);
-      }, 50),
-    );
+    this.qrText.addEventListener('input', () => {
+      this.debouncedUpdateInput(this.qrText.value);
+    });
   }
 
   updateInput(text: string): void {
     this.updateTextBox(text);
     void this.updateQRCode(text);
   }
+
+  debouncedUpdateInput = debounce((text: string) => {
+    this.updateInput(text);
+  }, 50);
 
   private async updateQRCode(text: string): Promise<void> {
     this.qrSvg.innerHTML = await toString(text || EMPTY_QRCODE_SEGMENT, {

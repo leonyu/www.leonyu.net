@@ -1,6 +1,6 @@
-type Func<TInput extends unknown[], TOutput> = (...args: TInput) => TOutput;
+type Func<TInput extends never[], TOutput> = (...args: TInput) => TOutput;
 
-export function debounce<T extends Func<unknown[], void>>(
+export function debounce<T extends Func<never[], void>>(
   func: T,
   wait: number,
 ): Func<Parameters<T>, void> {
