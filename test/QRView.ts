@@ -1,12 +1,14 @@
 import { TextEncoder } from 'node:util';
 
-(globalThis as Partial<typeof globalThis>).TextEncoder ??= TextEncoder;
-
-import { describe, afterEach, it, expect } from '@jest/globals';
+import { describe, afterEach, it, expect, beforeAll } from '@jest/globals';
 
 import QRView from '../src/QRView';
 
 describe('QRView', () => {
+  beforeAll(() => {
+    (globalThis as Partial<typeof globalThis>).TextEncoder ??= TextEncoder;
+  });
+
   let div: HTMLDivElement | null = null;
 
   it('should render correct HTML', () => {
@@ -19,6 +21,6 @@ describe('QRView', () => {
   });
 
   afterEach(() => {
-    div?.parentElement?.removeChild(div);
+    div?.remove();
   });
 });
