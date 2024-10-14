@@ -15,9 +15,9 @@ describe('QRView', () => {
     div = document.createElement('div');
     document.body.appendChild(div);
     const qrView = new QRView(div);
-    expect(div.outerHTML).toMatchSnapshot();
+    expect(div).toMatchSnapshot();
     qrView.updateInput('hello world');
-    expect(div.outerHTML).toMatchSnapshot();
+    expect(div).toMatchSnapshot();
   });
 
   afterEach(() => {

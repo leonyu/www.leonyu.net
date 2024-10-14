@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`QRView should render correct HTML 1`] = `"<div><input><div></div></div>"`;
+exports[`QRView should render correct HTML 1`] = `
+<div>
+  <input />
+  <div />
+</div>
+`;
 
-exports[`QRView should render correct HTML 2`] = `"<div><input><div></div></div>"`;
+exports[`QRView should render correct HTML 2`] = `
+<div>
+  <input />
+  <div />
+</div>
+`;
