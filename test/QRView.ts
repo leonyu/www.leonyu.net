@@ -9,7 +9,7 @@ describe('QRView', () => {
     (globalThis as Partial<typeof globalThis>).TextEncoder ??= TextEncoder;
   });
 
-  let div: HTMLDivElement | null = null;
+  let div: HTMLDivElement;
 
   it('should render correct HTML', () => {
     div = document.createElement('div');
@@ -21,6 +21,6 @@ describe('QRView', () => {
   });
 
   afterEach(() => {
-    div?.remove();
+    div.remove();
   });
 });
