@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.20 AS builder
+FROM docker.io/library/alpine:3.21 AS builder
 RUN apk add --no-cache nodejs npm
 COPY . /build
 WORKDIR /build
