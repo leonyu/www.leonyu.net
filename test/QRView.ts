@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { TextEncoder } from 'node:util';
 
 import { describe, afterEach, it, expect, beforeAll } from '@jest/globals';
