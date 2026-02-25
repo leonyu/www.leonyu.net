@@ -21,7 +21,7 @@ describe('Screenshot test', () => {
     expressApp.use(express.static(path.join(__dirname, '../dist')));
     httpServer = expressApp.listen(8080);
 
-    const args = ['--no-sandbox', '--disable-setuid-sandbox'];
+    const args = process.getuid?.() == 0 ? ['--no-sandbox'] : [];
     browser = await puppeteer.launch(process.env['CHROME_BIN'] ?
       { executablePath: process.env['CHROME_BIN'], args } :
       { channel: 'chrome', args });
