@@ -1,8 +1,8 @@
-import fs from 'node:fs/promises';
+import type http from 'node:http';
 import path from 'node:path';
 
-import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import express from 'express';
+import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import puppeteer, { Browser } from 'puppeteer-core';
 
 const VIEWPORT_SIZES = {
@@ -11,22 +11,21 @@ const VIEWPORT_SIZES = {
 };
 
 describe('Screenshot test', () => {
-  let httpServer: ReturnType<express.Application['listen']>;
+  let httpServer: http.Server;
   let browser: Browser;
 
   beforeAll(async () => {
-    const app = express();
-    app.use(express.static(path.join(__dirname, '../dist')));
-    httpServer = app.listen(8080);
-
-    const chromeBin = await locateBinary(CHROME_BIN_PATHS);
-    browser = await puppeteer.launch({
-      executablePath: chromeBin,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-
     expect.extend({ toMatchImageSnapshot });
-  });
+
+    const expressApp = express();
+    expressApp.use(express.static(path.join(__dirname, '../dist')));
+    httpServer = expressApp.listen(8080);
+
+    const args = ['--no-sandbox', '--disable-setuid-sandbox'];
+    browser = await puppeteer.launch(process.env['CHROME_BIN'] ?
+      { executablePath: process.env['CHROME_BIN'], args } :
+      { channel: 'chrome', args });
+  }, 30_000);
 
   afterAll(async () => {
     httpServer.close();
@@ -51,17 +50,3 @@ describe('Screenshot test', () => {
     });
   });
 });
-
-const CHROME_BIN_PATHS = [
-  '/usr/bin/chromium-browser',
-  '/usr/bin/google-chrome',
-];
-
-async function locateBinary(binPaths: string[]): Promise<string> {
-  for (const binPath of binPaths) {
-    if (await fs.access(binPath, fs.constants.X_OK).then(() => true).catch(() => false)) {
-      return binPath;
-    }
-  }
-  throw new Error(`Binary not found: ${binPaths.join(', ')}`);
-}
