@@ -1,23 +1,31 @@
 // @ts-check
 
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import eslintJest from 'eslint-plugin-jest';
+import { fileURLToPath, URL } from "node:url";
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.strictTypeChecked,
-  ...tseslint.configs.stylisticTypeChecked,
+import { includeIgnoreFile } from "@eslint/compat";
+import eslintJS from '@eslint/js';
+import eslintJest from 'eslint-plugin-jest';
+import { defineConfig } from 'eslint/config';
+import eslintTS from 'typescript-eslint';
+
+export default defineConfig(
+  includeIgnoreFile(fileURLToPath(new URL(".gitignore", import.meta.url))),
   {
-    plugins: { jest: eslintJest },
+    files: ["**/*.{ts,tsx}"],
+    extends: [
+      eslintJS.configs.recommended,
+      ...eslintTS.configs.strictTypeChecked,
+      ...eslintTS.configs.stylisticTypeChecked,
+      eslintJest.configs["flat/recommended"],
+    ],
     languageOptions: {
       parserOptions: {
-        project: true,
+        projectService: true,
       },
-    },
-    rules: {
-      '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
-      '@typescript-eslint/restrict-template-expressions': ['off'],
-    },
-  },
-);
+    }
+  }, {
+  files: ["**/*.{js,cjs,mjs}"],
+  extends: [
+    eslintJS.configs.recommended,
+  ],
+});
