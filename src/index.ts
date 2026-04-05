@@ -16,14 +16,17 @@ function initQRView(text: string): void {
 }
 
 function init() {
-  if (location.host.endsWith('leonyu.net') && location.pathname.startsWith('/qr.html')) {
+  if (
+    location.host.endsWith('leonyu.net') &&
+    location.pathname.startsWith('/qr.html')
+  ) {
     void fetch('https://cloud.leonyu.net/boxing/', { method: 'HEAD' })
       .then((res) => res.headers.get('X-Request-IP') ?? '')
       .then((ipAddress) => {
         const text = `CLIENT_IP:${ipAddress}`;
         const url = new URL(location.href);
-        url.searchParams.set("text", text);
-        history.pushState({}, "", url);
+        url.searchParams.set('text', text);
+        history.pushState({}, '', url);
         initQRView(text);
       });
   } else {

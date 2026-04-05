@@ -9,7 +9,9 @@ import QRView from '../src/QRView';
 
 describe('QRView', () => {
   beforeAll(() => {
-    (globalThis as unknown as { TextEncoder?: typeof TextEncoder }).TextEncoder ??= TextEncoder;
+    (
+      globalThis as unknown as { TextEncoder?: typeof TextEncoder }
+    ).TextEncoder ??= TextEncoder;
   });
 
   let div: HTMLDivElement;
